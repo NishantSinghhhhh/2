@@ -1,6 +1,5 @@
 $('#mysidebar').height($(".nav").height());
 
-
 $( document ).ready(function() {
 
     //this script says, if the height of the viewport is greater than 800px, then insert affix class, which makes the nav bar float in a fixed
@@ -12,7 +11,7 @@ $( document ).ready(function() {
     }
     // activate tooltips. although this is a bootstrap js function, it must be activated this way in your theme.
     $('[data-toggle="tooltip"]').tooltip({
-    <!-- TODO-BS5: jQuery tooltip() — use Bootstrap 5 Tooltip JS API instead -->
+    // <!-- TODO-BS5: jQuery tooltip() — use Bootstrap 5 Tooltip JS API instead -->
         placement : 'top'
     });
 
@@ -52,4 +51,65 @@ $(function() {
             return $this.find("a[data-toggle=tab]:first, a[data-toggle=pill]:first").tab("show");
         }
     });
+});
+
+$(document).ready(function() {
+
+  // ── Sidebar: highlight active parents ─────────────────────
+  $("li.active").parents("li").addClass("active");
+
+  // ── Top-level: collapse all, expand only active ───────────
+  $("#mysidebar > li > ul").hide();
+  $("#mysidebar > li.active > ul").show();
+  $("#mysidebar > li.active > a").addClass("expanded");
+
+  // ── Top-level: toggle on click ────────────────────────────
+  $("#mysidebar > li > a").on("click", function(e) {
+    var $li = $(this).parent();
+    var $ul = $li.children("ul");
+
+    if ($ul.length === 0) return; // no submenu, follow link
+
+    e.preventDefault();
+
+    var isOpen = $ul.is(":visible");
+
+    // Close all top-level sections
+    $("#mysidebar > li > ul").slideUp(200);
+    $("#mysidebar > li > a").removeClass("expanded");
+
+    // Open clicked if it was closed
+    if (!isOpen) {
+      $ul.slideDown(200);
+      $(this).addClass("expanded");
+    }
+  });
+
+  // ── Subfolder: collapse all, expand only active ───────────
+  $("#mysidebar > li > ul > li.subfolders > ul").hide();
+  $("#mysidebar > li > ul > li.subfolders.active > ul").show();
+  $("#mysidebar > li > ul > li.subfolders.active > a").addClass("expanded");
+
+  // ── Subfolder: toggle on click ────────────────────────────
+  $("#mysidebar > li > ul > li.subfolders > a").on("click", function(e) {
+    var $li = $(this).parent();
+    var $ul = $li.children("ul");
+
+    if ($ul.length === 0) return; // no submenu, follow link
+
+    e.preventDefault();
+
+    var isOpen = $ul.is(":visible");
+
+    // Close all subfolders within the same parent
+    $(this).closest("ul").find("li.subfolders > ul").slideUp(200);
+    $(this).closest("ul").find("li.subfolders > a").removeClass("expanded");
+
+    // Open clicked if it was closed
+    if (!isOpen) {
+      $ul.slideDown(200);
+      $(this).addClass("expanded");
+    }
+  });
+
 });

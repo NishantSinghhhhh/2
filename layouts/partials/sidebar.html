@@ -11,6 +11,7 @@
   {{- range $loop2, $folder := $entry.folders -}}
   {{- if in $folder.output "web" -}}
   {{- if $folder.url -}}
+  <!-- Parent menu item has url and no folderitems -->
   {{- if eq $.RelPermalink $folder.url -}}
   <li class="active">
     <a title="{{ $folder.title }}" href="{{ $folder.url | strings.TrimPrefix "/" }}">{{ $folder.title }}</a>
@@ -21,6 +22,7 @@
   </li>
   {{- end -}}
   {{- else -}}
+  <!-- Parent menu item has folderitems -->
   <li>
     <a title="{{ $folder.title }}" href="#">{{ $folder.title }}</a>
     <ul>
@@ -29,7 +31,7 @@
       {{- if $folderitem.external_url -}}
       <li><a title="{{ $folderitem.title }}" href="{{ $folderitem.external_url }}" target="_blank" rel="noopener">{{ $folderitem.title }}</a></li>
       {{- else if eq $.RelPermalink $folderitem.url -}}
-      <li {{- if not $folderitem.link_only -}} class="active"{{- end -}}><a title="{{ $folderitem.title }}" href="{{ $folderitem.url | strings.TrimPrefix "/" }}">{{ $folderitem.title }}</a></li>
+      <li{{- if not $folderitem.link_only }} class="active"{{- end -}}><a title="{{ $folderitem.title }}" href="{{ $folderitem.url | strings.TrimPrefix "/" }}">{{ $folderitem.title }}</a></li>
       {{- else if eq $folderitem.type "empty" -}}
       <li><a title="{{ $folderitem.title }}" href="{{ $folderitem.url | strings.TrimPrefix "/" }}">{{ $folderitem.title }}</a></li>
       {{- else -}}
@@ -65,4 +67,4 @@
   {{- end -}}
 </ul>
 </nav>
-<script>$("li.active").parents('li').toggleClass("active");</script>
+<!-- active highlighting and accordion handled by customscripts.js -->

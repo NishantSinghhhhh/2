@@ -1,0 +1,301 @@
+/* ============================================================
+   SIDEBAR — sidebar.css
+   ============================================================ */
+
+/* ── Sidebar container width ────────────────────────────────── */
+div#tg-sb-sidebar,
+#mysidebar-container {
+  width: 280px; /* Keeps the sidebar on the side in desktop mode */
+  min-width: 280px;
+  flex-shrink: 0;
+  margin-right: 32px; /* Gives some breathing room between sidebar and main content */
+}
+
+ul#mysidebar {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ── Reset ──────────────────────────────────────────────────── */
+#mysidebar,
+#mysidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  display: block;
+}
+
+/* ── sidebarTitle ───────────────────────────────────────────── */
+#mysidebar li.sidebarTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ED762C;
+  padding: 0 0 16px 2px;
+  margin: 0;
+  line-height: 1.2;
+  background: transparent !important;
+  border: none;
+  cursor: default;
+}
+[data-bs-theme="dark"] #mysidebar li.sidebarTitle {
+  color: #ff9955;
+}
+
+/* ── Top-level <li> ─────────────────────────────────────────── */
+#mysidebar > li {
+  margin-bottom: 5px;
+  width: 100%;
+  display: block;
+}
+
+/* ── Top-level <a> ──────────────────────────────────────────── */
+#mysidebar > li > a {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #8D8D8D !important;
+  color: #ffffff !important;
+  border-radius: 5px !important;
+  padding: 0 14px !important;
+  font-size: 0.92rem !important;
+  font-weight: 500;
+  line-height: 1.3;
+  text-decoration: none !important;
+  border: none !important;
+  height: 40px;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box;
+  transition: background-color 150ms;
+}
+
+/* Arrow — rotates when expanded */
+#mysidebar > li > a::after {
+  content: '›';
+  font-size: 1.3rem;
+  font-weight: 400;
+  flex-shrink: 0;
+  margin-left: 8px;
+  display: inline-block;
+  transition: transform 200ms ease;
+  transform: rotate(0deg);
+}
+#mysidebar > li > a.expanded::after {
+  transform: rotate(90deg);
+}
+
+#mysidebar > li > a:hover {
+  background-color: #767676 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Active top-level — blue */
+#mysidebar > li.active > a,
+#mysidebar > li.active > a:hover,
+#mysidebar > li.active > a:focus {
+  background-color: #0A76BB !important;
+  color: #ffffff !important;
+}
+
+/* ── Sub-items container ────────────────────────────────────── */
+#mysidebar > li > ul {
+  background-color: #e8e8e8 !important;
+  border-radius: 0 0 5px 5px;
+  padding: 6px 0 8px !important;
+  margin-top: -3px;
+  margin-bottom: 5px;
+  display: none; /* JS controls */
+}
+
+/* ── Sub-item <li> ──────────────────────────────────────────── */
+#mysidebar > li > ul > li {
+  margin: 0;
+}
+
+/* ── Sub-item <a> ───────────────────────────────────────────── */
+#mysidebar > li > ul > li > a {
+  display: block !important;
+  background-color: transparent !important;
+  color: #333333 !important;
+  padding: 6px 12px 6px 18px !important;
+  font-size: 0.875rem !important;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none !important;
+  border: none !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+#mysidebar > li > ul > li > a:hover {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+  color: #111111 !important;
+  border-radius: 3px;
+  text-decoration: none !important;
+}
+
+/* Active sub-item */
+#mysidebar > li > ul > li.active > a {
+  font-weight: 600;
+  color: #0A76BB !important;
+  background-color: transparent !important;
+}
+
+/* ── Subfolder <li> — has children, styled as button ────────── */
+#mysidebar > li > ul > li.subfolders > a {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #a0a0a0 !important;
+  color: #ffffff !important;
+  border-radius: 4px !important;
+  padding: 0 12px !important;
+  height: 32px;
+  font-size: 0.875rem !important;
+  font-weight: 500;
+  margin: 3px 4px 3px 6px !important;
+  width: calc(100% - 10px) !important;
+  box-sizing: border-box;
+  text-decoration: none !important;
+  border: none !important;
+  transition: background-color 150ms;
+  cursor: pointer;
+}
+
+/* Arrow on subfolder button */
+#mysidebar > li > ul > li.subfolders > a::after {
+  content: '›';
+  font-size: 1.2rem;
+  font-weight: 400;
+  flex-shrink: 0;
+  margin-left: 6px;
+  display: inline-block;
+  transition: transform 200ms ease;
+  transform: rotate(0deg);
+}
+#mysidebar > li > ul > li.subfolders > a.expanded::after {
+  transform: rotate(90deg);
+}
+
+#mysidebar > li > ul > li.subfolders > a:hover {
+  background-color: #888888 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Active subfolder — blue */
+#mysidebar > li > ul > li.subfolders.active > a,
+#mysidebar > li > ul > li.subfolders.active > a:hover {
+  background-color: #0A76BB !important;
+  color: #ffffff !important;
+}
+
+/* ── Third-level container ──────────────────────────────────── */
+#mysidebar > li > ul > li.subfolders > ul {
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0;
+  display: none; /* JS controls */
+}
+
+/* ── Third-level <a> ────────────────────────────────────────── */
+#mysidebar > li > ul > li.subfolders > ul > li > a {
+  display: block !important;
+  background-color: transparent !important;
+  color: #444444 !important;
+  padding: 4px 12px 4px 28px !important;
+  font-size: 0.84rem !important;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none !important;
+  border: none !important;
+}
+#mysidebar > li > ul > li.subfolders > ul > li > a:hover {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+  border-radius: 3px;
+  color: #111111 !important;
+  text-decoration: none !important;
+}
+#mysidebar > li > ul > li.subfolders > ul > li.active > a {
+  font-weight: 600;
+  color: #0A76BB !important;
+}
+
+/* ── Hide old span arrows ───────────────────────────────────── */
+#mysidebar li > a > span {
+  display: none !important;
+}
+
+/* ── Dark mode ──────────────────────────────────────────────── */
+[data-bs-theme="dark"] #mysidebar > li > a {
+  background-color: #3a3a3a !important;
+  color: #e0e0e0 !important;
+}
+[data-bs-theme="dark"] #mysidebar > li > a:hover {
+  background-color: #484848 !important;
+  color: #ffffff !important;
+}
+[data-bs-theme="dark"] #mysidebar > li.active > a,
+[data-bs-theme="dark"] #mysidebar > li.active > a:hover,
+[data-bs-theme="dark"] #mysidebar > li.active > a:focus {
+  background-color: #0A76BB !important;
+  color: #ffffff !important;
+}
+[data-bs-theme="dark"] #mysidebar > li > ul {
+  background-color: #252525 !important;
+}
+[data-bs-theme="dark"] #mysidebar > li > ul > li > a {
+  color: #cccccc !important;
+}
+[data-bs-theme="dark"] #mysidebar > li > ul > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.07) !important;
+  color: #ffffff !important;
+}
+[data-bs-theme="dark"] #mysidebar > li > ul > li.active > a {
+  color: #4da6ff !important;
+}
+[data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > a {
+  background-color: #444444 !important;
+  color: #e0e0e0 !important;
+}
+[data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > a:hover {
+  background-color: #555555 !important;
+}
+[data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders.active > a {
+  background-color: #0A76BB !important;
+  color: #ffffff !important;
+}
+[data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > ul > li > a {
+  color: #aaaaaa !important;
+}
+[data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > ul > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+}
+[data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > ul > li.active > a {
+  color: #4da6ff !important;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 991px) {
+  div#tg-sb-sidebar,
+  #mysidebar-container {
+    width: 100%;       /* Snaps to full width on mobile/tablet */
+    min-width: 100%;
+    margin-right: 0;   /* Removes the right margin */
+    margin-bottom: 24px; /* Drops it on top with a bit of space below for the content */
+  }
+  ul#mysidebar {
+    width: 100%;
+    max-width: 100%;
+  }
+  #mysidebar > li > a {
+    height: auto;
+    min-height: 40px;
+    padding: 10px 14px !important;
+  }
+}
