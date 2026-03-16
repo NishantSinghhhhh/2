@@ -33,3 +33,30 @@
 [submodule "imported/preeco-orga"]
     path = content/imported/preeco-orga
     url = https://github.com/precice/preeco-orga
+[submodule "content/imported/tutorials"]
+	path = content/imported/tutorials
+	url = https://github.com/precice/tutorials.git
+[submodule "content/imported/openfoam-adapter"]
+	path = content/imported/openfoam-adapter
+	url = https://github.com/precice/openfoam-adapter.git
+[submodule "content/imported/aste"]
+	path = content/imported/aste
+	url = https://github.com/precice/aste.git
+[submodule "content/imported/micro-manager"]
+	path = content/imported/micro-manager
+	url = https://github.com/precice/micro-manager.git
+[submodule "content/imported/fmi-runner"]
+	path = content/imported/fmi-runner
+	url = https://github.com/precice/fmi-runner
+[submodule "content/imported/su2-adapter"]
+	path = content/imported/su2-adapter
+	url = https://github.com/precice/su2-adapter
+[submodule "content/imported/dune-adapter"]
+	path = content/imported/dune-adapter
+	url = https://github.com/precice/dune-adapter
+[submodule "content/imported/dumux-adapter"]
+	path = content/imported/dumux-adapter
+	url = https://github.com/precice/dumux-adapter
+[submodule "content/imported/preeco-orga"]
+	path = content/imported/preeco-orga
+	url = https://github.com/precice/preeco-orga
