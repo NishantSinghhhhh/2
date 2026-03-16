@@ -1,0 +1,26 @@
+{{- $dev_leads := .Site.Data.developer.leads  | sort "name" -}}
+<div class="row">
+<div class="col-md-8 offset-md-2">
+<ul class="devlist">
+  {{- range $loop, $p := $dev_leads -}}
+  <li{{- if $loop.IsFirst -}} class="devlist-first"{{- end -}}>
+    <div class="devlist-img">
+      {{- if $p.img -}}
+      <img src="images/developer/{{ $p.img }}.jpg" alt="Portrait">
+      {{- end -}}
+    </div>
+    <div class="devlist-left">
+      <p>
+        <strong>{{ $p.fullname }}</strong><br/>
+        {{ $p.institution }}
+      </p>
+    </div>
+    <ul class="devlist-right">
+      {{- if $p.url -}}<li><a href="{{ $p.url }}" alt="See the institutional website" class="no-icon"><i class="fas fa-university"></i></a></li>{{- end -}}
+      {{- if $p.github -}}<li><a href="https://github.com/{{ $p.github }}" alt="See the Github profile" class="no-icon"><i class="fab fa-github"></i></a></li>{{- end -}}
+    </ul>
+  </li>
+  {{- end -}}
+</ul>
+</div>
+</div>

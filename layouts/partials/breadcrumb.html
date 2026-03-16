@@ -1,0 +1,63 @@
+{{/* Generate breadcrumb metadata from topnav and sidebar if available */}}
+{{- if not .Params.topnav -}}{{- /* skip breadcrumb if no topnav param */ -}}
+{{- else -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+{{- $topnav := (index .Site.Data .Params.topnav) -}}
+{{- if $topnav -}}
+{{- range $loop, $entry := $topnav.topnav -}}
+  {{- range $loop2, $item := $entry.items -}}
+    {{- $section_sidebar := printf "%s_sidebar" $item.section -}}
+    {{- if or (in $.RelPermalink $item.url) (eq $.Params.sidebar $section_sidebar) -}}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{ $item.title }}",
+      "item": "{{ $item.url | absURL }}"
+    }
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
+{{- if .Params.sidebar -}}
+{{- $sidebarData := index .Site.Data.sidebars .Params.sidebar -}}
+{{- if $sidebarData -}}
+{{- $sidebar := $sidebarData.entries -}}
+{{- range $loop, $entry := $sidebar -}}
+  {{- range $loop2, $folder := $entry.folders -}}
+    {{- if in $folder.output "web" -}}
+      {{- if $folder.url -}}
+        {{- if eq $.RelPermalink $folder.url -}}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ $folder.title }}",
+      "item": "{{ $folder.url | absURL }}"
+    }
+        {{- end -}}
+      {{- else -}}
+        {{- range $loop3, $folderitem := $folder.folderitems -}}
+          {{- if in $folderitem.output "web" -}}
+            {{- if eq $.RelPermalink $folderitem.url -}}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ $folderitem.title }}",
+      "item": "{{ $folderitem.url | absURL }}"
+    }
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+  ]
+}
+</script>
+{{- end -}}

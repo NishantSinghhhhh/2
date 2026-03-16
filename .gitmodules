@@ -1,0 +1,35 @@
+[submodule "tutorials"]
+    path = content/imported/tutorials
+    url = https://github.com/precice/tutorials.git
+    branch = develop
+[submodule "openfoam-adapter"]
+    path = content/imported/openfoam-adapter
+    url = https://github.com/precice/openfoam-adapter.git
+    branch = develop
+[submodule "imported/aste"]
+    path = content/imported/aste
+    url = https://github.com/precice/aste.git
+    branch = develop
+[submodule "imported/micro-manager"]
+    path = content/imported/micro-manager
+    url = https://github.com/precice/micro-manager.git
+    branch = develop
+[submodule "imported/fmi-runner"]
+    path = content/imported/fmi-runner
+    url = https://github.com/precice/fmi-runner
+    branch = main
+[submodule "imported/su2-adapter"]
+    path = content/imported/su2-adapter
+    url = https://github.com/precice/su2-adapter
+    branch = develop
+[submodule "imported/dune-adapter"]
+    path = content/imported/dune-adapter
+    url = https://github.com/precice/dune-adapter
+    branch = main
+[submodule "imported/dumux-adapter"]
+    path = content/imported/dumux-adapter
+    url = https://github.com/precice/dumux-adapter
+    branch = develop
+[submodule "imported/preeco-orga"]
+    path = content/imported/preeco-orga
+    url = https://github.com/precice/preeco-orga

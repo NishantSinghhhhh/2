@@ -1,0 +1,106 @@
+name: Build and deploy the website
+on:
+  workflow_dispatch:
+  workflow_call:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: website-deploy
+  cancel-in-progress: false # wait
+
+jobs:
+  pre-commit:
+    name: pre-commit checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+         python-version: '3.x'
+      - name: Run pre-commit
+        uses: pre-commit/action@v3.0.1
+
+  build-deploy:
+    needs: pre-commit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          lfs: false
+          path: website
+          fetch-depth: 0 # full history required to determine last edit
+
+      - name: Fetch - precice develop
+        uses: actions/checkout@v4
+        with:
+          repository: precice/precice
+          ref: develop
+          path: develop
+
+      - name: Fetch - precice main
+        uses: actions/checkout@v4
+        with:
+          repository: precice/precice
+          ref: main
+          path: main
+          fetch-tags: true
+
+      - name: Patch doxyfiles
+        run: website/doxygen/patch.sh
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get -yyq update
+          sudo apt-get -yyq install graphviz plantuml
+
+          # Install latest doxygen binary
+          mkdir doxygen
+          curl -sL https://github.com/doxygen/doxygen/releases/download/Release_1_14_0/doxygen-1.14.0.linux.bin.tar.gz | tar -xz --strip-components=1 -C doxygen
+          readlink -f doxygen/bin >> $GITHUB_PATH
+
+      - name: Check doxygen version
+        run: doxygen --version
+
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          working-directory: website
+
+      - name: Build website
+        working-directory: website
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build
+
+      - name: Build doxygen - develop
+        working-directory: develop
+        run: doxygen
+        env:
+          PLANTUML_JAR_PATH: /usr/share/plantuml/plantuml.jar
+
+      - name: Build doxygen - main
+        working-directory: main
+        run: doxygen
+        env:
+          PLANTUML_JAR_PATH: /usr/share/plantuml/plantuml.jar
+
+      - name: Assemble website
+        run: |
+          mv website/_site public
+          mv develop/docs/source-code-documentation/html public/doxygen/develop
+          mv main/docs/source-code-documentation/html public/doxygen/main
+
+      - name: List website files
+        run: find public
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.JEKYLL_PAT }}
+          publish_dir: ./public

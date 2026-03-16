@@ -1,0 +1,68 @@
+{{- $sidebar := slice -}}
+{{- if .Params.sidebar -}}
+{{- $sidebar = (index .Site.Data.sidebars .Params.sidebar).entries -}}
+{{- end -}}
+{{- if not $sidebar -}}{{- return -}}{{- end -}}
+
+<nav aria-label="{{ (index $sidebar 0).product }}">
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">{{ (index $sidebar 0).product }} {{ (index $sidebar 0).version }}</li>
+  {{- range $loop, $entry := $sidebar -}}
+  {{- range $loop2, $folder := $entry.folders -}}
+  {{- if in $folder.output "web" -}}
+  {{- if $folder.url -}}
+  {{- if eq $.RelPermalink $folder.url -}}
+  <li class="active">
+    <a title="{{ $folder.title }}" href="{{ $folder.url | strings.TrimPrefix "/" }}">{{ $folder.title }}</a>
+  </li>
+  {{- else -}}
+  <li>
+    <a title="{{ $folder.title }}" href="{{ $folder.url | strings.TrimPrefix "/" }}">{{ $folder.title }}</a>
+  </li>
+  {{- end -}}
+  {{- else -}}
+  <li>
+    <a title="{{ $folder.title }}" href="#">{{ $folder.title }}</a>
+    <ul>
+      {{- range $loop3, $folderitem := $folder.folderitems -}}
+      {{- if in $folderitem.output "web" -}}
+      {{- if $folderitem.external_url -}}
+      <li><a title="{{ $folderitem.title }}" href="{{ $folderitem.external_url }}" target="_blank" rel="noopener">{{ $folderitem.title }}</a></li>
+      {{- else if eq $.RelPermalink $folderitem.url -}}
+      <li {{- if not $folderitem.link_only -}} class="active"{{- end -}}><a title="{{ $folderitem.title }}" href="{{ $folderitem.url | strings.TrimPrefix "/" }}">{{ $folderitem.title }}</a></li>
+      {{- else if eq $folderitem.type "empty" -}}
+      <li><a title="{{ $folderitem.title }}" href="{{ $folderitem.url | strings.TrimPrefix "/" }}">{{ $folderitem.title }}</a></li>
+      {{- else -}}
+      <li><a title="{{ $folderitem.title }}" href="{{ $folderitem.url | strings.TrimPrefix "/" }}">{{ $folderitem.title }}</a></li>
+      {{- end -}}
+      {{- range $loop4, $subfolders := $folderitem.subfolders -}}
+      {{- if in $subfolders.output "web" -}}
+      <li class="subfolders">
+        <a title="{{ $subfolders.title }}" href="#">{{ $subfolders.title }}</a>
+        <ul>
+          {{- range $loop5, $subfolderitem := $subfolders.subfolderitems -}}
+          {{- if in $subfolderitem.output "web" -}}
+          {{- if $subfolderitem.external_url -}}
+          <li><a title="{{ $subfolderitem.title }}" href="{{ $subfolderitem.external_url }}" target="_blank" rel="noopener">{{ $subfolderitem.title }}</a></li>
+          {{- else if eq $.RelPermalink $subfolderitem.url -}}
+          <li class="active"><a title="{{ $subfolderitem.title }}" href="{{ $subfolderitem.url | strings.TrimPrefix "/" }}">{{ $subfolderitem.title }}</a></li>
+          {{- else -}}
+          <li><a title="{{ $subfolderitem.title }}" href="{{ $subfolderitem.url | strings.TrimPrefix "/" }}">{{ $subfolderitem.title }}</a></li>
+          {{- end -}}
+          {{- end -}}
+          {{- end -}}
+        </ul>
+      </li>
+      {{- end -}}
+      {{- end -}}
+      {{- end -}}
+      {{- end -}}
+    </ul>
+  </li>
+  {{- end -}}
+  {{- end -}}
+  {{- end -}}
+  {{- end -}}
+</ul>
+</nav>
+<script>$("li.active").parents('li').toggleClass("active");</script>

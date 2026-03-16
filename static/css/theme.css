@@ -1,0 +1,11 @@
+/* Light mode (default) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #212529;
+}
+
+/* Dark mode */
+[data-bs-theme="dark"] {
+  --bg-color: #121313 ;
+  --text-color: #f8f9fa;
+}

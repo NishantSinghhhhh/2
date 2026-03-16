@@ -1,0 +1,19 @@
+<!-- toc -->
+<script>
+$( document ).ready(function() {
+    {{- $headers := "h2,h3,h4" -}}
+    {{- if reflect.IsMap . -}}
+      {{- with .headers -}}{{- $headers = . -}}{{- end -}}
+    {{- end -}}
+    $('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: '{{ $headers }}' });
+
+    $('#toc').on('click', 'a', function() {
+        var target = $(this.getAttribute('href'))
+            , scroll_target = target.offset().top
+        $(window).scrollTop(scroll_target - 10);
+        return false
+    });
+});
+</script>
+
+<div id="toc"></div>

@@ -1,0 +1,6 @@
+<figure>
+{{- if .url -}}<a class="no_icon" target="_blank" rel="noopener noreferrer" href="{{ .url }}">{{- end -}}
+<img class="docimage" src="images/{{ .file }}" alt="{{ .alt }}" {{- if .maxwidth -}} style="max-width: {{ .maxwidth }}px"{{- end -}} />
+{{- if .url -}}</a>{{- end -}}
+{{- if .caption -}}<figcaption>{{ .caption }}</figcaption>{{- end -}}
+</figure>

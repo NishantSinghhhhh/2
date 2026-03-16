@@ -1,0 +1,138 @@
+<script>
+const algoliaSearch = instantsearch({
+  appId: '{{ .Site.Params.algolia.application_id }}',
+  apiKey: '{{ .Site.Params.algolia.search_only_api_key }}',
+  indexName: '{{ .Site.Params.algolia.index_name }}',
+  searchFunction: function(helper) {
+    var searchResults = $('#search-results');
+    if (helper.state.query === '') {
+      searchResults.hide();
+      return;
+    }
+    helper.search();
+    searchResults.show();
+  }
+});
+
+const hitTemplate = function(hit) {
+  let date = '';
+  if (hit.date) {
+    date = moment.unix(hit.date).format('MMM D, YYYY');
+  }
+
+  let url = `{{ .Site.BaseURL }}${hit.url}#${hit.anchor}`;
+
+  const title = hit._highlightResult.title.value;
+
+  let breadcrumbs = '';
+  if (hit._highlightResult.headings) {
+    breadcrumbs = hit._highlightResult.headings.map(match => {
+      return `<span class="result-breadcrumb">${match.value}</span>`
+    }).join(' > ')
+  }
+
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="result-item">
+    <h2><a class="result-link" href="${url}">${title}</a></h2>
+    ${breadcrumbs ? `<a href="${url}" class="result-breadcrumbs">${breadcrumbs}</a>` : ''}
+    <div class="result-snippet">${content}</div>
+    </div>
+  `;
+}
+
+algoliaSearch.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#search-input',
+    placeholder: 'Search (' + (/Mac|iPhone|iPad/.test(navigator.platform) ? '⌘K' : 'Ctrl+K') + ')',
+    poweredBy: true,
+    magnifier: false,
+    autofocus: false,
+    searchOnEnterKeyPressOnly: false,
+    reset: true
+  })
+);
+
+algoliaSearch.addWidget(
+  instantsearch.widgets.hits({
+    container: '#search-results',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+algoliaSearch.start();
+
+var elem = document.querySelector('.ais-search-box--powered-by');
+elem.style.marginTop = '-15px';
+elem.style.paddingRight = '5px';
+
+var elem = document.querySelector('.nav li a.ais-search-box--powered-by-link');
+elem.style.padding = '0';
+elem.style.backgroundColor = 'transparent';
+elem.style.display = "inline-block";
+
+var elem = document.querySelector('.ais-search-box--input');
+elem.style.paddingLeft = '10px';
+elem.style.borderColor = '#0A76BB';
+
+var elem = document.querySelector('.ais-search-box');
+elem.style.padding = '.5em';
+elem.style.marginBottom = '0px';
+elem.style.marginLeft = '10px';
+elem.style.marginTop = '0px';
+elem.style.width = '20em';
+elem.style.fontSize = '0.8em';
+elem.style.height = '50px';
+elem.style.boxSizing = 'border-box';
+
+document.addEventListener('mouseup', function(e) {
+  var results = document.getElementById('search-results');
+  if (!results.contains(e.target)) {
+    results.style.display = 'none';
+  }
+});
+document.addEventListener('mouseup', function(e) {
+  var input = document.getElementById('search-input');
+  var results = document.getElementById('search-results');
+  if (input.contains(e.target)) {
+    results.style.display = 'block';
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  var isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
+  if ((isMac ? e.metaKey : e.ctrlKey) && e.key === 'k') {
+    e.preventDefault();
+    var input = document.querySelector('.ais-search-box--input');
+    if (input) {
+      input.focus();
+      input.select();
+    }
+  }
+
+  if (e.key === 'Escape' || e.keyCode === 27) {
+    var results = document.getElementById('search-results');
+    var inputContainer = document.getElementById('search-input');
+    var activeElement = document.activeElement;
+
+    if (results) {
+      results.style.display = 'none';
+    }
+
+    if (inputContainer && inputContainer.contains(activeElement)) {
+      activeElement.blur();
+    } else if (results && results.contains(activeElement)) {
+      var algoliaInput = document.querySelector('#search-input .ais-search-box--input');
+      if (algoliaInput) {
+        algoliaInput.focus();
+      } else {
+        activeElement.blur();
+      }
+    }
+  }
+});
+
+</script>

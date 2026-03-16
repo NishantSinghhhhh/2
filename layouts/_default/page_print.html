@@ -1,0 +1,13 @@
+<div class="post-header">
+    <h1 class="post-title-main" id="{{ .RelPermalink | replaceRE "/" "" }}">{{ .Title }}</h1>
+</div>
+
+<div class="post-content">
+
+    {{- if .Summary -}}
+    <div class="summary">
+        {{ .Summary | markdownify }}
+    </div>
+    {{- end -}}
+    {{ .Content }}
+</div>

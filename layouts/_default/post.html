@@ -1,0 +1,34 @@
+{{ define "main" }}
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
+        <p class="post-meta">
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" itemprop="datePublished">{{ .Date | time.Format "Jan 2, 2006" }}</time>
+            {{- if .Params.author -}}
+            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name"> / {{ .Params.author }}</span>
+            </span>
+            {{- end -}}
+            {{- if .Params.tags -}} /
+                {{- $projectTags := .Site.Data.tags.allowed_tags -}}
+                {{- range $loop, $tag := .Params.tags -}}
+                {{- if in $projectTags $tag -}}
+                <a href="{{ printf "tag_%s.html" $tag }}">{{ $tag }}</a>{{- if not $loop.IsLast -}}, {{- end -}}
+                {{- end -}}
+                {{- end -}}
+            {{- end -}}
+        </p>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        {{- if .Summary -}}
+        <div class="summary">{{ .Summary }}</div>
+        {{- end -}}
+        {{ .Content }}
+    </div>
+
+</article>
+
+{{- partial "commento.html" . -}}
+{{ end }}

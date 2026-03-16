@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{- partial "head_print.html" . -}}
+</head>
+
+<body class="{{- if eq .Params.type "title" -}}title{{- else if eq .Params.type "frontmatter" -}}frontmatter{{- else if eq .Params.type "first_page" -}}first_page{{- end -}} print">
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Column -->
+    <div class="col-md-9">
+
+        {{ .Content }}
+    </div>
+
+</div>    <!-- /.container -->
+
+</body>
+
+</html>

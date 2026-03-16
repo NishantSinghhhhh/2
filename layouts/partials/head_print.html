@@ -1,0 +1,68 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{- if .Summary -}}{{ .Summary | plainify | truncate 160 }}{{- end -}}">
+<meta name="keywords" content="{{ .Params.tags }}{{- if .Params.tags -}}, {{- end -}} {{ .Params.keywords }}">
+<title>{{- if .Params.homepage -}} {{ .Site.Params.homepage_title }} {{- else if .Title -}}{{ .Title }}{{- end -}} | {{ .Site.Params.site_title }}</title>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}">
+<link rel="icon" sizes="192x192" href="images/icon.png">
+<link rel="apple-touch-icon" sizes="310x310" href="images/icon-310x310.png">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="css/fontawesome.6.7.2.all.min.css">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Local CSS -->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/customstyles-precice.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<link rel="stylesheet" href="css/bookcover.css">
+<link rel="stylesheet" href="css/theme-precice.css">
+{{- if eq .RelPermalink "/index.html" -}}
+<link rel="stylesheet" href="css/landing-page.css">
+{{- end -}}
+
+<link rel="stylesheet" href="css/printstyles.css">
+
+<script src="js/prince.es6.polyfill.min.js"></script>
+<script src="js/prince.mathjax.compat.js"></script>
+
+<link rel="stylesheet" href="css/katex.min.css">
+<script src="js/katex.min.js"></script>
+<script defer src="js/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+
+<script>
+    Prince.addScriptFunc("datestamp", function() {
+        return "{{ now | time.Format "January 02, 2006" }}";
+    });
+</script>
+
+<script>
+    Prince.addScriptFunc("guideName", function() {
+        return "{{ .Site.Params.print_title }} Documentation";
+    });
+</script>
+
+<script>
+    Prince.addScriptFunc("versionNumber", function() {
+        return "{{ .Site.Params.precice_version }}";
+    });
+</script>

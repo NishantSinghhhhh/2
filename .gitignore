@@ -1,0 +1,12 @@
+_site/
+.sass-cache/
+.jekyll-metadata
+.jekyll-cache
+_pdf
+.DS_Store
+.idea
+.public
+vendor/
+.bundle/
+Gemfile.lock
+public/

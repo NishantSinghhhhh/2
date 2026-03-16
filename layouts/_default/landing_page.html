@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{{- partial "head.html" . -}}
+</head>
+
+<body>
+	<header>
+		{{- partial "topnav.html" . -}}
+		<!-- News banner -->
+		{{- partial "news_banner.html" (dict "onlanding" "true" "page" .) -}}
+	</header>
+	<main>
+		<!-- Page Content -->
+		{{ .Content }}
+	</main>
+
+	{{- partial "footer.html" . -}}
+
+	<script src="{{ "/js/github-queries.js" | relURL }}"></script>
+
+	<script src="{{ "/js/news-collect.js" | relURL }}"></script>
+
+</body>
+
+{{- if .Site.Params.google_analytics -}}
+{{- partial "google_analytics.html" . -}}
+{{- end -}}
+
+</html>

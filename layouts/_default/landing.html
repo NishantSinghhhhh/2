@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body>
+  <header>
+    {{- partial "topnav.html" . -}}
+    {{- partial "news_banner.html" (dict "onlanding" "true" "page" .) -}}
+  </header>
+  <main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO + NEWS WRAPPER — shared background logo
+     ═══════════════════════════════════════════════════════════ -->
+<div class="hero-news-wrapper">
+
+  <!-- Lead stage -->
+  <div class="hero-stage">
+    <div class="hero-bg-arch" aria-hidden="true"></div>
+    <div class="container hero-container">
+
+      <div class="hero-pill-row">
+        <a href="https://github.com/precice/precice/releases/tag/v{{ .Site.Params.precice_version }}"
+           class="hero-pill no-icon" role="button">
+          Latest&nbsp;(v{{ .Site.Params.precice_version }})&nbsp;<i class="fas fa-download"></i>
+        </a>
+      </div>
+
+      <h1 class="hero-headline no-anchor">
+        The coupling library for<br>
+        <span class="hero-highlight-blue">partitioned</span>&nbsp;<span class="hero-highlight-amber">multi-physics.</span>
+      </h1>
+
+      <p class="hero-description">
+        preCICE is an open-source coupling library and ecosystem for general partitioned
+        multi-physics and multi-scale simulations, including surface and volume coupling.
+        Partitioned means that preCICE couples existing programs/solvers capable of simulating
+        a subpart of the complete physics involved in a simulation. This allows for the high
+        flexibility that is needed to keep a decent time-to-solution for complex coupled problems.
+        The software offers convenient methods for transient equation coupling, communication,
+        time interpolation, and data mapping.
+      </p>
+
+      <div class="hero-cta-row">
+        <a href="/quickstart.html" class="btn btn-primary hero-btn-primary no-icon" role="button">
+          Get Started&nbsp;<i class="fas fa-arrow-right"></i>
+        </a>
+        <span id="github-button">
+          <a href="https://github.com/precice/precice/" class="hero-btn-github no-icon" role="button">
+            <i class="fab fa-github"></i>&nbsp;Star on GitHub&nbsp;<span id="stargazers" class="hero-star-count"></span>
+          </a>
+        </span>
+      </div>
+
+    </div><!-- /.container.hero-container -->
+  </div><!-- /.hero-stage -->
+
+  <!-- Latest News (sibling to hero) -->
+  <div id="latest-news">
+    <div class="container">
+
+      <h2 class="news-section-header">Latest news</h2>
+
+      <div id="news-container" class="news-grid">
+        <p id="loading-news">Loading latest news...</p>
+      </div>
+
+      <div class="news-more-row">
+        <a href="https://precice.discourse.group/c/news/5"
+           class="btn btn-primary no-icon"
+           role="button"
+           target="_blank"
+           rel="noopener noreferrer">
+          More news &nbsp;<i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </div><!-- /#latest-news -->
+
+</div><!-- /.hero-news-wrapper -->
+
+<!-- USP Section -->
+<div class="usp-section">
+  <div class="container">
+
+    <h2 class="usp-section-header">Prepared for the next generation of multi-physics simulations</h2>
+
+    <div class="usp-grid">
+
+      <div class="usp-card">
+        <div class="usp-card-img">
+          <img src="images/usp/usp-minimal.svg" alt="non-invasive integration">
+        </div>
+        <div class="usp-card-body">
+          <h3 class="usp-card-title">Minimally invasive integration</h3>
+          <ul class="usp-card-list">
+            <li>Elegant library approach</li>
+            <li>High-level API in C++, C, Fortran, Python, Matlab</li>
+          </ul>
+          <a href="couple-your-code-overview.html" class="usp-card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="usp-card">
+        <div class="usp-card-img">
+          <img src="images/usp/usp-arbitrary.svg" alt="Coupling of programs">
+        </div>
+        <div class="usp-card-body">
+          <h3 class="usp-card-title">Coupling of arbitrary many programs</h3>
+          <ul class="usp-card-list">
+            <li>Arbitrary combinations of strong and weak interactions</li>
+            <li>Arbitrary many solvers</li>
+          </ul>
+          <a href="configuration-coupling-multi.html" class="usp-card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="usp-card">
+        <div class="usp-card-img">
+          <img src="images/usp/usp-numerics.svg" alt="numerical methods">
+        </div>
+        <div class="usp-card-body">
+          <h3 class="usp-card-title">State-of-the-art numerical methods</h3>
+          <ul class="usp-card-list">
+            <li>Robust quasi-Newton acceleration</li>
+            <li>Radial-basis function data mapping</li>
+          </ul>
+          <a href="fundamentals-literature-guide.html" class="usp-card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="usp-card">
+        <div class="usp-card-img">
+          <img src="images/usp/usp-scalability.svg" alt="scalability">
+        </div>
+        <div class="usp-card-body">
+          <h3 class="usp-card-title">Scalability up to complete supercomputers</h3>
+          <ul class="usp-card-list">
+            <li>Pure peer-to-peer approach</li>
+            <li>Support of heterogenous hardware (CPU/GPU)</li>
+            <li>Efficient also on a laptop</li>
+          </ul>
+          <a href="fundamentals-literature-guide.html#parallel-and-high-performance-computing" class="usp-card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Adapters + Testimonials wrapper — shared bg logo -->
+<div class="adapters-testimonials-wrapper">
+
+  <!-- Adapters -->
+  <div class="adapters-section">
+    <div class="container">
+
+      <h2 class="adapters-header">Ready-to-use with your favourite open-source solver</h2>
+      <p class="adapters-subtext">
+        Several free and proprietary codes are currently coupled with preCICE.
+        Pick one of our official adapters below or check out our
+        <a href="community-projects.html">community projects</a>.
+      </p>
+
+      <div class="adapters-grid">
+
+        <a class="adapter-card" href="adapter-openfoam-overview.html">
+          <div class="adapter-card-img">
+            <img src="images/logo/logo-openfoam.png" alt="OpenFOAM logo">
+          </div>
+          <p class="adapter-card-name">OpenFOAM</p>
+        </a>
+
+        <a class="adapter-card" href="adapter-calculix-overview.html">
+          <div class="adapter-card-img">
+            <img src="images/logo/logo-calculix.png" alt="CalculiX logo">
+          </div>
+          <p class="adapter-card-name">CalculiX</p>
+        </a>
+
+        <a class="adapter-card" href="adapter-fenics.html">
+          <div class="adapter-card-img">
+            <img src="images/logo/logo-fenics.png" alt="FEniCS logo">
+          </div>
+          <p class="adapter-card-name">FEniCS</p>
+        </a>
+
+        <a class="adapter-card" href="adapter-dealii-overview.html">
+          <div class="adapter-card-img">
+            <img src="images/logo/logo-dealii.png" alt="deal.II logo">
+          </div>
+          <p class="adapter-card-name">deal.II</p>
+        </a>
+
+        <a class="adapter-card" href="adapter-nutils.html">
+          <div class="adapter-card-img">
+            <img src="images/logo/logo-nutils.png" alt="Nutils logo">
+          </div>
+          <p class="adapter-card-name">Nutils</p>
+        </a>
+
+        <a class="adapter-card adapter-card-all" href="adapters-overview.html">
+          <div class="adapter-card-img adapter-all-icon">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <p class="adapter-card-name">All Adapters</p>
+        </a>
+
+      </div><!-- /.adapters-grid -->
+    </div><!-- /.container -->
+  </div><!-- /.adapters-section -->
+
+  <!-- Testimonials -->
+  <div class="testimonials-section">
+    <div class="container">
+
+      <h2 class="testimonials-header">What our community is saying</h2>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            <a href="community-projects.html#evaluation-of-heart-balve-biomechanics">
+              We are using preCICE as it can handle numerical simulations of large sizes with ease as opposed to previous in-house couplers.
+            </a>
+          </p>
+          <div class="testimonial-person">
+            <img src="images/testimonial_kyle_square.jpg" alt="Kyle Davis">
+            <div>
+              <p class="testimonial-name">Kyle Davis</p>
+              <p class="testimonial-affiliation">University of the Free State, South Africa</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            <a href="community-projects.html#fluid-structure-interaction-on-flapping-wings">
+              The large number of coupling functionalities in preCICE gives the user the opportunity to build advanced and scalable simulations with ease.
+            </a>
+          </p>
+          <div class="testimonial-person">
+            <img src="images/testimonial_derek_square.jpg" alt="Derek Risseeuw">
+            <div>
+              <p class="testimonial-name">Derek Risseeuw</p>
+              <p class="testimonial-affiliation">TU Delft, The Netherlands</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            <a href="community-projects.html#hybrid-simulation-methods-for-wind-modelling-in-urban-areas">
+              With preCICE, we could realize an efficient CPU-GPU coupling of our in-house lattice Boltzmann solver and OpenFOAM.
+            </a>
+          </p>
+          <div class="testimonial-person">
+            <img src="images/testimonial_manchester_square.jpg" alt="Marta Camps Santasmasas">
+            <div>
+              <p class="testimonial-name">Marta Camps Santasmasas</p>
+              <p class="testimonial-affiliation">The University of Manchester, UK</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.testimonials-grid -->
+
+      <div class="testimonials-cta">
+        <a href="community-projects.html" class="btn-explore-stories">
+          Explore all community stories <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div><!-- /.container -->
+  </div><!-- /.testimonials-section -->
+
+</div><!-- /.adapters-testimonials-wrapper -->
+
+<!-- Science & open source -->
+<div class="science-section">
+  <div class="container">
+
+    <h2 class="science-header">Academic at heart, 100% free software</h2>
+
+    <!-- Two feature cards -->
+    <div class="science-cards-row">
+
+      <div class="science-card">
+        <div class="science-card-icon">🎓</div>
+        <h3 class="science-card-title">Academic at heart</h3>
+        <p class="science-card-desc">
+          preCICE has been developed by three generations of doctoral candidates from the
+          <a href="https://www.cs.cit.tum.de/en/sccs/home/">Chair of Scientific Computing</a>
+          at the <strong>Technical University of Munich</strong> and from the
+          <a href="https://www.ipvs.uni-stuttgart.de/">Institute for Parallel and Distributed Systems</a>
+          at the <strong>University of Stuttgart</strong>.
+          <a href="fundamentals-license.html">More information.</a>
+        </p>
+      </div>
+
+      <div class="science-card">
+        <div class="science-card-icon">🧡</div>
+        <h3 class="science-card-title">100% free software</h3>
+        <p class="science-card-desc">
+          Licensed under LGPL-3.0, preCICE ensures you retain control of your simulation stack.
+          No license fees, no vendor lock-in, just pure open innovation.
+          You can <strong>cite the preCICE library</strong> using the paper below. Find more references in our
+          <a href="fundamentals-literature-guide.html">literature guide</a>.
+        </p>
+      </div>
+
+    </div><!-- /.science-cards-row -->
+
+    <!-- Logos row -->
+    <div class="science-logos-row">
+      <a class="science-logo-item no-icon" href="https://www.cs.cit.tum.de/en/sccs/home/">
+        <img src="images/logo/logo_tum_400px.png" alt="TUM logo">
+      </a>
+      <a class="science-logo-item no-icon" href="https://www.ipvs.uni-stuttgart.de/">
+        <img src="images/logo/logo_stuttgart_400px.png" alt="Uni Stuttgart logo">
+      </a>
+      <a class="science-logo-item no-icon github-link" href="https://github.com/precice/precice">
+        <i class="fab fa-github"></i>
+        <span>preCICE on Github</span>
+      </a>
+    </div><!-- /.science-logos-row -->
+
+    <!-- Paper + citation row -->
+    <div class="science-paper-row">
+
+      <a class="science-paper-thumb no-icon"
+         href="https://doi.org/10.12688/openreseurope.14445.2"
+         target="_blank" rel="noreferrer noopener">
+        <img src="images/paper-v2-thumbnail.jpg" alt="preCICE reference paper">
+      </a>
+
+      <div class="science-paper-info">
+        <div class="science-paper-card">
+          <p class="science-paper-title">preCICE v2: A sustainable and user-friendly coupling library</p>
+          <p class="science-paper-authors">
+            <em>Gerasimos Chourdakis, Kyle Davis, Benjamin Rodenberg, Miriam Schulte, Frédéric Simonis, Benjamin Uekermann et al.</em>, <strong>2022</strong>. In Open Research Europe, 2:51.
+          </p>
+          <div class="science-paper-links">
+            <a href="https://doi.org/10.12688/openreseurope.14445.2" target="_blank" rel="noreferrer noopener">
+              Publisher's Site <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="assets/precice-v2.bib">
+              Download BibTeX <i class="fas fa-download"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="science-citation-btns">
+          {{- if .Site.Params.precice_v2_citations_url -}}
+          <a href="{{ .Site.Params.precice_v2_citations_url }}" class="btn-citation no-icon">
+            Citations of preCICE v2 paper ({{ .Site.Params.precice_v2_citations }}) <i class="fas fa-chevron-right"></i>
+          </a>
+          {{- end -}}
+          {{- if .Site.Params.precice_v1_citations_url -}}
+          <a href="{{ .Site.Params.precice_v1_citations_url }}" class="btn-citation no-icon">
+            preCICE v1 ({{ .Site.Params.precice_v1_citations }}) <i class="fas fa-chevron-right"></i>
+          </a>
+          {{- end -}}
+          <a href="fundamentals-literature-guide.html" class="btn btn-primary btn-citation-primary no-icon">
+            Literature guide <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+
+      </div><!-- /.science-paper-info -->
+    </div><!-- /.science-paper-row -->
+
+  </div><!-- /.container -->
+</div><!-- /.science-section -->
+
+<!-- Community + Support wrapper — shared bg logo -->
+<div class="community-support-wrapper">
+
+  <!-- Community -->
+  <div class="community-section">
+    <div class="container">
+
+      <h2 class="community-header">Join the Community!</h2>
+
+      <div class="community-inner">
+
+        <!-- Left: text + list -->
+        <div class="community-text">
+          <p>We develop everything in the open, with continuous feedback by a vivid community. Be part of it:</p>
+          <ul class="community-list">
+            <li><strong>Ask for help and help others</strong> in the <a href="https://precice.discourse.group/">preCICE forum</a> and register to receive news.</li>
+            <li>Directly <strong>edit the documentation</strong>. We review and help — nothing can go wrong.</li>
+            <li>Report issues on <a href="https://github.com/precice/">GitHub</a> and help us solve them for everyone.</li>
+            <li><a href="community-contribute-to-precice.html">Contribute</a> code and simulation examples — we help you with guidelines, tools, and reviews.</li>
+            <li><strong>Meet the community</strong> in one of the <a href="community.html">preCICE workshops and conference sessions</a>.</li>
+            <li>Subscribe to our <strong>quarterly newsletter</strong> including:
+              <ul class="community-sublist">
+                <li>New publications</li>
+                <li>New features</li>
+                <li>New adapters, bindings, tools, tutorials, and more</li>
+                <li>Upcoming events and news from the community</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: newsletter card -->
+        <div class="community-newsletter-card">
+          <p class="newsletter-card-title">The quarterly preCICE newsletter</p>
+          {{- partial "newsletter.html" . -}}
+        </div>
+
+      </div><!-- /.community-inner -->
+    </div><!-- /.container -->
+  </div><!-- /.community-section -->
+
+  <!-- Support program -->
+  <div class="support-section">
+    <div class="container">
+
+      <h2 class="support-header">You support preCICE — preCICE supports you</h2>
+
+      <div class="support-inner">
+
+        <!-- Left: text -->
+        <div class="support-text">
+          <p>As the developers of preCICE, we enjoy supporting our academic and industry users, but due to the growing demand, we are not able to service all support requests anymore. We are introducing preCICE support as a way to contribute to sustainable open-source software development and to ensure preCICE is developed and maintained in the future. Supporting preCICE comes with several benefits:</p>
+          <ul class="support-list">
+            <li>Increased success rate for your research proposal (include preCICE as a partner, software provider, or sub-contractor)</li>
+            <li>Priority support and direct access to the preCICE developers</li>
+            <li>Private, on-site support and bespoke training</li>
+          </ul>
+          <p>We offer different levels of support for industry and academia.</p>
+          <a href="community-support-precice.html" class="btn-support-cta no-icon">
+            Support preCICE — see options <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Right: image -->
+        <div class="support-image">
+          <img class="img-responsive center-block" src="images/precice-support.svg" alt="preCICE support program">
+        </div>
+
+      </div><!-- /.support-inner -->
+    </div><!-- /.container -->
+  </div><!-- /.support-section -->
+
+</div><!-- /.community-support-wrapper -->
+
+<!-- FAQs -->
+<div class="faq-section">
+  <div class="container">
+
+    <h2 class="faq-header">Frequently asked questions (FAQ)</h2>
+
+    <div class="faq-grid">
+
+      <div class="faq-card">
+        <h3 class="faq-card-question">Can preCICE be used for volume coupling?</h3>
+        <p class="faq-card-answer">Yes. In preCICE v3 there have been many changes and improvements regarding large meshes. The following has ...</p>
+        <a href="https://precice.discourse.group/t/can-precice-be-used-for-volume-coupling/27/9" class="faq-card-link no-icon">
+          Learn more
+        </a>
+      </div>
+
+      <div class="faq-card">
+        <h3 class="faq-card-question">What are best practices to write a new adapter?</h3>
+        <p class="faq-card-answer">There are guidelines for adapters, as well as for application cases, as part of the ecosystem standardization ...</p>
+        <a href="https://precice.discourse.group/t/what-are-best-practices-to-write-a-new-adapter/44/3" class="faq-card-link no-icon">
+          Learn more
+        </a>
+      </div>
+
+      <div class="faq-card">
+        <h3 class="faq-card-question">Can preCICE be used for one-way coupling?</h3>
+        <p class="faq-card-answer">Yes! Several people are doing this already. Even though there may be other ways to do one-way coupling, it may ...</p>
+        <a href="https://precice.discourse.group/t/can-precice-be-used-for-one-way-coupling/28/2" class="faq-card-link no-icon">
+          Learn more
+        </a>
+      </div>
+
+    </div><!-- /.faq-grid -->
+
+    <div class="faq-cta">
+      <a href="fundamentals-faq.html" class="btn-faq-more no-icon">
+        More questions <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div><!-- /.container -->
+</div><!-- /.faq-section -->
+
+<!-- Logowall -->
+<div class="logowall-section">
+  <div class="container">
+
+    <h2 class="logowall-header">Tried and tested by a global community</h2>
+
+    <p class="logowall-subtext">
+      Through the <strong>community-driven development</strong> approach, preCICE has become one of the leading
+      coupling libraries for multi-physics simulations both in <strong>academia and industry.</strong>
+      The wide variety of application fields ranges from aerodynamics to astronautics, automotive manufacturing,
+      wind energy, biomechanics, biomimetics, marine engineering, nuclear fusion, reactor safety,
+      geophysical systems, and many more.
+    </p>
+
+    {{- $logowall := .Site.Data.logowall -}}
+    <div class="logowall-grid">
+      {{- range $loop, $row := $logowall -}}
+        {{- range $loop2, $column := $row.columns -}}
+          {{- range $loop3, $logo := $column.logos -}}
+          <a href="{{ $logo.link }}" class="logowall-card no-icon">
+            <div class="logowall-card-img">
+              <img src="images/logo/{{ $logo.logo }}"
+                   alt="{{ $logo.name }}, {{ $logo.country }}"
+                   loading="lazy">
+            </div>
+          </a>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    </div><!-- /.logowall-grid -->
+
+    <div class="logowall-cta">
+      <a href="community.html" class="btn btn-primary no-icon">
+        Explore preCICE community <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div><!-- /.container -->
+</div><!-- /.logowall-section -->
+
+<!-- Code example -->
+<div class="code-section">
+  <div class="container">
+
+    <h2 class="code-header">How does it look like?</h2>
+
+    <p class="code-subtext">
+      In this tutorial, we couple the CFD code OpenFOAM with a C++ rigid body solver for fluid-structure
+      interaction, using a serial-explicit coupling, as defined in the
+      <a href="configuration-overview.html">preCICE configuration file</a>.
+      OpenFOAM loads a ready-to-use <a href="adapter-openfoam-overview.html">adapter</a>,
+      while the C++ code uses the <a href="couple-your-code-api.html">preCICE API</a>.
+      OpenFOAM starts and waits for the other code. After they both start, they find each other
+      and perform a black-box coupled simulation.
+    </p>
+
+    <!-- Code window -->
+    <div class="code-window">
+      <div class="code-window-bar">
+        <span class="code-dot code-dot-red"></span>
+        <span class="code-dot code-dot-yellow"></span>
+        <span class="code-dot code-dot-green"></span>
+        <span class="code-window-filename">precice-config.xml</span>
+      </div>
+      <div class="code-window-body">
+        <!-- Desktop: asciinema player -->
+        <div class="code-asciinema">
+          <script id="asciicast-RqGhiiS8jf2fKTaXgiNn73B1G"
+                  src="https://asciinema.org/a/RqGhiiS8jf2fKTaXgiNn73B1G.js"
+                  data-size="small" async></script>
+        </div>
+        <!-- Mobile fallback -->
+        <div class="code-asciinema-mobile">
+          <a class="no-icon" href="https://asciinema.org/a/RqGhiiS8jf2fKTaXgiNn73B1G" target="_blank">
+            <img class="img-responsive center-block"
+                 src="https://asciinema.org/a/RqGhiiS8jf2fKTaXgiNn73B1G.svg"
+                 alt="code animation"/>
+          </a>
+        </div>
+      </div>
+    </div><!-- /.code-window -->
+
+    <!-- Buttons -->
+    <div class="code-actions">
+      <a href="community-channels.html" class="btn-code-outline no-icon">
+        Follow preCICE <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="https://precice.discourse.group/c/what-is/9" class="btn-code-outline no-icon">
+        Is preCICE for me? <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="quickstart.html" class="btn btn-primary btn-code-primary no-icon">
+        Run this tutorial yourself <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div><!-- /.container -->
+</div><!-- /.code-section -->
+
+  </main>
+
+  {{- partial "footer.html" . -}}
+  <script src="{{ "/js/github-queries.js" | relURL }}"></script>
+  <script src="{{ "/js/news-collect.js" | relURL }}"></script>
+  <script src="{{ "/js/theme-toggle.js" | relURL }}"></script>
+  {{- if .Site.Params.google_analytics -}}{{- partial "google_analytics.html" . -}}{{- end -}}
+</body>
+</html>

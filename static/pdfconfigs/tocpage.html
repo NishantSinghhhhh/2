@@ -1,0 +1,44 @@
+---
+type: frontmatter
+search: exclude
+url: /tocpage/
+---
+
+<!-- new page -->
+<div id="navig">
+    <h1>Table of Contents</h1>
+
+    {{- $sidebar := .Site.Data.sidebars[.Site.Params.pdf_sidebar].entries -}}
+
+    <ul id="mysidebar" class="nav">
+        {{- range $loop, $entry := sidebar -}}
+        {{- range $loop, $folder := entry.folders -}}
+        {{- if in $folder.output "pdf" and folder.type != "frontmatter" -}}
+        <li class="sectionHead">{{ folder.title }}
+            <ul>
+                {{- range $loop, $folderitem := folder.folderitems -}}
+                {{- if in $folderitem.output "pdf" and folderitem.type != "frontmatter" -}}
+                <li><a href="{{folderitem.url | prepend: site.baseurl}}">{{folderitem.title}}</a>
+                    {{- range $loop, $subfolders := folderitem.subfolders -}}
+                    {{- if in $subfolders.output "pdf" and subfolders.type != "frontmatter" -}}
+                <li class="subSectionHead"><span>{{ subfolders.title }}</span>
+                    <ul>
+                        {{- range $loop, $subfolderitem := subfolders.subfolderitems -}}
+                        {{- if in $subfolderitem.output "pdf" and subfolderitem.type != "frontmatter" -}}
+                        <li><a href="{{subfolderitem.url | prepend: site.baseurl}}">{{subfolderitem.title}}</a></li>
+                        {{- end -}}
+                        {{- end -}}
+                    </ul>
+                </li>
+                {{- end -}}
+                {{- end -}}
+                </li>
+                {{- end -}}
+                {{- end -}}
+            </ul>
+        </li>
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
+    </ul>
+</div>

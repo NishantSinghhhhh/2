@@ -1,0 +1,70 @@
+# This file mocks pyprecice, the Python bindings for preCICE, and is used _only_ for testing the Micro Manager.
+from typing import Any
+
+import numpy as np
+
+
+class Participant:
+    def __init__(
+        self, solver_name, config_file_name, solver_process_index, solver_process_size
+    ):
+        self.read_write_vector_buffer = []
+        self.read_write_scalar_buffer = []
+
+    def initialize(self):
+        return 0.1  # dt
+
+    def advance(self, dt):
+        pass
+
+    def finalize(self):
+        pass
+
+    def get_mesh_dimensions(self, mesh_name):
+        return 3
+
+    def get_data_dimensions(self, mesh_name, data_name):
+        return 3
+
+    def is_coupling_ongoing(self):
+        yield True
+        yield False
+
+    def is_time_window_complete(self):
+        return True
+
+    def get_max_time_step_size(self):
+        return 0.1  # dt
+
+    def requires_initial_data(self):
+        return True
+
+    def requires_writing_checkpoint(self):
+        return True
+
+    def requires_reading_checkpoint(self):
+        return True
+
+    def set_mesh_access_region(self, mesh_name, bounds):
+        pass
+
+    def get_mesh_vertex_ids_and_coordinates(self, mesh_name):
+        return np.array([0, 1, 2, 3]), np.array([[0, 0], [1, 0], [1, 1], [0, 1]])
+
+    def write_data(self, mesh_name, data_name, vertex_ids, data):
+        if data_name == "Micro-Scalar-Data":
+            self.read_write_scalar_buffer = data
+        elif data_name == "Micro-Vector-Data":
+            self.read_write_vector_buffer = data
+
+    def read_data(self, mesh_name, data_name, vertex_ids, relative_read_time):
+        if data_name == "Macro-Scalar-Data":
+            return self.read_write_scalar_buffer
+        elif data_name == "Macro-Vector-Data":
+            return self.read_write_vector_buffer
+
+    def start_profiling_section(self, section_name):
+        pass
+
+    def stop_last_profiling_section(self):
+        pass

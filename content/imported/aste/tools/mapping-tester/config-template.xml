@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<precice-configuration>
+
+  <log>
+    <sink type="file" output="debug.log" filter="" format='%TimeStamp(format="%H:%M:%S.%f")%|%Participant%|%Rank%|%Module%|l%Line%|%Function%|%Severity%%Message%' />
+  </log>
+
+  <profiling mode="all" flush-every="0" {% if synchronize %} synchronize="1" {% endif %} />
+
+    <!-- Data fields that are exchanged between the solvers -->
+    <data:scalar name="Data" />
+
+    <!-- A common mesh that uses these data fields -->
+    <mesh name="A-Mesh" dimensions="3">
+      <use-data name="Data" />
+    </mesh>
+
+    <mesh name="B-Mesh" dimensions="3">
+      <use-data name="Data" />
+    </mesh>
+
+    <m2n:sockets acceptor="A" connector="B"{% if network %} network="{{ network }}"{% endif %} exchange-directory="." />
+
+    <participant name="A">
+      <provide-mesh name="A-Mesh" />
+      <write-data name="Data" mesh="A-Mesh" />
+
+      {% if mapping.constraint == "conservative" %}
+      <receive-mesh name="B-Mesh" from="B" />
+
+      <mapping:{{ mapping.kind }} {{ mapping.options }} constraint="conservative" direction="write" from="A-Mesh" to="B-Mesh" >
+        {% if mapping.kind.startswith("rbf") %}
+          {% if mapping.executor %}
+        <executor:{{ mapping.executor }} {{ mapping.executoroptions }} />
+          {% endif %}
+        <basis-function:{{ mapping.basis }} {{ mapping.basisoptions }} />
+        {% endif %}
+      </mapping:{{ mapping.kind }} >
+      {% endif %}
+    </participant>
+
+    <participant name="B">
+      <provide-mesh name="B-Mesh" />
+      <read-data name="Data" mesh="B-Mesh" />
+
+      {% if mapping.constraint == "consistent" %}
+      <receive-mesh name="A-Mesh" from="A" />
+
+      <mapping:{{ mapping.kind }} {{ mapping.options }} constraint="consistent" direction="read" from="A-Mesh" to="B-Mesh" >
+        {% if mapping.kind.startswith("rbf") %}
+          {% if mapping.executor %}
+        <executor:{{ mapping.executor }} {{ mapping.executoroptions }} />
+          {% endif %}
+        <basis-function:{{ mapping.basis }} {{ mapping.basisoptions }} />
+        {% endif %}
+      </mapping:{{ mapping.kind }} >
+      {% endif %}
+    </participant>
+
+    <coupling-scheme:parallel-explicit>
+      <participants first="A" second="B" />
+      <max-time value="1.0" />
+      <time-window-size value="1" />
+
+      {% if mapping.constraint == "consistent" %}
+      <exchange data="Data" mesh="A-Mesh" from="A" to="B" />
+      {% else %}
+      <exchange data="Data" mesh="B-Mesh" from="A" to="B" />
+      {% endif %}
+    </coupling-scheme:parallel-explicit>
+
+</precice-configuration>

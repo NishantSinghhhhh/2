@@ -1,0 +1,266 @@
+baseURL: "https://precice.org/"
+indexFiles:
+  - README.md
+  - index.md
+  - _index.md
+title: "preCICE - The Coupling Library"
+uglyURLs: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+ignoreFiles:
+  - "changelog-entries/"
+  - "\\.github/"
+  - "CONTRIBUTING\\.md$"
+  - "LICENSE\\.md$"
+  - "tools/"
+
+# -------------------------------------------------------------
+# CASCADE: Automatically applies frontmatter based on folder
+# -------------------------------------------------------------
+cascade:
+  - target:
+      path: /**
+    params:
+      layout: "page"
+      comments: true
+      search: true
+      topnav: "topnav"
+
+  - target:
+      path: /docs/**
+    params:
+      comments: false
+      sidebar: "docs_sidebar"
+      toc: true
+
+  - target:
+      path: /tutorials/**
+    params:
+      comments: false
+      sidebar: "tutorial_sidebar"
+      toc: true
+
+  - target:
+      path: /imported/tutorials/**
+    params:
+      comments: false
+      sidebar: "tutorial_sidebar"
+      toc: true
+      github_editme_path: "https://github.com/precice/tutorials/edit/develop/"
+
+  - target:
+      path: /imported/openfoam-adapter/**
+    params:
+      comments: false
+      sidebar: "docs_sidebar"
+      toc: true
+      github_editme_path: "https://github.com/precice/openfoam-adapter/edit/develop/"
+
+  - target:
+      path: /imported/aste/**
+    params:
+      comments: false
+      sidebar: "docs_sidebar"
+      toc: true
+      github_editme_path: "https://github.com/precice/aste/edit/develop/"
+
+  - target:
+      path: /imported/micro-manager/**
+    params:
+      comments: false
+      sidebar: "docs_sidebar"
+      toc: true
+      github_editme_path: "https://github.com/precice/micro-manager/edit/develop/"
+
+  - target:
+      path: /imported/fmi-runner/**
+    params:
+      comments: false
+      sidebar: "docs_sidebar"
+      toc: true
+      github_editme_path: "https://github.com/precice/fmi-runner/edit/main/"
+
+  - target:
+      path: /imported/su2-adapter/**
+    params:
+      comments: false
+      sidebar: "docs_sidebar"
+      toc: true
+      github_editme_path: "https://github.com/precice/su2-adapter/edit/develop/"
+
+  - target:
+      path: /imported/dune-adapter/**
+    params:
+      comments: false
+      sidebar: "docs_sidebar"
+      toc: true
+      github_editme_path: "https://github.com/precice/dune-adapter/edit/main/"
+
+  - target:
+      path: /imported/dumux-adapter/**
+    params:
+      comments: false
+      sidebar: "docs_sidebar"
+      toc: true
+      github_editme_path: "https://github.com/precice/dumux-adapter/edit/develop/"
+
+  - target:
+      path: /imported/preeco-orga/**
+    params:
+      comments: false
+      sidebar: "community_sidebar"
+      toc: true
+      github_editme_path: "https://github.com/precice/preeco-orga/edit/main/"
+
+  - target:
+      path: /community/**
+    params:
+      comments: false
+      sidebar: "community_sidebar"
+      toc: true
+
+# -------------------------------------------------------------
+# PARAMS: All custom Jekyll variables
+# -------------------------------------------------------------
+params:
+  topnav_title: "preCICE"
+  company_name: "preCICE"
+  github_editme_path: "https://github.com/precice/precice.github.io_future/edit/master/"
+  description: "preCICE (Precise Code Interaction Coupling Environment) is an open-source coupling library for partitioned simulations of multi-physics scenarios such as fluid-structure interaction or fluid-structure-acoustic interaction."
+  feedback_email: "email"
+
+  sidebars:
+    - home_sidebar
+    - docs_sidebar
+    - tutorials_sidebar
+    - community_sidebar
+
+  precice_version: "3.3.1"
+  calculix_version: "2.20"
+  calculix_adapter_version: "2.20.1"
+  matrix_url: "https://matrix.to/#/#precice_lobby:gitter.im?web-instance[element.io]=app.gitter.im"
+
+  precice_v1_citations: 432
+  precice_v1_citations_url: "https://scholar.google.com/scholar?cites=5053469347483527186&as_sdt=2005&sciodt=0,5&hl=en"
+  precice_v2_citations: 187
+  precice_v2_citations_url: "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=17974677460269868025,12004404035922881061"
+
+  algolia:
+    application_id: "LIT6P0EW26"
+    index_name: "jekyll"
+    search_only_api_key: "760ed6be3e165d08b4a798ac4aa82fe4"
+
+  mermaid:
+    src: "https://cdn.jsdelivr.net/npm/mermaid@11.12.3/dist/mermaid.min.js"
+
+  subprojects:
+    - imported/aste/docs
+    - imported/dumux-adapter/docs
+    - imported/dune-adapter/docs
+    - imported/fmi-runner/docs
+    - imported/micro-manager/docs
+    - imported/openfoam-adapter/docs
+    - imported/preeco-orga/guidelines
+    - imported/su2-adapter/docs
+    - imported/tutorials/aste-turbine
+    - imported/tutorials/breaking-dam-2d
+    - imported/tutorials/channel-transport
+    - imported/tutorials/channel-transport-reaction
+    - imported/tutorials/channel-transport-particles
+    - imported/tutorials/elastic-tube-1d
+    - imported/tutorials/elastic-tube-3d
+    - imported/tutorials/flow-around-controlled-moving-cylinder
+    - imported/tutorials/flow-over-heated-plate
+    - imported/tutorials/flow-over-heated-plate-nearest-projection
+    - imported/tutorials/flow-over-heated-plate-partitioned-flow
+    - imported/tutorials/flow-over-heated-plate-steady-state
+    - imported/tutorials/flow-over-heated-plate-two-meshes
+    - imported/tutorials/free-flow-over-porous-media
+    - imported/tutorials/heat-exchanger
+    - imported/tutorials/heat-exchanger-simplified
+    - imported/tutorials/multiple-perpendicular-flaps
+    - imported/tutorials/oscillator
+    - imported/tutorials/oscillator-overlap
+    - imported/tutorials/partitioned-backwards-facing-step
+    - imported/tutorials/partitioned-elastic-beam
+    - imported/tutorials/partitioned-heat-conduction
+    - imported/tutorials/partitioned-heat-conduction-complex
+    - imported/tutorials/partitioned-heat-conduction-direct
+    - imported/tutorials/partitioned-heat-conduction-overlap
+    - imported/tutorials/partitioned-pipe
+    - imported/tutorials/partitioned-pipe-two-phase
+    - imported/tutorials/perpendicular-flap
+    - imported/tutorials/perpendicular-flap-stress
+    - imported/tutorials/quickstart
+    - imported/tutorials/resonant-circuit
+    - imported/tutorials/tools/tests
+    - imported/tutorials/turek-hron-fsi3
+    - imported/tutorials/two-scale-heat-conduction
+    - imported/tutorials/volume-coupled-diffusion
+    - imported/tutorials/volume-coupled-flow
+
+# -------------------------------------------------------------
+# VIRTUAL MOUNTS: Pulls submodules into the content folder
+# -------------------------------------------------------------
+module:
+  mounts:
+    - source: content
+      target: content
+    - source: static
+      target: static
+    - source: layouts
+      target: layouts
+    - source: data
+      target: data
+    - source: assets
+      target: assets
+    - source: imported/tutorials
+      target: content/imported/tutorials
+    - source: imported/openfoam-adapter
+      target: content/imported/openfoam-adapter
+    - source: imported/aste
+      target: content/imported/aste
+    - source: imported/micro-manager
+      target: content/imported/micro-manager
+    - source: imported/fmi-runner
+      target: content/imported/fmi-runner
+    - source: imported/su2-adapter
+      target: content/imported/su2-adapter
+    - source: imported/dune-adapter
+      target: content/imported/dune-adapter
+    - source: imported/dumux-adapter
+      target: content/imported/dumux-adapter
+    - source: imported/preeco-orga
+      target: content/imported/preeco-orga
+      
+frontmatter:
+  date:
+    - date
+    - publishDate
+    - lastmod
+  url:
+    - permalink
+    - url
+
+
+permalinks:
+  page:
+    docs: "/:filename"
+    community: "/:filename"
+    about: "/:filename"
+    tutorials: "/:filename"
+    posts: "/:filename"
+    privacy: "/:filename"
+    imported: "/:contentbasename"
+  section:
+    docs: "/:sections[last]"
+    community: "/:sections[last]"
+    about: "/:sections[last]"
+    tutorials: "/:sections[last]"
+    posts: "/:sections[last]"
+    privacy: "/:sections[last]"
+    imported: "/:sections[last]"

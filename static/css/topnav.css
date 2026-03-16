@@ -1,0 +1,445 @@
+/* ─── NAVBAR BASE ────────────────────────────────────────── */
+.navbar-inverse {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+    min-height: 90px;
+}
+
+.navbar-fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    width: 100%;
+}
+
+/* ─── CONTAINER ──────────────────────────────────────────── */
+.navbar-inverse .container.topnavlinks {
+    display: flex;
+    align-items: stretch;
+    height: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   DESKTOP NAVBAR
+════════════════════════════════════════════════════════════ */
+.navbar-desktop {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+}
+
+.navbar-mobile {
+    display: none;
+}
+
+/* ─── ROW 1: Logo + Search + Icons ──────────────────────── */
+.navbar-flex-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+
+.navbar-section {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    flex-shrink: 0;
+}
+
+.navbar-brand-text {
+    height: 42px;
+}
+
+.navbar-right-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+/* ─── SEARCH ─────────────────────────────────────────────── */
+.navbar-search {
+    height: 2.3rem;
+    width: 20.625rem;
+    max-width: 20.625rem;
+}
+
+.navbar-search #search-demo-container,
+.navbar-search .ais-SearchBox,
+.navbar-search .ais-SearchBox-form {
+    height: 2.3rem;
+    width: 20.625rem;
+}
+
+.navbar-search input,
+.navbar-search .ais-SearchBox-input {
+    height: 2.3rem;
+    width: 100%;
+    background-color: #F2F2F3;
+    border: 1px solid #F2F2F3;
+    border-radius: 8px;
+    color: #333333;
+    padding: 6px 12px;
+    box-sizing: border-box;
+}
+
+.navbar-search input::placeholder {
+    color: #999999;
+}
+
+.navbar-search input:focus {
+    border-color: #0a76bb;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(10, 118, 187, 0.15);
+}
+
+/* ─── ICONS ──────────────────────────────────────────────── */
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.navbar-icons a {
+    font-size: 1.461rem;
+    padding: 6px 5px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.navbar-icons a:hover { opacity: 0.8; }
+
+.navbar-icons a[aria-label*="discourse"] i { color: #006DA7; }
+.navbar-icons a[aria-label*="GitHub"] i    { color: #333333; }
+.navbar-icons a[aria-label*="LinkedIn"] i  { color: #0A66C2; }
+.navbar-icons a[aria-label*="Mastodon"] i  { color: #6364FF; }
+.navbar-icons a[aria-label*="Youtube"] i   { color: #FF0000; }
+
+/* ─── THEME TOGGLE ───────────────────────────────────────── */
+.nav-theme-toggle {
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 5px 9px;
+    color: #333333;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.nav-theme-toggle:hover {
+    border-color: #0a76bb;
+    color: #0a76bb;
+}
+
+/* ─── ROW 2: Nav Links ───────────────────────────────────── */
+.navbar-links-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 4px 0;
+}
+
+.navbar-center-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 4px;
+    flex-wrap: nowrap;
+}
+
+.navbar-center-links > li {
+    display: flex;
+    align-items: center;
+    float: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar-center-links > li > a {
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    color: #333333;
+    font-size: 14px;
+    padding: 6px 12px;
+    white-space: nowrap;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+.navbar-center-links > li > a:hover,
+.navbar-center-links > li.active > a {
+    color: #0a76bb;
+    border-bottom: 2px solid #0a76bb;
+}
+
+/* ─── DROPDOWN ───────────────────────────────────────────── */
+.navbar-inverse .dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.navbar-inverse .dropdown-menu > li > a {
+    color: #333333;
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.navbar-inverse .dropdown-menu > li > a:hover {
+    background-color: #0a76bb;
+    color: #ffffff;
+}
+
+/* ════════════════════════════════════════════════════════════
+   MOBILE NAVBAR
+════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    .navbar-inverse {
+        min-height: 56px;
+    }
+
+    /* Switch visibility */
+    .navbar-desktop {
+        display: none;
+    }
+    .navbar-mobile {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 100%;
+    }
+
+    /* Mobile top bar */
+    .navbar-mobile-topbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 56px;
+        width: 100%;
+    }
+
+    .navbar-mobile-topbar .navbar-brand-text {
+        height: 36px;
+    }
+
+    /* Hamburger button */
+    .navbar-toggler {
+        display: block;
+        background: none;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        padding: 6px 10px;
+        cursor: pointer;
+    }
+
+    .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Mobile menu */
+    #mobile-menu {
+        width: 100%;
+        padding-bottom: 12px;
+    }
+
+    /* Nav links */
+    .mobile-nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .mobile-nav-links > li {
+        width: 100%;
+        list-style: none;
+    }
+
+    .mobile-nav-links > li > a {
+        display: block;
+        padding: 12px 16px;
+        font-family: 'Figtree', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        color: #333333;
+        text-decoration: none;
+        border-left: 3px solid transparent;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-nav-links > li > a:hover {
+        color: #0a76bb;
+        border-left: 3px solid #0a76bb;
+        background-color: rgba(10, 118, 187, 0.08);
+    }
+
+    .mobile-nav-links > li.active > a {
+        color: #ffffff;
+        background-color: #0a76bb;
+        border-left: 3px solid #0a76bb;
+    }
+
+    /* Mobile search */
+    .mobile-search {
+        padding: 12px 4px;
+    }
+
+    .mobile-search input {
+        width: 100%;
+        height: 2.3rem;
+        background-color: #F2F2F3;
+        border: 1px solid #F2F2F3;
+        border-radius: 8px;
+        color: #333333;
+        padding: 6px 12px;
+        box-sizing: border-box;
+    }
+
+    .mobile-search input:focus {
+        border-color: #0a76bb;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(10, 118, 187, 0.15);
+    }
+
+    /* Mobile icons */
+    .mobile-icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        padding: 4px;
+    }
+
+    .mobile-icons a {
+        font-size: 1.3rem;
+        padding: 6px 8px;
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+    }
+
+    .mobile-icons a:hover { opacity: 0.8; }
+
+    .mobile-icons a[aria-label*="discourse"] i { color: #006DA7; }
+    .mobile-icons a[aria-label*="GitHub"] i    { color: #333333; }
+    .mobile-icons a[aria-label*="LinkedIn"] i  { color: #0A66C2; }
+    .mobile-icons a[aria-label*="Mastodon"] i  { color: #6364FF; }
+    .mobile-icons a[aria-label*="Youtube"] i   { color: #FF0000; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   DARK MODE
+════════════════════════════════════════════════════════════ */
+[data-bs-theme="dark"] .navbar-inverse {
+    background-color: #121313;
+    border-bottom: 1px solid #444444;
+}
+
+[data-bs-theme="dark"] .navbar-center-links > li > a {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+[data-bs-theme="dark"] .navbar-center-links > li > a:hover,
+[data-bs-theme="dark"] .navbar-center-links > li.active > a {
+    color: #ffffff;
+    border-bottom: 2px solid #0a76bb;
+}
+
+[data-bs-theme="dark"] .navbar-search input,
+[data-bs-theme="dark"] .navbar-search .ais-SearchBox-input {
+    background-color: #323232;
+    border: 1px solid #444444;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .navbar-search input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+[data-bs-theme="dark"] .navbar-search input:focus {
+    border-color: #0a76bb;
+    box-shadow: 0 0 0 2px rgba(10, 118, 187, 0.25);
+}
+
+[data-bs-theme="dark"] .navbar-icons a:hover { opacity: 0.75; }
+
+[data-bs-theme="dark"] .nav-theme-toggle {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .nav-theme-toggle:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .navbar-inverse .dropdown-menu {
+    background-color: #323232;
+    border: 1px solid #444444;
+}
+
+[data-bs-theme="dark"] .navbar-inverse .dropdown-menu > li > a {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+[data-bs-theme="dark"] .navbar-inverse .dropdown-menu > li > a:hover {
+    background-color: #0a76bb;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-bs-theme="dark"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-bs-theme="dark"] .mobile-nav-links > li > a {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+[data-bs-theme="dark"] .mobile-nav-links > li > a:hover {
+    background-color: rgba(10, 118, 187, 0.15);
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .mobile-nav-links > li.active > a {
+    background-color: #0a76bb;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .mobile-search input {
+    background-color: #323232;
+    border: 1px solid #444444;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .mobile-search input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}

@@ -1,0 +1,44 @@
+{{/* Get links from each sidebar, as listed in the hugo.yaml file under sidebars */}}
+
+{{- range $loop, $sidebar := .Site.Params.sidebars -}}
+{{- $sidebarData := index $.Site.Data.sidebars $sidebar -}}
+{{- range $loop2, $entry := $sidebarData.entries -}}
+{{- range $loop3, $folder := $entry.folders -}}
+{{- range $loop4, $folderitem := $folder.folderitems -}}
+{{- if in $folderitem.url "html#" -}}
+[{{ $folderitem.url | strings.TrimPrefix "/" }}]: {{ $folderitem.url | strings.TrimPrefix "/" }}
+{{- else -}}
+[{{ $folderitem.url | strings.TrimPrefix "/" | strings.TrimSuffix ".html" }}]: {{ $folderitem.url | strings.TrimPrefix "/" }}
+{{- end -}}
+{{- range $loop5, $subfolders := $folderitem.subfolders -}}
+{{- range $loop6, $subfolderitem := $subfolders.subfolderitems -}}
+[{{ $subfolderitem.url | strings.TrimPrefix "/" | strings.TrimSuffix ".html" }}]: {{ $subfolderitem.url | strings.TrimPrefix "/" }}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+
+{{/* Get links from topnav */}}
+
+{{- range $loop, $entry := .Site.Data.topnav.topnav -}}
+{{- range $loop2, $item := $entry.items -}}
+{{- if not $item.external_url -}}
+[{{ $item.url | strings.TrimPrefix "/" | strings.TrimSuffix ".html" }}]: {{ $item.url | strings.TrimPrefix "/" }}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{/* Get links from topnav dropdowns */}}
+
+{{- range $loop, $entry := .Site.Data.topnav.topnav_dropdowns -}}
+{{- range $loop2, $folder := $entry.folders -}}
+{{- range $loop3, $folderitem := $folder.folderitems -}}
+{{- if not $folderitem.external_url -}}
+[{{ $folderitem.url | strings.TrimPrefix "/" | strings.TrimSuffix ".html" }}]: {{ $folderitem.url | strings.TrimPrefix "/" }}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}

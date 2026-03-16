@@ -1,0 +1,73 @@
+name: Build and upload Docker containers
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+    paths:
+      - 'docker/**'
+      - '.github/workflows/build-docker-containers.yml'
+
+jobs:
+  build-and-release-docker-image:
+    name: Builds a Docker container for testing the DuMuX preCICE adapter
+    runs-on: ubuntu-latest
+    env:
+        dockerhub_username: precice
+    strategy:
+      matrix:
+        dumux_version: [3.7, 3.8]
+        precice_version: [develop]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ env.dockerhub_username }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push Dockerfile
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: "{{defaultContext}}:docker"
+          file: "./dockerfile.slim"
+          tags: ${{ env.dockerhub_username }}/dumux-precice:${{ matrix.dumux_version }}-${{ matrix.precice_version }}
+          build-args: |
+            DUNEVERSION=2.9
+            PRECICEUBUNTU=jammy
+            DUMUXVERSION=${{ matrix.dumux_version }}
+            PRECICEVERSION=${{ matrix.precice_version }}
+  build-dune-precice:
+    name: Builds a Docker container for testing the DuMuX preCICE adapter (DUNE and preCICE)
+    runs-on: ubuntu-latest
+    env:
+        dockerhub_username: precice
+    strategy:
+      matrix:
+        dune_version: ['2.10']
+        precice_version: [develop]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ env.dockerhub_username }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push Dockerfile
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: "{{defaultContext}}:docker"
+          file: "./dockerfile_dune-precice.slim"
+          tags: ${{ env.dockerhub_username }}/dune-precice:${{ matrix.dune_version }}-${{ matrix.precice_version }}
+          build-args: |
+            DUNEVERSION=${{ matrix.dune_version }}
+            PRECICEUBUNTU=jammy
+            PRECICEVERSION=${{ matrix.precice_version }}

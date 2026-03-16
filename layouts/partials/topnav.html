@@ -1,0 +1,181 @@
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" aria-label="Main">
+    <div class="container topnavlinks">
+
+        <!-- ─── DESKTOP NAVBAR (hidden on mobile) ─── -->
+        <div class="navbar-desktop">
+
+            <!-- ROW 1: Logo + Search + Icons -->
+            <div class="navbar-flex-wrapper">
+
+                <!-- Logo -->
+                <div class="navbar-section navbar-logo">
+                    <a class="navbar-brand no-icon" href="{{ .Site.BaseURL }}">
+                        <span class="navbar-brand-icon">
+                            <img class="navbar-brand-text" src="images/preCICE_logo_42px.svg" alt="preCICE">
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Search + Icons -->
+                <div class="navbar-right-group">
+                    <div class="navbar-section navbar-search">
+                        <div id="search-demo-container">
+                            <div id="search-input"></div>
+                            <div id="search-results"></div>
+                            {{- partial "algolia.html" . -}}
+                        </div>
+                    </div>
+                    <div class="navbar-section navbar-icons">
+                        <a class="no-icon nav-external" href="https://precice.discourse.group" target="_blank" rel="noopener noreferrer" aria-label="Join the discourse community"><i class="fab fa-discourse"></i></a>
+                        <a class="no-icon nav-external" href="https://github.com/precice" target="_blank" rel="noopener noreferrer" aria-label="Star precice/precice on GitHub"><i class="fab fa-github"></i></a>
+                        <a class="no-icon nav-external" href="https://www.linkedin.com/company/precice" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a rel="me noopener noreferrer" class="no-icon nav-external" href="https://fosstodon.org/@precice" target="_blank" aria-label="Follow us on Mastodon"><i class="fab fa-mastodon"></i></a>
+                        <a class="no-icon nav-external" href="https://www.youtube.com/c/preCICECoupling/" target="_blank" rel="noopener noreferrer" aria-label="Subscribe on Youtube"><i class="fab fa-youtube"></i></a>
+                        <button id="theme-toggle" class="btn btn-link nav-theme-toggle no-icon" aria-label="Toggle dark mode">
+                            <i id="theme-icon" class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div><!-- end ROW 1 -->
+
+            <!-- ROW 2: Nav Links -->
+            <div class="navbar-links-row">
+                <ul class="navbar-center-links">
+                    {{- if .Params.topnav -}}
+                    {{- $topnav := (index .Site.Data .Params.topnav) -}}
+                    {{- $topnav_dropdowns := (index .Site.Data .Params.topnav).topnav_dropdowns -}}
+                    {{- range $loop, $entry := $topnav.topnav -}}
+                    {{- range $loop2, $item := $entry.items -}}
+                    {{- $section_sidebar := printf "%s_sidebar" $item.section -}}
+                    {{- if $item.external_url -}}
+                    <li><a href="{{ $item.external_url }}" target="_blank" rel="noopener">{{ $item.title }}</a></li>
+                    {{- else if in $.RelPermalink $item.url -}}
+                    <li class="active"><a href="{{ $item.url | strings.TrimPrefix "/" }}">{{ $item.title }}</a></li>
+                    {{- else if eq $.Params.sidebar $section_sidebar -}}
+                    <li class="active"><a href="{{ $item.url | strings.TrimPrefix "/" }}">{{ $item.title }}</a></li>
+                    {{- else -}}
+                    <li><a href="{{ $item.url | strings.TrimPrefix "/" }}">{{ $item.title }}</a></li>
+                    {{- end -}}
+                    {{- end -}}
+                    {{- end -}}
+                    {{- range $loop, $entry := $topnav_dropdowns -}}
+                    {{- range $loop2, $folder := $entry.folders -}}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{ $folder.title }}<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            {{- range $loop3, $folderitem := $folder.folderitems -}}
+                            {{- if $folderitem.external_url -}}
+                            <li><a href="{{ $folderitem.external_url }}" target="_blank" rel="noopener">{{ $folderitem.title }}</a></li>
+                            {{- else if in $.RelPermalink $folderitem.url -}}
+                            <li class="dropdownActive"><a href="{{ $folderitem.url | strings.TrimPrefix "/" }}">{{ $folderitem.title }}</a></li>
+                            {{- else -}}
+                            <li><a href="{{ $folderitem.url | strings.TrimPrefix "/" }}">{{ $folderitem.title }}</a></li>
+                            {{- end -}}
+                            {{- end -}}
+                        </ul>
+                    </li>
+                    {{- end -}}
+                    {{- end -}}
+                    {{- if not .Site.Params.feedback_disable -}}
+                    {{- partial "feedback.html" . -}}
+                    {{- end -}}
+                    {{- end -}}
+                </ul>
+            </div><!-- end ROW 2 -->
+
+        </div><!-- end navbar-desktop -->
+
+        <!-- ─── MOBILE NAVBAR (hidden on desktop) ─── -->
+        <div class="navbar-mobile">
+
+            <!-- Mobile top bar: Logo + Hamburger -->
+            <div class="navbar-mobile-topbar">
+                <a class="navbar-brand no-icon" href="{{ .Site.BaseURL }}">
+                    <span class="navbar-brand-icon">
+                        <img class="navbar-brand-text" src="images/preCICE_logo_42px.svg" alt="preCICE">
+                    </span>
+                </a>
+                <button type="button" class="navbar-toggler"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mobile-menu"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <!-- Mobile menu: collapsible -->
+            <div class="collapse" id="mobile-menu">
+
+                <!-- Nav Links -->
+                <ul class="mobile-nav-links">
+                    {{- if .Params.topnav -}}
+                    {{- $topnav := (index .Site.Data .Params.topnav) -}}
+                    {{- $topnav_dropdowns := (index .Site.Data .Params.topnav).topnav_dropdowns -}}
+                    {{- range $loop, $entry := $topnav.topnav -}}
+                    {{- range $loop2, $item := $entry.items -}}
+                    {{- $section_sidebar := printf "%s_sidebar" $item.section -}}
+                    {{- if $item.external_url -}}
+                    <li><a href="{{ $item.external_url }}" target="_blank" rel="noopener">{{ $item.title }}</a></li>
+                    {{- else if in $.RelPermalink $item.url -}}
+                    <li class="active"><a href="{{ $item.url | strings.TrimPrefix "/" }}">{{ $item.title }}</a></li>
+                    {{- else if eq $.Params.sidebar $section_sidebar -}}
+                    <li class="active"><a href="{{ $item.url | strings.TrimPrefix "/" }}">{{ $item.title }}</a></li>
+                    {{- else -}}
+                    <li><a href="{{ $item.url | strings.TrimPrefix "/" }}">{{ $item.title }}</a></li>
+                    {{- end -}}
+                    {{- end -}}
+                    {{- end -}}
+                    {{- range $loop, $entry := $topnav_dropdowns -}}
+                    {{- range $loop2, $folder := $entry.folders -}}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{ $folder.title }}<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            {{- range $loop3, $folderitem := $folder.folderitems -}}
+                            {{- if $folderitem.external_url -}}
+                            <li><a href="{{ $folderitem.external_url }}" target="_blank" rel="noopener">{{ $folderitem.title }}</a></li>
+                            {{- else if in $.RelPermalink $folderitem.url -}}
+                            <li class="dropdownActive"><a href="{{ $folderitem.url | strings.TrimPrefix "/" }}">{{ $folderitem.title }}</a></li>
+                            {{- else -}}
+                            <li><a href="{{ $folderitem.url | strings.TrimPrefix "/" }}">{{ $folderitem.title }}</a></li>
+                            {{- end -}}
+                            {{- end -}}
+                        </ul>
+                    </li>
+                    {{- end -}}
+                    {{- end -}}
+                    {{- if not .Site.Params.feedback_disable -}}
+                    {{- partial "feedback.html" . -}}
+                    {{- end -}}
+                    {{- end -}}
+                </ul>
+
+                <!-- Search -->
+                <div class="mobile-search">
+                    <div id="search-demo-container-mobile">
+                        <div id="search-input-mobile"></div>
+                        <div id="search-results-mobile"></div>
+                    </div>
+                </div>
+
+                <!-- Icons + Theme Toggle -->
+                <div class="mobile-icons">
+                    <a class="no-icon nav-external" href="https://precice.discourse.group" target="_blank" rel="noopener noreferrer" aria-label="Join the discourse community"><i class="fab fa-discourse"></i></a>
+                    <a class="no-icon nav-external" href="https://github.com/precice" target="_blank" rel="noopener noreferrer" aria-label="Star precice/precice on GitHub"><i class="fab fa-github"></i></a>
+                    <a class="no-icon nav-external" href="https://www.linkedin.com/company/precice" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a rel="me noopener noreferrer" class="no-icon nav-external" href="https://fosstodon.org/@precice" target="_blank" aria-label="Follow us on Mastodon"><i class="fab fa-mastodon"></i></a>
+                    <a class="no-icon nav-external" href="https://www.youtube.com/c/preCICECoupling/" target="_blank" rel="noopener noreferrer" aria-label="Subscribe on Youtube"><i class="fab fa-youtube"></i></a>
+                    <button id="theme-toggle-mobile" class="btn btn-link nav-theme-toggle no-icon" aria-label="Toggle dark mode">
+                        <i id="theme-icon-mobile" class="fas fa-moon"></i>
+                    </button>
+                </div>
+
+            </div><!-- end mobile-menu -->
+
+        </div><!-- end navbar-mobile -->
+
+    </div>
+</nav>

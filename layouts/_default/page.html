@@ -1,0 +1,90 @@
+{{ define "main" }}
+<div class="post-header">
+   <h1 class="post-title-main">{{ .Title }}</h1>
+</div>
+
+{{- if .Params.simple_map -}}
+<script>
+    $(document).ready ( function(){
+        $('.box{{ .Params.box_number }}').addClass('active');
+    });
+</script>
+{{- partial (printf "custom/%s.html" .Params.map_name) . -}}
+{{- else if .Params.complex_map -}}
+<script>
+    $(document).ready ( function(){
+        $('.modalButton{{ .Params.box_number }}').addClass('active');
+    });
+</script>
+{{- partial (printf "custom/%s.html" .Params.map_name) . -}}
+{{- end -}}
+
+<div class="post-content">
+
+    {{- if .Summary -}}
+    <div class="summary">
+        {{ .Summary | markdownify }}
+    </div>
+    {{- end -}}
+
+    <div class="row">
+        <div class="col-md-9 col-sm-8">
+          {{- if .Params.toc -}}
+          <nav aria-label="table of contents">
+          {{- if .Params.tocheaders -}}
+          {{- partial "toc.html" (dict "headers" .Params.tocheaders "page" .) -}}
+          {{- else -}}
+          {{- partial "toc.html" . -}}
+          {{- end -}}
+          </nav>
+          {{- end -}}
+        </div>
+
+        <div class="col-md-3 col-sm-4">
+          {{- if .Params.editme -}}
+          <aside>
+            {{- if .Params.github_editme_path -}}
+                {{/*
+                    a complete edit_me path looks like this:
+                    https://github.com/organisation/repository/blob/master/directory/file.md
+                */}}
+                {{- $array := split .Params.github_editme_path "/" -}}
+                {{- $repository := index $array 4 -}}
+                {{- $github_file_path := .File.Path | strings.TrimPrefix $repository | strings.TrimPrefix "/" -}}
+                <div class="text-right">
+                    <a target="_blank" rel="noopener" href="{{ .Params.github_editme_path }}{{ $github_file_path }}" class="btn btn-default githubEditButton" role="button"><i class="fab fa-github fa-lg"></i> Edit me</a>
+                </div>
+            {{- else if .Site.Params.github_editme_path -}}
+                <div class="text-right">
+                    <a target="_blank" rel="noopener" href="{{ .Site.Params.github_editme_path }}{{ .File.Path }}" class="btn btn-default githubEditButton" role="button"><i class="fab fa-github fa-lg"></i> Edit me</a>
+                </div>
+            {{- end -}}
+            <div class="text-right">
+              <small>Updated {{ .Lastmod | time.Format "02 Jan 06" -}}</small>
+            </div>
+          </aside>
+          {{- end -}}
+        </div>
+    </div>
+
+    {{ .Content }}
+
+    {{- if .Params.tags -}}
+    <div class="tags">
+        <b>Tags: </b>
+        {{- $projectTags := .Site.Data.tags.allowed_tags -}}
+        {{- range $loop, $tag := .Params.tags -}}
+        {{- if in $projectTags $tag -}}
+        <a href="{{ printf "tag_%s.html" $tag }}" class="btn btn-default navbar-btn cursorNorm" role="button">{{ $tag }}</a>
+        {{- end -}}
+        {{- end -}}
+    </div>
+    {{- end -}}
+
+    {{- partial "commento.html" . -}}
+
+    <!-- Breadcrumb metadata -->
+    {{- partial "breadcrumb.html" . -}}
+
+</div>
+{{ end }}

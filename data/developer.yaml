@@ -1,0 +1,315 @@
+leads:
+  - fullname: Benjamin Uekermann
+    institution:  University of Stuttgart
+    github: uekerman
+    orcid: https://orcid.org/0000-0002-1314-9969
+    img: Benjamin_Uekermann
+  - fullname: Miriam Mehl
+    institution: University of Stuttgart
+    orcid: https://orcid.org/0000-0003-4594-6142
+    img: Miriam_Mehl
+  - fullname: Hans-Joachim Bungartz
+    institution: Technical University of Munich
+    orcid: https://orcid.org/0000-0003-4594-6142
+    img: Hans_Bungartz
+
+main:
+  - fullname: Gerasimos Chourdakis
+    name: Chourdakis
+    institution: University of Stuttgart and Technical University of Munich
+    github: MakisH
+    orcid: https://orcid.org/0000-0002-3977-1385
+    img: Gerasimos_Chourdakis
+  - fullname: Frédéric Simonis
+    name: Simonis
+    institution:  University of Stuttgart
+    github:  fsimonis
+    orcid: https://orcid.org/0000-0003-3390-157X
+    img: Frederic_Simonis
+  - fullname: Benjamin Uekermann
+    name: Uekermann
+    institution:  University of Stuttgart
+    github: uekerman
+    orcid: https://orcid.org/0000-0002-1314-9969
+    img: Benjamin_Uekermann
+  - fullname: Ishaan Desai
+    name: Desai
+    institution: University of Stuttgart
+    github: IshaanDesai
+    orcid: https://orcid.org/0000-0002-2552-7509
+    img: Ishaan_Desai
+  - fullname: David Schneider
+    name: Schneider
+    institution: University of Stuttgart
+    github: DavidSCN
+    orcid: https://orcid.org/0000-0002-3487-9688
+    img: David_Schneider
+  - fullname: Carme Homs Pons
+    name: Homs
+    institution: University of Stuttgart
+    github: carme-hp
+    orcid: https://orcid.org/0009-0000-3974-0274
+    img: Carme_Homs_Pons
+  - fullname: Jun Chen
+    name: Chen
+    institution: University of Stuttgart
+    github: Fujikawas
+    orcid: https://orcid.org/0009-0000-0335-4558
+    img: Jun_Chen
+  - fullname: Felix Neubauer
+    name: Neubauer
+    institution: University of Stuttgart
+    github: Logende
+    orcid: https://orcid.org/0009-0008-5367-2034
+    img: Felix_Neubauer
+
+main-inactive:
+  - fullname: Bernhard Gatzhammer
+    name: Gatzhammer
+    institution: Technical University of Munich
+    github: gatzhamm
+  - fullname: Florian Lindner
+    name: Lindner
+    institution: University of Stuttgart
+    github: floli
+    orcid: https://orcid.org/0000-0002-2279-2796
+    img: Florian_Lindner
+  - fullname: Klaudius Scheufele
+    name: Scheufele
+    institution: University of Stuttgart
+    github: scheufks
+  - fullname: Benjamin Rodenberg
+    name: Rodenberg
+    institution:  Technical University of Munich
+    github: BenjaminRodenberg
+    orcid:  https://orcid.org/0000-0002-3116-0133
+  - fullname: Alexander Rusch
+    name: Rusch
+    institution: Technical University of Munich
+    github: arusch
+    orcid: https://orcid.org/0000-0002-6944-5660
+    img: Alexander_Rusch
+  - fullname: Kyle Davis
+    name: Davis
+    institution: University of Stuttgart
+    github: KyleDavisSA
+    orcid: https://orcid.org/0000-0001-8602-8124
+    img: Kyle_Davis
+
+contributors:
+  - fullname: Julian Sueffert
+    name: Sueffert
+    institution: Karlsruhe Institute of Technology
+    github: JSeuffert
+  - fullname: Max Firmbach
+    name: Firmbach
+    institution: Technical University of Munich
+    github: maxfirmbach
+  - fullname: Matthias Freimuth
+    name: Freimuth
+    institution: MTU Aero Engines
+    github: MatthiasFreimuth
+  - fullname: Stefan Scheiblhofer
+    name: Scheiblhofer
+    institution: Austrian Institute of Technology
+    github: StefanScG
+  - fullname: Gertjan van Zwieten
+    name: van Zwieten
+    institution: Technical University Delft
+    github: gertjanvanzwieten
+  - fullname: Arved Enders-Seidlitz
+    name: Enders-Seidlitz
+    institution: Leibniz Institut für Kristallzüchtung
+    github: arvedes
+  - fullname: Mikko Folkersma
+    name: Folkersma
+    institution: Technical University Delft
+    github: mfolkersma
+  - fullname: Christopher Lorenz
+    name: Lorenz
+    institution: CH Lorenz UG Research & Innovation Consulting
+    github: chlorenz
+  - fullname: Yakup Hoshaber
+    name: Hoshaber
+    institution: Technical University of Munich
+    github: kunstrasenspringer
+  - fullname: Francisco Espinosa
+    name: Espinosa
+    institution: Technical University of Munich
+    github: pachesp
+  - fullname: Hisham Saeed
+    name: Saeed
+    institution: Technical University of Munich
+    github: HishamSaeed
+  - fullname: Kürşat Yurt
+    name: Yurt
+    institution: Technical University of Munich
+    github: kursatyurt
+  - fullname: Boshra Ariguib
+    name: Ariguib
+    institution: University of Stuttgart
+    github: ariguiba
+  - fullname: Pavel Kharitenko
+    name: Kharitenko
+    institution: University of Stuttgart
+    github: pavelkharitenko
+  - fullname: Erik Scheurer
+    name: Scheurer
+    institution:  University of Stuttgart
+    github: erikscheurer
+  - fullname: Boris Martin
+    name: Martin
+    institution: Technical University of Munich
+    github: boris-martin
+  - fullname: Amin Totounferoush
+    name: Totounferoush
+    institution:  University of Stuttgart
+    github: atotoun
+  - fullname: Georg Abrams
+    name: Abrams
+    institution: University of Stuttgart
+    github: pikotee
+  - fullname: Atanas Atanasov
+    name: Atanasov
+    institution: Technical University of Munich
+    github: atanasoa
+  - fullname: David Blom
+    name: Blom
+    institution: Delft University of Technology
+    github: davidsblom
+  - fullname: Lucia Cheung
+    name: Cheung
+    institution: Technical University of Munich
+    github: ludcila
+  - fullname: Richard Hertrich
+    name: Hertrich
+    institution: Technical University of Munich
+    github: richahert
+  - fullname: Saumitra Vinay Joshi
+    name: Joshi
+    institution: Technical University of Munich
+    github: saumiJ
+  - fullname: Harald Klimach
+    name: Klimach
+    institution: University of Siegen
+    github: haraldkl
+  - fullname: Peter Meisrimel
+    name: Meisrimel
+    institution: Lund University
+    github: PeterMeisrimel
+  - fullname: Derek Risseeuw
+    name: Risseeuw
+    institution: Delft University of Technology
+    github: derekrisseeuw
+  - fullname: Dmytro Sashko
+    name: Sashko
+    institution: Technical University of Munich
+    github: shkodm
+  - fullname: Alexander Shukaev
+    name: Shukaev
+    institution: Technical University of Munich
+    github: alexander-shukaev
+  - fullname: David Sommer
+    name: Sommer
+    institution: University of Stuttgart
+    github: Summerdave
+  - fullname: Alex Trujillo
+    name: Trujillo
+    institution: University of Uppsala
+    github: Alex-tru
+  - fullname: Peter Vollmer
+    name: Vollmer
+    institution: University of Stuttgart
+    github: petervollmer
+  - fullname: Jiho Yang
+    name: Yang
+    institution: Technical University of Munich
+    github: JihoYang
+  - fullname: Dominik Volland
+    name: Volland
+    institution: Technical University of Munich
+    github: Dominanz
+  - fullname: Gilberto Lem Carrillo
+    name: Carrillo
+    institution: Technical University of Munich
+    github: gilbertolem
+  - fullname: Oguz Ziya Koseomur
+    name: Koseomur
+    institution: Technical University of Munich
+    github: oguzziya
+  - fullname: Alexander Jaust
+    name: Jaust
+    institution: University of Stuttgart
+    github: ajaust
+  - fullname: Michel Takken
+    name: Takken
+    institution: Technical University of Munich
+    github: micheltakken
+  - fullname: Qunsheng Huang
+    name: Huang
+    institution: Technical University of Munich
+    github: keefehuang
+  - fullname: Konrad Eder
+    name: Eder
+    institution: Technical University of Munich
+    github: Eder-K
+  - fullname: Valentin Seitz
+    name: Seitz
+    institution: Technical University of Munich
+    github: valentin-seitz
+  - fullname: Tina Vladimirova
+    name: Vladimirova
+    institution: Technical University of Munich
+    github: tirgendetwas
+  - fullname: Markus Mühlhäußer
+    name: Mühlhäußer
+    institution: Technical University of Munich
+    github: thesamriel
+  - fullname: Elia Zonta
+    name: Zonta
+    institution: Technical University of Munich
+    github: ezonta
+  - fullname: Kanishk Bhatia
+    name: Bhatia
+    institution: Technical University of Munich
+    github: kanishkbh
+  - fullname: Niklas Vinnitchenko
+    name: Vinnitchenko
+    institution: Technical University of Munich
+    github: NiklasVin
+  - fullname: Niklas Kotarsky
+    name: Kotarsky
+    institution: Lund University
+    github: NiklasKotarsky
+  - fullname: Durganshu Mishra
+    name: Mishra
+    institution: Technical University of Munich
+    github: Durganshu
+  - fullname: Leonard Willeke
+    name: Willeke
+    institution: University of Stuttgart
+    github: LeonardWilleke
+  - fullname: Joseph Signorelli
+    name: Signorelli
+    institution: University of Illinois Urbana-Champaign
+    github: j-signorelli
+  - fullname: Timo Pierre Schrader
+    name: Schrader
+    institution: University of Stuttgart
+    github: Timo-Schrader
+  - fullname: Helena Kschidock
+    name: Kschidock
+    institution: University of Stuttgart
+    github: 
+  - fullname: Mathis Kelm
+    name: Kelm
+    institution: University of Stuttgart
+    github: mathiskelm
+  - fullname: Philip Cardiff
+    name: Cardiff
+    institution: University College Dublin
+    github: philipcardiff
+  - fullname: Robert Klöfkorn
+    name: Klöfkorn
+    institution: Lund University
+    github: 

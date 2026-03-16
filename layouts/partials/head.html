@@ -1,0 +1,106 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- if .Summary -}}
+<meta name="description" content="{{ .Summary | plainify }}">
+{{- end -}}
+<meta name="keywords" content="{{ .Params.tags }}{{- if .Params.tags -}}, {{- end -}} {{ .Params.keywords }}">
+<meta name="theme-color" content="#0A76BB">
+<meta name="msapplication-square310x310logo" content="images/icon-310x310.png">
+
+<title>{{ .Title }} | {{ .Site.Params.site_title }}</title>
+<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "/feed.xml" | absURL }}">
+
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:site_name" content="preCICE.org" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:image" content="{{ "images/icon-310x310.png" | absURL }}" />
+{{- if .Summary -}}
+<meta property="og:description" content="{{ .Summary | plainify }}">
+{{- else if .Site.Params.description -}}
+<meta property="og:description" content="{{ .Site.Params.description | plainify }}">
+{{- end -}}
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ .Title }}" />
+{{- if .Summary -}}
+<meta name="twitter:description" content="{{ .Summary | plainify }}">
+{{- else if .Site.Params.description -}}
+<meta name="twitter:description" content="{{ .Site.Params.description | plainify }}">
+{{- end -}}
+<meta name="twitter:image" content="{{ "images/icon-310x310.png" | absURL }}" />
+
+{{- if eq .RelPermalink "/index.html" -}}
+<link rel="canonical" href="{{ .Site.BaseURL }}">
+{{- else -}}
+<link rel="canonical" href="{{ .Permalink }}">
+{{- end -}}
+
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}">
+<link rel="icon" sizes="192x192" href="images/icon.png">
+<link rel="apple-touch-icon" sizes="310x310" href="images/icon-310x310.png">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/customstyles-precice.css">
+<link rel="stylesheet" href="css/topnav.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<link rel="stylesheet" href="css/bookcover.css">
+<link rel="stylesheet" href="css/theme-precice.css">
+{{- if eq .RelPermalink "/index.html" -}}
+<link rel="stylesheet" href="css/landing-page.css">
+{{- end -}}
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/anchor-js@4.2.0/anchor.min.js" integrity="sha256-m1eTvwEHwmsw4+XKF7BshClVJEPwTVycveNl0CS0Mkk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+<script src="{{ "js/jquery.navgoco.min.js" | relURL }}"></script>
+<!-- TODO-BS5: navgoco is not compatible with Bootstrap 5, replace with a BS5 accordion or collapse -->
+<script src="{{ "js/toc.js" | relURL }}"></script>
+<script src="{{ "js/customscripts.js" | relURL }}"></script>
+
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.20.1/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script defer src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var qrDiv = document.createElement("div");
+    qrDiv.id = "print-qr-code";
+    var qr = qrcode(0, "M");
+    qr.addData("{{ .Permalink }}");
+    qr.make();
+    qrDiv.innerHTML = qr.createImgTag(3, 0);
+    document.body.appendChild(qrDiv);
+  });
+</script>
+<style>
+  #print-qr-code { display: none; }
+  @media print {
+    #print-qr-code { display: block; position: fixed; top: 0; right: 0; }
+  }
+</style>
+
+<script async defer data-domain="precice.org" src="https://plausible.io/js/plausible.js"></script>

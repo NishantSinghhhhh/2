@@ -1,0 +1,211 @@
+/* ============================================================
+   HERO STAGE — landing-page-1.css
+   Light & dark mode supported via [data-bs-theme="dark"]
+   ============================================================ */
+
+/* ── Light mode tokens ─────────────────────────────────────── */
+:root {
+  --hero-bg:               var(--bg-color, #ffffff);
+  --hero-arch-color-1:     transparent;
+  --hero-arch-color-2:     transparent;
+  --hero-arch-color-3:     transparent;
+  --hero-pill-border:      #bbb;
+  --hero-pill-bg:          rgba(255, 255, 255, 0.9);
+  --hero-pill-color:       #333;
+  --hero-pill-hover-bg:    rgba(10, 118, 187, 0.05);
+  --hero-pill-hover-color: #0a76bb;
+  --hero-pill-hover-border:#0a76bb;
+  --hero-headline-color:   #040606;
+  --hero-blue:             #0a76bb;
+  --hero-amber:            #e07b00;
+  --hero-desc-color:       #444;
+  --hero-github-bg:        #ffffff;
+  --hero-github-border:    #ccc;
+  --hero-github-color:     #040606;
+  --hero-github-hover-bg:  rgba(10, 118, 187, 0.04);
+  --hero-github-hover-border: #0a76bb;
+  --hero-star-color:       #555;
+}
+
+/* ── Dark mode tokens ──────────────────────────────────────── */
+[data-bs-theme="dark"] {
+  --hero-bg:               var(--bg-color, #131312);
+  --hero-arch-color-1:     transparent;
+  --hero-arch-color-2:     transparent;
+  --hero-arch-color-3:     transparent;
+  --hero-pill-border:      #555;
+  --hero-pill-bg:          rgba(255, 255, 255, 0.06);
+  --hero-pill-color:       #cccccc;
+  --hero-pill-hover-bg:    rgba(77, 166, 255, 0.10);
+  --hero-pill-hover-color: #4da6ff;
+  --hero-pill-hover-border:#4da6ff;
+  --hero-headline-color:   #ffffff;
+  --hero-blue:             #4da6ff;
+  --hero-amber:            #4da6ff;   /* both words same blue in dark mode */
+  --hero-desc-color:       #cccccc;
+  --hero-github-bg:        transparent;
+  --hero-github-border:    #555;
+  --hero-github-color:     #ffffff;
+  --hero-github-hover-bg:  rgba(77, 166, 255, 0.08);
+  --hero-github-hover-border: #4da6ff;
+  --hero-star-color:       #aaaaaa;
+}
+
+/* ── Stage wrapper ─────────────────────────────────────────── */
+.hero-stage {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0 120px;
+  text-align: center;
+  background: var(--hero-bg) !important;
+  transition: background 300ms;
+}
+
+/* ── Pure-CSS arch ─────────────────────────────────────────── */
+.hero-bg-arch {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130vw;
+  height: 65vw;
+  max-width: 1800px;
+  max-height: 900px;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    var(--hero-arch-color-1) 0%,
+    var(--hero-arch-color-2) 45%,
+    var(--hero-arch-color-3) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+  transition: background 300ms;
+}
+
+[data-bs-theme="dark"] .hero-stage {
+  background: #131312 !important;
+}
+.hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Pill ──────────────────────────────────────────────────── */
+.hero-pill-row {
+  margin-bottom: 28px;
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 18px;
+  border: 1px solid var(--hero-pill-border);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--hero-pill-color);
+  background: var(--hero-pill-bg);
+  text-decoration: none;
+  transition: border-color 200ms, background 200ms, color 200ms;
+}
+.hero-pill:hover {
+  border-color: var(--hero-pill-hover-border);
+  background:   var(--hero-pill-hover-bg);
+  color:        var(--hero-pill-hover-color);
+  text-decoration: none;
+}
+
+/* ── Headline ──────────────────────────────────────────────── */
+.hero-headline {
+  font-size: clamp(2.2rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--hero-headline-color);
+  margin: 0 auto 24px;
+  max-width: 820px;
+  letter-spacing: -0.5px;
+  transition: color 300ms;
+}
+.hero-highlight-blue {
+  color: var(--hero-blue);
+  font-style: italic;
+  transition: color 300ms;
+}
+.hero-highlight-amber {
+  color: var(--hero-amber);
+  font-style: italic;
+  transition: color 300ms;
+}
+
+/* ── Description ───────────────────────────────────────────── */
+.hero-description {
+  max-width: 660px;
+  margin: 0 auto 36px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--hero-desc-color);
+  transition: color 300ms;
+}
+
+/* ── CTA row ───────────────────────────────────────────────── */
+.hero-cta-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-btn-primary {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.hero-btn-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1.5px solid var(--hero-github-border);
+  border-radius: 6px;
+  background: var(--hero-github-bg);
+  color: var(--hero-github-color);
+  text-decoration: none;
+  transition: border-color 200ms, background 200ms, color 200ms;
+  cursor: pointer;
+}
+.hero-btn-github:hover {
+  border-color: var(--hero-github-hover-border);
+  background:   var(--hero-github-hover-bg);
+  color:        var(--hero-github-color);
+  text-decoration: none;
+}
+
+.hero-star-count {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--hero-star-color);
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-stage {
+    padding: 40px 0 220px;
+  }
+  .hero-bg-arch {
+    width: 200vw;
+    height: 100vw;
+  }
+  .hero-headline {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
+  .hero-description {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,29 @@
+<p>The following pages and posts are tagged with <button type="button" style="cursor: default" class="btn btn-default navbar-btn">{{ .Params.tagName }}</button></p>
+<table><thead><tr><th>Title</th><th>Type</th><th>Excerpt</th></tr></thead>
+    <tbody>
+    {{- $thisTag := .Params.tagName -}}
+    {{- range $loop, $page := .Site.RegularPages -}}
+      {{- range $loop2, $tag := $page.Params.tags -}}
+        {{- if eq $tag $thisTag -}}
+        <tr>
+          <td><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></td>
+          <td><span class="label label-default">Page</span></td>
+          <td>{{- if $page.Summary -}}{{ $page.Summary | plainify | truncate 160 }}{{- else -}}{{ $page.Content | truncate 250 | plainify }}{{- end -}}</td>
+        </tr>
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- range $loop, $post := where .Site.RegularPages "Type" "posts" -}}
+      {{- range $loop2, $tag := $post.Params.tags -}}
+        {{- if eq $tag $thisTag -}}
+        <tr>
+          <td><a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a></td>
+          <td><span class="label label-primary">Post</span></td>
+          <td>{{- if $post.Summary -}}{{ $post.Summary | plainify | truncate 160 }}{{- else -}}{{ $post.Content | truncate 250 | plainify }}{{- end -}}</td>
+        </tr>
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    </tbody>
+</table>

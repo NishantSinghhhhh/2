@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{- partial "head.html" . -}}
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            <!-- TODO-BS5: navgoco is not compatible with Bootstrap 5, replace with a BS5 accordion or collapse -->
+            $("#mysidebar").navgoco({
+            <!-- TODO-BS5: navgoco is not compatible with Bootstrap 5, replace with a BS5 accordion or collapse -->
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    <!-- TODO-BS5: navgoco is not compatible with Bootstrap 5, replace with a BS5 accordion or collapse -->
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+                <!-- TODO-BS5: navgoco is not compatible with Bootstrap 5, replace with a BS5 accordion or collapse -->
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+                <!-- TODO-BS5: navgoco is not compatible with Bootstrap 5, replace with a BS5 accordion or collapse -->
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+            <!-- TODO-BS5: jQuery tooltip() — use Bootstrap 5 Tooltip JS API instead -->
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    <script>
+        // wrap tables into a div to make them scrollable on small viewports
+        // https://getbootstrap.com/docs/3.4/css/#tables-responsive
+        $(document).ready(function() {
+            $('table').addClass('table');
+            $('table').wrap('<div class="table-responsive"></div>');
+        });
+    </script>
+    {{- if .Params.datatable -}}
+    <!-- Include the standard DataTables bits -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+    <script>
+      $(document).ready(function(){
+          $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
+          $('table.display').DataTable( {
+              paging: true,
+              stateSave: true,
+              searching: true
+          });
+       });
+    </script>
+    {{- end -}}
+</head>
+<body>
+    <header>
+        {{- partial "topnav.html" . -}}
+          <!-- News banner -->
+          {{- partial "news_banner.html" (dict "onlanding" "false" "page" .) -}}
+    </header>
+    <div class="container" style="margin-bottom:50px">
+        {{- if not (.Params.hide_sidebar) -}}
+        <div class="row">
+          <div class="col-md-3" id="tg-sb-sidebar">
+            {{- partial "sidebar.html" . -}}
+          </div>
+          <main class="col-md-9" id="tg-sb-content">
+            {{ .Content }}
+          </main>
+        </div>
+        {{- else -}}
+        <main id="tg-sb-content">
+          {{ .Content }}
+        </main>
+        {{- end -}}
+    </div>
+    {{- partial "footer.html" . -}}
+
+{{- if .Site.Params.google_analytics -}}
+{{- partial "google_analytics.html" . -}}
+{{- end -}}
+</body>
+
+</html>
