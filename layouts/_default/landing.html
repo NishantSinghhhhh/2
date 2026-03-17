@@ -509,11 +509,13 @@
         {{- range $loop2, $column := $row.columns -}}
           {{- range $loop3, $logo := $column.logos -}}
           <a href="{{ $logo.link }}" class="logowall-card no-icon">
-            <div class="logowall-card-img">
-              <img src="images/logo/{{ $logo.logo }}"
-                   alt="{{ $logo.name }}, {{ $logo.country }}"
-                   loading="lazy">
-            </div>
+              <div class="logowall-card-img">
+                  <img src="images/logo/{{ $logo.logo }}"
+                      alt="{{ $logo.name }}, {{ $logo.country }}"
+                      loading="lazy">
+              </div>
+              <p class="logowall-card-name">{{ $logo.name }}</p>
+              <p class="logowall-card-country"><strong>{{ $logo.country }}</strong></p>
           </a>
           {{- end -}}
         {{- end -}}
