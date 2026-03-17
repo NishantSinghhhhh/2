@@ -973,3 +973,27 @@ h4.card-title {
 .margin-left {
   padding-left: 2rem !important;
 }
+/* Content spacing */
+#tg-sb-content {
+  margin-top: 15px;
+  padding-top: 20px;
+}
+.post-header {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* ════════════════════════════════════════════════════════════
+   GLOBAL DARK MODE BACKGROUND
+════════════════════════════════════════════════════════════ */
+[data-bs-theme="dark"] body {
+    background-color: #121313 !important;
+    color: #e0e0e0; 
+}
+
+[data-bs-theme="dark"] .page-content,
+[data-bs-theme="dark"] main,
+[data-bs-theme="dark"] .container-fluid,
+[data-bs-theme="dark"] #tg-sb-content {
+    background-color: #121313 !important;
+}
