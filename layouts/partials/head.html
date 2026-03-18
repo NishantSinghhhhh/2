@@ -53,6 +53,9 @@
 <link rel="stylesheet" href="/css/sidebar.css">
 <link rel="stylesheet" href="css/bookcover.css">
 <link rel="stylesheet" href="css/theme-precice.css">
+<link rel="stylesheet" href="css/about.css">
+<link rel="stylesheet" href="{{ "css/footer.css" | relURL }}">
+
 {{- if eq .RelPermalink "/index.html" -}}
 <link rel="stylesheet" href="css/landing-page.css">
 {{- end -}}
@@ -60,7 +63,13 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/anchor-js@4.2.0/anchor.min.js" integrity="sha256-m1eTvwEHwmsw4+XKF7BshClVJEPwTVycveNl0CS0Mkk=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
+<script>
+  (function() {
+    var saved = localStorage.getItem('precice-theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
 <script src="{{ "js/jquery.navgoco.min.js" | relURL }}"></script>
 <!-- TODO-BS5: navgoco is not compatible with Bootstrap 5, replace with a BS5 accordion or collapse -->
 <script src="{{ "js/toc.js" | relURL }}"></script>

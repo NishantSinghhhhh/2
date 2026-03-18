@@ -1,0 +1,158 @@
+<div class="about-page">
+
+  <!-- Hero -->
+  <div class="about-hero">
+    <h1>About the <span class="about-title-blue">preCICE</span> project</h1>
+  </div>
+
+  <!-- Development -->
+  <section class="about-section">
+    <h2>Development</h2>
+    <p>
+      preCICE is developed in the groups of
+      <a href="https://www.ipvs.uni-stuttgart.de/departments/us3/">Benjamin Uekermann (Usability and Sustainability of Simulation Software)</a>
+      and
+      <a href="https://www.ipvs.uni-stuttgart.de/departments/sgs/">Miriam Schulte (Simulation of Large Systems)</a>
+      at the University of Stuttgart and in the group of
+      <a href="https://www.cs.cit.tum.de/en/sccs/home/">Hans-Joachim Bungartz (Scientific Computing in Computer Science)</a>
+      at the Technical University of Munich.
+      <a href="community-support-precice.html">Support contracts</a> are offered through
+      <a href="https://www.tti-stuttgart.de/">TTI GmbH</a>.
+    </p>
+  </section>
+
+  <!-- Lead Maintainers -->
+  <section class="about-section">
+    <h2>Lead Maintainers</h2>
+    <div class="about-cards-lead">
+      {{- range .Site.Data.developer.leads -}}
+      <div class="about-card about-card--lead">
+        {{- if .img -}}
+        <img src="{{ "images/developer/" | relURL }}{{ .img }}.jpg" alt="{{ .fullname }}">
+        {{- else -}}
+        <img src="{{ "images/developer/placeholder.jpg" | relURL }}" alt="{{ .fullname }}">
+        {{- end -}}
+        <div class="about-card-info">
+          <strong>{{ .fullname }}</strong>
+          <span>{{ .institution }}</span>
+        </div>
+        {{- if .role -}}
+        <span class="about-badge">{{ .role }}</span>
+        {{- end -}}
+      </div>
+      {{- end -}}
+    </div>
+  </section>
+
+  <!-- Core Developers -->
+  <section class="about-section">
+    <h2>Core Developers</h2>
+    <div class="about-cards-grid">
+      {{- range .Site.Data.developer.main -}}
+      <div class="about-card">
+        {{- if .img -}}
+        <img src="{{ "images/developer/" | relURL }}{{ .img }}.jpg" alt="{{ .fullname }}">
+        {{- else -}}
+        <img src="{{ "images/developer/placeholder.jpg" | relURL }}" alt="{{ .fullname }}">
+        {{- end -}}
+        <div class="about-card-info">
+          <strong>{{ .fullname }}</strong>
+          <span>{{ .institution }}</span>
+        </div>
+      </div>
+      {{- end -}}
+    </div>
+    <p>For the full list of contributors to preCICE please see our <a href="community-contributors">community page</a>.</p>
+    <p>The conceptual ideas of preCICE are not completely new. preCICE is an advancement of FSI*ce, developed by Markus Brenk.</p>
+  </section>
+
+  <!-- Planning -->
+  <section class="about-section">
+    <h2>Planning and development of precice.org</h2>
+    <p>
+      The website in its current form was planned and implemented by CH Lorenz Research and Innovation Consulting
+      together with the preCICE team. For more information contact
+      <a href="https://christopherlorenz.com">Christopher Lorenz</a>
+      at christopher[dot]lorenz[at]chlorenz[dot]ug.
+    </p>
+  </section>
+
+  <!-- Funding -->
+  <section class="about-section">
+    <h2>Funding</h2>
+    <div class="funding-grid">
+      {{- range .Site.Data.funding -}}
+      <div class="funding-card">
+        <a href="{{ .url }}" target="_blank" class="funding-card-title no-icon">
+          {{ .title }}
+        </a>
+        <div class="funding-card-body">
+          <div class="funding-card-logo">
+            <a href="{{ .url }}" target="_blank" class="no-icon">
+              <img src="{{ .img }}" alt="{{ .title }} logo">
+            </a>
+          </div>
+          <div class="funding-card-details">
+            {{- if .description -}}<p>{{ .description }}</p>{{- end -}}
+            {{- if .number -}}<p>Funding number: {{ .number }}</p>{{- end -}}
+            <p>Years running: {{ .period }}</p>
+          </div>
+        </div>
+      </div>
+      {{- end -}}
+    </div>
+  </section>
+
+  <!-- Prince XML -->
+  <section class="about-section">
+    <h2>Prince XML</h2>
+    <div class="about-simple-section">
+      <p>
+        We use a non-commercial license of <a href="http://www.princexml.com/">Prince XML</a>
+        to generate the PDF version of the documentation. For more information see our
+        <a href="docs-meta-publish-to-pdf.html">meta documentation page</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Analytics -->
+  <section class="about-section">
+    <h2>Website analytics</h2>
+    <div class="about-simple-section">
+      <p>
+        We use the open-source and privacy-friendly analytics service
+        <a href="https://plausible.io/">Plausible</a>.
+        Everyone can see the <a href="https://plausible.io/precice.org">analytics for this website</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Impressum -->
+  <section class="about-section">
+    <h2>Impressum</h2>
+    <div class="about-simple-section about-impressum">
+      <p>
+        This website is maintained by<br>
+        Benjamin Uekermann —
+        Universität Stuttgart —
+        Universitätsstraße 38 —
+        70569 Stuttgart
+      </p>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="about-section">
+    <h2>Privacy</h2>
+    <div class="about-simple-section">
+      <p>You can find the preCICE <a href="privacy.html">privacy policy here</a>.</p>
+    </div>
+  </section>
+
+  <!-- Footer image -->
+  <div class="about-footer-img">
+    <img src="{{ "images/doughnuts.jpg" | relURL }}" alt="preCICE doughnuts" class="img-responsive">
+    <p><em>preCICE is tasty because it is made with love by its contributors.</em></p>
+  </div>
+
+</div><!-- /.about-page -->

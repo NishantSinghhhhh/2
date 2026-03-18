@@ -87,7 +87,7 @@ body { font-family: 'Figtree', sans-serif; }
 .hero-stage {
   position: relative;
   overflow: hidden;
-  padding: 64px 0 60px;
+  padding: 64px 0 0;
   text-align: center;
   background-color: transparent;
 }
@@ -916,22 +916,23 @@ body { font-family: 'Figtree', sans-serif; }
    ============================================================ */
 
 .code-section { 
-    padding: 72px 0 80px; 
+    padding: 72px 0 0; 
     background: #e7f2fe;  /* ← same as science section */
 }
 [data-bs-theme="dark"] .code-section { 
     background: #0e1620;  /* ← same as science section dark */
+     padding-bottom: 0;
 }
-.code-header { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; color: #040606; text-align: center; margin-bottom: 20px; }
+.code-header { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; color: #040606; text-align: center; }
 [data-bs-theme="dark"] .code-header { color: #f0f0f0; }
 
-.code-subtext { font-size: 1.1rem; color: #333; line-height: 1.75; margin-bottom: 36px;}
+.code-subtext { font-size: 1.1rem; color: #333; line-height: 1.75; }
 .code-subtext a { color: #0a76bb; text-decoration: none; }
 .code-subtext a:hover { text-decoration: underline; }
 [data-bs-theme="dark"] .code-subtext { color: #aaa; }
 [data-bs-theme="dark"] .code-subtext a { color: #4da6ff; }
 
-.code-window { background: #1a2235; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.25); margin-bottom: 36px; }
+.code-window { background: #1a2235; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
 .code-window-bar { display: flex; align-items: center; gap: 7px; padding: 12px 18px; background: #161e2e; border-bottom: 1px solid rgba(255,255,255,0.06); }
 .code-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
 .code-dot-red    { background: #ff5f57; }

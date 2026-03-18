@@ -427,18 +427,6 @@ a[data-bs-toggle] {
     color: #248EC2;
 }
 
-.summary {
-    font-size:120%;
-    color: #808080;
-    margin:20px 0px 20px 0px;
-    border-left: 5px solid #ED1951;
-    padding-left: 10px;
-}
-
-.summary:before {
-    content: "Summary: ";
-    font-weight: bold;
-}
 
 a.fa.fa-envelope-o.mailto {
     font-weight: 600;
@@ -973,6 +961,7 @@ h4.card-title {
 .margin-left {
   padding-left: 2rem !important;
 }
+
 /* Content spacing */
 #tg-sb-content {
   margin-top: 15px;
@@ -988,7 +977,7 @@ h4.card-title {
 ════════════════════════════════════════════════════════════ */
 [data-bs-theme="dark"] body {
     background-color: #121313 !important;
-    color: #e0e0e0; 
+    color: #e0e0e0;
 }
 
 [data-bs-theme="dark"] .page-content,

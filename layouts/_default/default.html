@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     {{- partial "head.html" . -}}
     <script>
@@ -98,6 +98,7 @@
         {{- end -}}
     </div>
     {{- partial "footer.html" . -}}
+    <script src="{{ "js/theme-toggle.js" | relURL }}"></script>
 
     {{- if .Site.Params.google_analytics -}}
     {{- partial "google_analytics.html" . -}}

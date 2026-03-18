@@ -1,0 +1,294 @@
+/* ══════════════════════════════════════════════════════════════
+   SITE FOOTER
+   Colors: preCICE logo only
+   Blue:        #0a76bb  /  #1a3a6e
+   Orange:      #e87722  /  #c45a10
+   Dark bg:     #0d0d1a
+══════════════════════════════════════════════════════════════ */
+
+.site-footer {
+  font-family: 'Figtree', sans-serif;
+  margin-top: 0 !important;
+}
+
+/* ══════════════════════════════
+   DIV 1 — Logo + bars
+══════════════════════════════ */
+.footer-top {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  background: #0d0d1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+/* ── Vertical color bars ── */
+.footer-bars {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  z-index: 0;
+}
+
+.bar {
+  flex: 1;
+  height: 100%;
+}
+
+/* Left side - blue bars */
+.bar-1  { background: linear-gradient(to bottom, #1a2a5e 40%, transparent 100%); opacity: 0.6; }
+.bar-2  { background: linear-gradient(to bottom, #1a3a7e 40%, transparent 100%); opacity: 0.5; }
+.bar-3  { background: linear-gradient(to bottom, #0a76bb 30%, transparent 100%); opacity: 0.45; }
+.bar-4  { background: linear-gradient(to bottom, #1a2a5e 40%, transparent 100%); opacity: 0.3; }
+
+/* Center - transparent */
+.bar-5  { background: transparent; }
+
+/* Right side - orange bars */
+.bar-6  { background: linear-gradient(to bottom, #8a3a08 30%, transparent 100%); opacity: 0.35; }
+.bar-7  { background: linear-gradient(to bottom, #c45a10 30%, transparent 100%); opacity: 0.4; }
+.bar-8  { background: linear-gradient(to bottom, #e87722 25%, transparent 100%); opacity: 0.35; }
+.bar-9  { background: linear-gradient(to bottom, #c45a10 30%, transparent 100%); opacity: 0.3; }
+.bar-10 { background: linear-gradient(to bottom, #8a3a08 35%, transparent 100%); opacity: 0.25; }
+.bar-11 { background: linear-gradient(to bottom, #1a2a5e 40%, transparent 100%); opacity: 0.25; }
+.bar-12 { background: linear-gradient(to bottom, #0a76bb 30%, transparent 100%); opacity: 0.2; }
+.bar-13 { background: transparent; }
+.bar-14 { background: linear-gradient(to bottom, #8a3a08 30%, transparent 100%); opacity: 0.2; }
+.bar-15 { background: linear-gradient(to bottom, #c45a10 25%, transparent 100%); opacity: 0.25; }
+.bar-16 { background: linear-gradient(to bottom, #e87722 20%, transparent 100%); opacity: 0.2; }
+
+/* ── Logo + button centered ── */
+.footer-top-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 12px 28px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-logo-box img {
+  height: 32px;
+  width: auto;
+}
+
+.footer-logo-box span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+/* ── Newsletter button ── */
+.footer-newsletter-btn {
+  display: inline-block;
+  background: #e87722;
+  color: #fff !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 32px;
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: background 0.2s ease;
+}
+
+.footer-newsletter-btn:hover {
+  background: #c45a10;
+}
+
+.footer-newsletter-btn::after {
+  content: none !important;
+}
+
+/* ══════════════════════════════
+   DIV 2 — Links + legal
+   DARK MODE (default)
+══════════════════════════════ */
+.footer-bottom-section {
+  background: #0d0d1a;
+  padding: 40px 20px 32px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.footer-links-row {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  /* margin-bottom: 36px; */
+}
+
+.footer-links-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-col ul li {
+  margin: 8px 0;
+}
+
+.footer-links-col ul li a {
+  color: #ccc !important;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links-col ul li a:hover {
+  color: #fff !important;
+}
+
+.footer-links-col ul li a::after {
+  content: none !important;
+}
+
+.footer-links-heading {
+  color: #0a76bb;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  /* margin-bottom: 14px; */
+}
+
+.footer-legal {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-legal img {
+  opacity: 0.6;
+}
+
+.footer-legal p {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* ══════════════════════════════
+   LIGHT MODE OVERRIDES
+══════════════════════════════ */
+[data-bs-theme="light"] .footer-top {
+  background: #0d0d1a;
+  /* bars stay the same — dark bg always looks good */
+}
+
+[data-bs-theme="light"] .footer-bottom-section {
+  background: #f5f7fa;
+}
+
+[data-bs-theme="light"] .footer-links-col ul li a {
+  color: #444 !important;
+}
+
+[data-bs-theme="light"] .footer-links-col ul li a:hover {
+  color: #0a76bb !important;
+}
+
+[data-bs-theme="light"] .footer-links-heading {
+  color: #0a76bb;
+}
+
+[data-bs-theme="light"] .footer-legal {
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+[data-bs-theme="light"] .footer-legal p {
+  color: #888;
+}
+
+[data-bs-theme="light"] .footer-legal img {
+  opacity: 0.8;
+}
+
+/* ══════════════════════════════
+   DARK MODE OVERRIDES
+══════════════════════════════ */
+[data-bs-theme="dark"] .footer-top {
+  background: #0d0d1a;
+}
+
+[data-bs-theme="dark"] .footer-bottom-section {
+  background: #0d0d1a;
+}
+
+[data-bs-theme="dark"] .footer-links-col ul li a {
+  color: #ccc !important;
+}
+
+[data-bs-theme="dark"] .footer-links-col ul li a:hover {
+  color: #fff !important;
+}
+
+[data-bs-theme="dark"] .footer-legal {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+[data-bs-theme="dark"] .footer-legal p {
+  color: #666;
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 576px) {
+  .footer-top {
+    height: auto;
+    padding: 48px 20px;
+  }
+
+  .footer-links-row {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+/* ── Remove gap above footer ── */
+.site-footer {
+  margin-top: 0 !important;
+}
+
+/* ── Target the container directly above footer ── */
+.container {
+  margin-bottom: 0 !important;
+}
+
+/* ── Also kill any padding on the body/main wrapper ── */
+body > .container,
+main + .site-footer,
+div + .site-footer {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ── Remove bottom gap inside footer ── */
+.footer-bottom-section {
+  padding-bottom: 0 !important;
+}
+
+.footer-legal {
+  padding-bottom: 24px;
+}
+
+.site-footer {
+  padding-bottom: 0 !important;
+}

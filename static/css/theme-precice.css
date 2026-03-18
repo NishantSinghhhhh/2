@@ -52,10 +52,10 @@ black: #040606
 light blue: #ECF7FE
 */
 
-.summary {
+/* .summary {
     color: #808080;
     border-left: 5px solid #ED762C;
-}
+} */
 
 /* BS5 nav tabs */
 .nav-tabs > .nav-item > .nav-link.active,

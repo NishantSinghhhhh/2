@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  {{- partial "head.html" . -}}
+  <link rel="stylesheet" href="{{ "css/about.css" | relURL }}">
+</head>
+<body>
+  <header>
+    {{- partial "topnav.html" . -}}
+    {{- partial "news_banner.html" (dict "onlanding" "false" "page" .) -}}
+  </header>
+  <div class="container about-page" style="margin-top:20px; margin-bottom:50px">
+    <main id="tg-sb-content">
+      {{- partial "about.html" . -}}
+    </main>
+  </div>
+  {{- partial "footer.html" . -}}
+  <script src="{{ "js/theme-toggle.js" | relURL }}"></script>
+  {{- if .Site.Params.google_analytics -}}{{- partial "google_analytics.html" . -}}{{- end -}}
+</body>
+</html>
