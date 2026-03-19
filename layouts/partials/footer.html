@@ -1,26 +1,34 @@
-<footer class="site-footer">
+<!-- ═══════════════════════════════════════════════
+     SINGLE FOOTER — auto-switches light / dark
+     The <body> (or any parent) must carry:
+       data-bs-theme="light"  OR  data-bs-theme="dark"
+     Only the matching footer will be visible.
+════════════════════════════════════════════════ -->
+
+<!-- LIGHT FOOTER -->
+<footer class="site-footer footer-light">
 
   <!-- DIV 1: Logo + bars background -->
   <div class="footer-top">
     <div class="footer-bars" aria-hidden="true">
-      <span class="bar bar-1"></span>
-      <span class="bar bar-2"></span>
-      <span class="bar bar-3"></span>
-      <span class="bar bar-4"></span>
-      <span class="bar bar-5"></span>
-      <span class="bar bar-6"></span>
-      <span class="bar bar-7"></span>
-      <span class="bar bar-8"></span>
-      <span class="bar bar-9"></span>
-      <span class="bar bar-10"></span>
-      <span class="bar bar-11"></span>
-      <span class="bar bar-12"></span>
-      <span class="bar bar-13"></span>
-      <span class="bar bar-14"></span>
-      <span class="bar bar-15"></span>
-      <span class="bar bar-16"></span>
+      <span class="bar_long  bar-1"></span>
+      <span class="bar_short bar-2"></span>
+      <span class="bar_long  bar-3"></span>
+      <span class="bar_short bar-4"></span>
+      <span class="bar_short bar-5"></span>
+      <span class="bar_long  bar-6"></span>
+      <span class="bar_short bar-7"></span>
+      <span class="bar_long  bar-8"></span>
+      <span class="bar_short bar-9"></span>
+      <span class="bar_long  bar-10"></span>
+      <span class="bar_short bar-11"></span>
+      <span class="bar_long  bar-12"></span>
+      <span class="bar_short bar-13"></span>
+      <span class="bar_long  bar-14"></span>
+      <span class="bar_short bar-15"></span>
+      <span class="bar_long  bar-16"></span>
     </div>
-  
+
     <div class="footer-top-content">
       <div class="footer-logo-box">
         <img src="{{ "../images/icon.svg" | relURL }}" alt="preCICE logo">
@@ -65,6 +73,70 @@
 
 </footer>
 
-{{- if .Site.Params.google_analytics -}}
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','{{ .Site.Params.google_analytics }}','auto');ga('require','displayfeatures');ga('send','pageview');</script>
-{{- end -}}
+<!-- DARK FOOTER -->
+<footer class="site-footer-dark footer-dark">
+
+  <!-- DIV 1: Logo + bars background -->
+  <div class="footer-top-dark">
+    <div class="footer-bars-dark" aria-hidden="true">
+      <span class="bar_long  bar-d1"></span>
+      <span class="bar_short bar-d2"></span>
+      <span class="bar_long  bar-d3"></span>
+      <span class="bar_short bar-d4"></span>
+      <span class="bar_short bar-d5"></span>
+      <span class="bar_long  bar-d6"></span>
+      <span class="bar_short bar-d7"></span>
+      <span class="bar_long  bar-d8"></span>
+      <span class="bar_short bar-d9"></span>
+      <span class="bar_long  bar-d10"></span>
+      <span class="bar_short bar-d11"></span>
+      <span class="bar_long  bar-d12"></span>
+      <span class="bar_short bar-d13"></span>
+      <span class="bar_long  bar-d14"></span>
+      <span class="bar_short bar-d15"></span>
+      <span class="bar_long  bar-d16"></span>
+    </div>
+
+    <div class="footer-top-content-dark">
+      <div class="footer-logo-box-dark">
+        <img src="{{ "../images/icon.svg" | relURL }}" alt="preCICE logo">
+        <span>preCICE</span>
+      </div>
+      <a href="https://precice.discourse.group/c/news/5" class="footer-newsletter-btn-dark no-icon">
+        Join newsletter
+      </a>
+    </div>
+  </div>
+
+  <!-- DIV 2: Links + bottom -->
+  <div class="footer-bottom-section-dark">
+    <div class="footer-links-row-dark">
+      <div class="footer-links-col-dark">
+        <p class="footer-links-heading-dark">[ COMMUNITY ]</p>
+        <ul>
+          <li><a class="no-icon" href="https://precice.discourse.group">Forum on Discourse</a></li>
+          <li><a class="no-icon" href="https://github.com/precice">preCICE on GitHub</a></li>
+          <li><a href="fundamentals-license.html">License</a></li>
+          <li><a href="about.html">Impressum / Legal</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col-dark">
+        <p class="footer-links-heading-dark">[ RESOURCES ]</p>
+        <ul>
+          <li><a href="fundamentals-literature-guide.html">Cite preCICE</a></li>
+          <li><a href="community-contribute-to-precice.html">Contribute</a></li>
+          <li><a href="community-support-precice.html">Get support</a></li>
+          <li><a href="community-training.html">Get training</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-legal-dark">
+      <a class="no-icon" rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+        <img alt="CC BY 4.0" src="{{ "images/licensebutton-by-40_88x31.png" | relURL }}">
+      </a>
+      <p>This website does not use cookies</p>
+    </div>
+  </div>
+
+</footer>

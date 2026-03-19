@@ -757,8 +757,10 @@ body { font-family: 'Figtree', sans-serif; }
 [data-bs-theme="dark"] .btn-faq-more { color: #e0e0e0; border-color: #555; }
 [data-bs-theme="dark"] .btn-faq-more:hover { border-color: #4da6ff; color: #4da6ff; background: rgba(77,166,255,0.07); }
 
+
 /* ============================================================
-   LOGOWALL SECTION
+   LOGOWALL — RESPONSIVE FIX
+   Replace the existing logowall block in landing-page-1.css
    ============================================================ */
 
 .logowall-section {
@@ -792,7 +794,7 @@ body { font-family: 'Figtree', sans-serif; }
 .logowall-section .container { position: relative; z-index: 1; }
 
 .logowall-header {
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
     font-weight: 700;
     color: #040606;
     text-align: center;
@@ -801,31 +803,43 @@ body { font-family: 'Figtree', sans-serif; }
 [data-bs-theme="dark"] .logowall-header { color: #e8f0ff; }
 
 .logowall-subtext {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #333;
     line-height: 1.75;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
     max-width: 100%;
     width: 100%;
 }
 [data-bs-theme="dark"] .logowall-subtext { color: #9ab5cc; }
 
-.logowall-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 40px; }
-@media (max-width: 1100px) { .logowall-grid { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 768px)  { .logowall-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 480px)  { .logowall-grid { grid-template-columns: repeat(2, 1fr); } }
+/* ── Grid: 5 cols desktop → scales down ── */
+.logowall-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+}
 
+@media (max-width: 1100px) { .logowall-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; } }
+@media (max-width: 768px)  { .logowall-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+@media (max-width: 400px)  { .logowall-grid { grid-template-columns: repeat(2, 1fr); gap: 8px;  } }
+
+/* ── Card ── */
 .logowall-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background: #ffffff;
     border: 1.5px solid #d0e4f7;
-    border-radius: 12px;
-    padding: 16px;
-    height: 100px;
+    border-radius: 10px;
+    padding: 16px 12px 14px;
+    gap: 8px;
     text-decoration: none;
     transition: box-shadow 200ms, border-color 200ms, transform 200ms;
+    height: auto;
+    min-height: 0;
+    box-sizing: border-box;
 }
 .logowall-card:hover {
     box-shadow: 0 4px 16px rgba(10,118,187,0.12);
@@ -833,69 +847,50 @@ body { font-family: 'Figtree', sans-serif; }
     transform: translateY(-2px);
     text-decoration: none;
 }
-[data-bs-theme="dark"] .logowall-card {
-    background: #1c1c1b;
-    border-color: #2e2e2c;
-}
-[data-bs-theme="dark"] .logowall-card:hover {
-    border-color: #4da6ff;
-    box-shadow: 0 4px 16px rgba(77,166,255,0.12);
+
+[data-bs-theme="dark"] .logowall-card { background: #1c1c1b; border-color: #2e2e2c; }
+[data-bs-theme="dark"] .logowall-card:hover { border-color: #4da6ff; box-shadow: 0 4px 16px rgba(77,166,255,0.12); }
+
+/* ── Logo image container ── */
+.logowall-card-img {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.logowall-card-img { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
 .logowall-card-img img {
     max-width: 100%;
-    max-height: 60px;
+    max-height: 44px;
+    width: auto;
     object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.75;
     transition: filter 200ms, opacity 200ms;
 }
-.logowall-card:hover .logowall-card-img img {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-[data-bs-theme="dark"] .logowall-card-img img {
-    filter: grayscale(100%) brightness(1.8);
-    opacity: 0.65;
-}
-[data-bs-theme="dark"] .logowall-card:hover .logowall-card-img img {
-    filter: grayscale(0%) brightness(1.1);
-    opacity: 1;
-}
+.logowall-card:hover .logowall-card-img img { filter: grayscale(0%); opacity: 1; }
 
-.logowall-cta { margin-top: 8px; }
+[data-bs-theme="dark"] .logowall-card-img img { filter: grayscale(100%) brightness(1.8); opacity: 0.65; }
+[data-bs-theme="dark"] .logowall-card:hover .logowall-card-img img { filter: grayscale(0%) brightness(1.1); opacity: 1; }
 
-/* ─── LOGOWALL CARD NAME + COUNTRY ──────────────────────── */
-.logowall-card {
-    flex-direction: column;
-    height: auto;
-    padding: 16px 12px 12px;
-    gap: 8px;
-}
-
-.logowall-card-img {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+/* ── Text labels ── */
 .logowall-card-name {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     color: #333333;
     text-align: center;
     margin: 0;
     line-height: 1.3;
+    word-break: break-word;
 }
 
 .logowall-card-country {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     color: #555555;
     text-align: center;
     margin: 0;
-    line-height: 1.3;
+    line-height: 1.2;
 }
 
 .logowall-card-country strong {
@@ -903,12 +898,29 @@ body { font-family: 'Figtree', sans-serif; }
     color: #333333;
 }
 
-[data-bs-theme="dark"] .logowall-card-name {
-    color: #cccccc;
+[data-bs-theme="dark"] .logowall-card-name { color: #cccccc; }
+[data-bs-theme="dark"] .logowall-card-country strong { color: #aaaaaa; }
+
+.logowall-cta { margin-top: 8px; }
+
+/* ── Mobile overrides ── */
+@media (max-width: 768px) {
+  .logowall-section { padding: 48px 16px 56px; }
+  .logowall-card-img { height: 42px; }
+  .logowall-card-img img { max-height: 36px; }
+  .logowall-card-name { font-size: 0.65rem; }
+  .logowall-card-country { font-size: 0.6rem; }
+  .logowall-card { padding: 10px 6px 8px; gap: 4px; }
 }
 
-[data-bs-theme="dark"] .logowall-card-country strong {
-    color: #aaaaaa;
+@media (max-width: 520px) {
+  .logowall-section { padding: 40px 12px 48px; }
+  .logowall-grid { gap: 6px; }
+  .logowall-card { padding: 8px 4px 6px; border-radius: 8px; }
+  .logowall-card-img { height: 36px; }
+  .logowall-card-img img { max-height: 30px; }
+  .logowall-card-name { font-size: 0.6rem; }
+  .logowall-card-country { font-size: 0.55rem; }
 }
 
 /* ============================================================
@@ -918,7 +930,10 @@ body { font-family: 'Figtree', sans-serif; }
 .code-section { 
     padding: 72px 0 0; 
     background: #e7f2fe;  /* ← same as science section */
+    padding-bottom: 0;   
+    margin-bottom: 0;
 }
+
 [data-bs-theme="dark"] .code-section { 
     background: #0e1620;  /* ← same as science section dark */
      padding-bottom: 0;
@@ -949,7 +964,16 @@ body { font-family: 'Figtree', sans-serif; }
   .code-asciinema-mobile img { width: 100%; border-radius: 6px; }
 }
 
-.code-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.code-actions {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 12px; 
+  align-items: center; 
+  margin-top: 40px;        /* ← increase gap between window and buttons */
+  padding-bottom: 56px; 
+
+}
+
 .btn-code-outline {
   display: inline-flex;
   align-items: center;
@@ -1054,3 +1078,4 @@ body { font-family: 'Figtree', sans-serif; }
     background-color: #000000 !important;
     border-color: #ffffff !important;
 }
+
