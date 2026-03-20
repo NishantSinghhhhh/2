@@ -1,5 +1,5 @@
 {
-  "buildCommand": "hugo --gc --baseURL $VERCEL_URL",
+  "buildCommand": "hugo --gc --baseURL https://$VERCEL_URL/",
   "outputDirectory": "public",
   "build": {
     "env": {
