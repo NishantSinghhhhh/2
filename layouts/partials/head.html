@@ -31,7 +31,7 @@
 {{- end -}}
 <meta name="twitter:image" content="{{ "images/icon-310x310.png" | absURL }}" />
 
-{{- if eq .RelPermalink "/index.html" -}}
+{{- if .IsHome -}}
 <link rel="canonical" href="{{ .Site.BaseURL }}">
 {{- else -}}
 <link rel="canonical" href="{{ .Permalink }}">
@@ -56,7 +56,7 @@
 <link rel="stylesheet" href="{{ "css/about.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/footer.css" | relURL }}">
 
-{{- if eq .RelPermalink "/index.html" -}}
+{{- if .IsHome -}}
 <link rel="stylesheet" href="{{ "css/landing-page.css" | relURL }}">
 {{- end -}}
 
