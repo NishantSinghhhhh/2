@@ -236,7 +236,7 @@ module:
       target: content/imported/dumux-adapter
     - source: imported/preeco-orga
       target: content/imported/preeco-orga
-      
+
 frontmatter:
   date:
     - date
@@ -246,7 +246,10 @@ frontmatter:
     - permalink
     - url
 
-
+# -------------------------------------------------------------
+# PERMALINKS
+# NOTE: :contentbasename removed in Hugo 0.122.0 → use :filename
+# -------------------------------------------------------------
 permalinks:
   page:
     docs: "/:filename"
@@ -255,7 +258,7 @@ permalinks:
     tutorials: "/:filename"
     posts: "/:filename"
     privacy: "/:filename"
-    imported: "/:contentbasename"
+    imported: "/:filename"
   section:
     docs: "/:sections[last]"
     community: "/:sections[last]"
