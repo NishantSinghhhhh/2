@@ -300,7 +300,14 @@
 .footer-newsletter-btn-dark::after { content: none !important; }
 
 .footer-bottom-section-dark {
-  background: #0d0d1a;
+  background: linear-gradient(
+    to right,
+    rgba(26, 42, 94, 0.35) 0%,
+    rgba(26, 58, 126, 0.25) 25%,
+    rgba(13, 13, 26, 0.1) 50%,
+    rgba(138, 58, 8, 0.25) 75%,
+    rgba(196, 90, 16, 0.35) 100%
+  ), #0d0d1a;
   padding: 32px 32px 0;
   text-align: center;
   border-top: 1.5px solid rgba(255, 255, 255, 0.08);
