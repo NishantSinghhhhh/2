@@ -302,3 +302,164 @@ details[open] > summary::after {
   margin-top: 0;
   padding-top: 0;
 }
+
+/* ============================================================
+   DEVLIST CARDS — contributors / maintainers pages
+   ============================================================ */
+
+.devlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+  margin: 1.5rem 0 2rem;
+}
+.devlist-grid--compact {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 8px;
+}
+
+/* ── Card ───────────────────────────────────────────────────── */
+.devcard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  transition: border-color 180ms, box-shadow 180ms;
+}
+.devcard:hover {
+  border-color: #0a76bb;
+  box-shadow: 0 2px 12px rgba(10, 118, 187, 0.08);
+}
+.devcard--featured {
+  padding: 16px 18px;
+}
+
+/* ── Avatar ─────────────────────────────────────────────────── */
+.devcard__avatar {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.devcard__avatar--photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.devcard__avatar--initials {
+  background: #e0f0fb;
+  color: #0a76bb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: 'Figtree', sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ── Info ───────────────────────────────────────────────────── */
+.devcard__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.devcard__name {
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.devcard__institution {
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.78rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* ── Links ──────────────────────────────────────────────────── */
+.devcard__links {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.devcard__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-decoration: none !important;
+  transition: background 150ms, color 150ms;
+  border: 1px solid transparent;
+}
+.devcard__link--orcid {
+  color: #a6ce39;
+  border-color: #e8f5d0;
+  background: #f5fbec;
+}
+.devcard__link--orcid:hover {
+  background: #a6ce39;
+  color: #fff;
+  border-color: #a6ce39;
+}
+.devcard__link--github {
+  color: #374151;
+  border-color: #e5e7eb;
+  background: #f9fafb;
+}
+.devcard__link--github:hover {
+  background: #24292e;
+  color: #fff;
+  border-color: #24292e;
+}
+
+/* ── Dark mode ──────────────────────────────────────────────── */
+[data-bs-theme="dark"] .devcard {
+  background: #1f2937;
+  border-color: #374151;
+}
+[data-bs-theme="dark"] .devcard:hover {
+  border-color: #4da6ff;
+  box-shadow: 0 2px 12px rgba(77, 166, 255, 0.1);
+}
+[data-bs-theme="dark"] .devcard__avatar--initials {
+  background: #1e3a5f;
+  color: #4da6ff;
+}
+[data-bs-theme="dark"] .devcard__name {
+  color: #f3f4f6;
+}
+[data-bs-theme="dark"] .devcard__institution {
+  color: #9ca3af;
+}
+[data-bs-theme="dark"] .devcard__link--github {
+  color: #d1d5db;
+  border-color: #374151;
+  background: #111827;
+}
+[data-bs-theme="dark"] .devcard__link--github:hover {
+  background: #f0f6ff;
+  color: #24292e;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .devlist-grid,
+  .devlist-grid--compact {
+    grid-template-columns: 1fr;
+  }
+}

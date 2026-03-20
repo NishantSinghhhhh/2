@@ -1,7 +1,6 @@
 /* ============================================================
    SIDEBAR — sidebar.css
    Font: Figtree
-   Design: Clean, minimal, modern docs sidebar
    ============================================================ */
 
 /* ── Sidebar container ──────────────────────────────────────── */
@@ -40,7 +39,7 @@ ul#mysidebar {
   padding: 0 4px 20px 4px;
   margin: 0 0 4px 0;
   line-height: 1.2;
-  background: transparent !important;
+  background: transparent;
   border: none;
   cursor: default;
   letter-spacing: -0.01em;
@@ -57,22 +56,24 @@ ul#mysidebar {
 }
 
 /* ── Top-level <a> ──────────────────────────────────────────── */
+/* display, background, color, padding, text-decoration need !important
+   to override Bootstrap's .nav > li > a defaults */
 #mysidebar > li > a {
   display: flex !important;
   align-items: center;
   justify-content: space-between;
   background-color: transparent !important;
   color: #374151 !important;
-  border-radius: 8px !important;
+  border-radius: 8px;
   padding: 0 12px !important;
-  font-family: 'Figtree', sans-serif !important;
-  font-size: 0.875rem !important;
-  font-weight: 600 !important;
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
   line-height: 1.3;
   text-decoration: none !important;
-  border: none !important;
+  border: none;
   height: 38px;
-  width: 100% !important;
+  width: 100%;
   box-sizing: border-box;
   transition: background-color 150ms, color 150ms;
   letter-spacing: 0.01em;
@@ -115,10 +116,10 @@ ul#mysidebar {
 
 /* ── Sub-items container ────────────────────────────────────── */
 #mysidebar > li > ul {
-  background-color: transparent !important;
+  background-color: transparent;
   border-left: 2px solid #e5e7eb;
   border-radius: 0;
-  padding: 4px 0 8px 0 !important;
+  padding: 4px 0 8px 0;
   margin: 2px 0 4px 14px;
   display: none;
 }
@@ -134,12 +135,12 @@ ul#mysidebar {
   background-color: transparent !important;
   color: #6b7280 !important;
   padding: 5px 10px 5px 14px !important;
-  font-family: 'Figtree', sans-serif !important;
-  font-size: 0.845rem !important;
-  font-weight: 400 !important;
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.845rem;
+  font-weight: 400;
   line-height: 1.5;
   text-decoration: none !important;
-  border: none !important;
+  border: none;
   width: 100%;
   box-sizing: border-box;
   border-radius: 5px;
@@ -153,7 +154,7 @@ ul#mysidebar {
 
 /* Active sub-item */
 #mysidebar > li > ul > li.active > a {
-  font-weight: 600 !important;
+  font-weight: 600;
   color: #0a76bb !important;
   background-color: rgba(10, 118, 187, 0.08) !important;
 }
@@ -165,17 +166,17 @@ ul#mysidebar {
   justify-content: space-between;
   background-color: transparent !important;
   color: #4b5563 !important;
-  border-radius: 5px !important;
+  border-radius: 5px;
   padding: 5px 10px 5px 14px !important;
   height: auto;
-  font-family: 'Figtree', sans-serif !important;
-  font-size: 0.845rem !important;
-  font-weight: 500 !important;
-  margin: 1px 0 !important;
-  width: 100% !important;
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.845rem;
+  font-weight: 500;
+  margin: 1px 0;
+  width: 100%;
   box-sizing: border-box;
   text-decoration: none !important;
-  border: none !important;
+  border: none;
   transition: background-color 130ms, color 130ms;
   cursor: pointer;
 }
@@ -208,14 +209,14 @@ ul#mysidebar {
 #mysidebar > li > ul > li.subfolders.active > a:hover {
   color: #0a76bb !important;
   background-color: rgba(10, 118, 187, 0.08) !important;
-  font-weight: 600 !important;
+  font-weight: 600;
 }
 
 /* ── Third-level container ──────────────────────────────────── */
 #mysidebar > li > ul > li.subfolders > ul {
-  background-color: transparent !important;
+  background-color: transparent;
   border-left: 2px solid #e5e7eb;
-  padding: 2px 0 4px 0 !important;
+  padding: 2px 0 4px 0;
   margin: 2px 0 2px 12px;
   display: none;
 }
@@ -226,12 +227,12 @@ ul#mysidebar {
   background-color: transparent !important;
   color: #9ca3af !important;
   padding: 4px 10px 4px 14px !important;
-  font-family: 'Figtree', sans-serif !important;
-  font-size: 0.82rem !important;
-  font-weight: 400 !important;
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
   line-height: 1.5;
   text-decoration: none !important;
-  border: none !important;
+  border: none;
   border-radius: 4px;
   transition: background-color 130ms, color 130ms;
 }
@@ -241,19 +242,16 @@ ul#mysidebar {
   text-decoration: none !important;
 }
 #mysidebar > li > ul > li.subfolders > ul > li.active > a {
-  font-weight: 600 !important;
+  font-weight: 600;
   color: #0a76bb !important;
   background-color: rgba(10, 118, 187, 0.08) !important;
 }
 
-/* ── Hide old span arrows ───────────────────────────────────── */
 #mysidebar li > a > span {
-  display: none !important;
+  display: none;
 }
 
-/* ══════════════════════════════
-   DARK MODE
-══════════════════════════════ */
+/* ── Dark mode ──────────────────────────────────────────────── */
 [data-bs-theme="dark"] #mysidebar > li > a {
   color: #d1d5db !important;
   background-color: transparent !important;
@@ -270,7 +268,7 @@ ul#mysidebar {
 }
 
 [data-bs-theme="dark"] #mysidebar > li > ul {
-  background-color: transparent !important;
+  background-color: transparent;
   border-left-color: #374151;
 }
 [data-bs-theme="dark"] #mysidebar > li > ul > li > a {
@@ -287,7 +285,7 @@ ul#mysidebar {
 
 [data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > a {
   color: #9ca3af !important;
-  background-color: transparent !important;
+  background-color: transparent;
 }
 [data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > a:hover {
   background-color: rgba(77, 166, 255, 0.08) !important;
@@ -313,7 +311,7 @@ ul#mysidebar {
   background-color: rgba(77, 166, 255, 0.08) !important;
 }
 
-/* ── Responsive ─────────────────────────────────────────────── */
+/* ── Responsive: sidebar stacks above docs below 992px ─────── */
 @media (max-width: 991px) {
   div#tg-sb-sidebar,
   #mysidebar-container {
@@ -322,10 +320,209 @@ ul#mysidebar {
     margin-right: 0;
     margin-bottom: 24px;
   }
-  ul#mysidebar { width: 100%; max-width: 100%; }
+  ul#mysidebar {
+    width: 100%;
+    max-width: 100%;
+  }
   #mysidebar > li > a {
     height: auto;
     min-height: 40px;
     padding: 10px 14px !important;
+  }
+}
+/* ============================================================
+   DEVLIST CARDS — contributors / maintainers pages
+   ============================================================ */
+
+.devlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  margin: 1.5rem 0 2rem;
+}
+.devlist-grid--compact {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 8px;
+}
+
+/* ── Card ───────────────────────────────────────────────────── */
+.devcard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  transition: border-color 180ms, box-shadow 180ms;
+}
+.devcard:hover {
+  border-color: #0a76bb;
+  box-shadow: 0 2px 14px rgba(10, 118, 187, 0.09);
+}
+
+/* Featured (main maintainers) — taller card with bigger avatar */
+.devcard--featured {
+  padding: 20px 22px;
+  gap: 18px;
+}
+
+/* ── Avatar ─────────────────────────────────────────────────── */
+.devcard__avatar {
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Default size for non-featured */
+.devcard__avatar {
+  width: 52px;
+  height: 52px;
+}
+
+/* Bigger avatar for featured (main) cards */
+.devcard--featured .devcard__avatar {
+  width: 80px;
+  height: 80px;
+}
+
+.devcard__avatar--photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.devcard__avatar--initials {
+  background: #e0f0fb;
+  color: #0a76bb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Figtree', sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.devcard--featured .devcard__avatar--initials {
+  font-size: 1.2rem;
+}
+
+/* ── Info ───────────────────────────────────────────────────── */
+.devcard__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.devcard__name {
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.devcard--featured .devcard__name {
+  font-size: 1rem;
+}
+.devcard__institution {
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.78rem;
+  color: #6b7280;
+  line-height: 1.4;
+  display: block;
+}
+.devcard--featured .devcard__institution {
+  font-size: 0.82rem;
+}
+
+/* ── Links ──────────────────────────────────────────────────── */
+.devcard__links {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  align-self: center;
+}
+.devcard__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  font-size: 1rem;
+  text-decoration: none !important;
+  transition: background 150ms, color 150ms;
+  border: 1px solid transparent;
+}
+.devcard--featured .devcard__link {
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+}
+.devcard__link--orcid {
+  color: #a6ce39;
+  border-color: #e8f5d0;
+  background: #f5fbec;
+}
+.devcard__link--orcid:hover {
+  background: #a6ce39;
+  color: #fff !important;
+  border-color: #a6ce39;
+}
+.devcard__link--github {
+  color: #374151;
+  border-color: #e5e7eb;
+  background: #f9fafb;
+}
+.devcard__link--github:hover {
+  background: #24292e;
+  color: #fff !important;
+  border-color: #24292e;
+}
+
+/* ── Dark mode ──────────────────────────────────────────────── */
+[data-bs-theme="dark"] .devcard {
+  background: #1f2937;
+  border-color: #374151;
+}
+[data-bs-theme="dark"] .devcard:hover {
+  border-color: #4da6ff;
+  box-shadow: 0 2px 12px rgba(77, 166, 255, 0.1);
+}
+[data-bs-theme="dark"] .devcard__avatar--initials {
+  background: #1e3a5f;
+  color: #4da6ff;
+}
+[data-bs-theme="dark"] .devcard__name {
+  color: #f3f4f6;
+}
+[data-bs-theme="dark"] .devcard__institution {
+  color: #9ca3af;
+}
+[data-bs-theme="dark"] .devcard__link--github {
+  color: #d1d5db;
+  border-color: #374151;
+  background: #111827;
+}
+[data-bs-theme="dark"] .devcard__link--github:hover {
+  background: #f0f6ff;
+  color: #24292e !important;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .devlist-grid,
+  .devlist-grid--compact {
+    grid-template-columns: 1fr;
+  }
+  .devcard--featured .devcard__avatar {
+    width: 64px;
+    height: 64px;
   }
 }

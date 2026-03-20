@@ -1,0 +1,43 @@
+{{- $section := .Get "section" -}}
+{{- $data := slice -}}
+
+{{- if eq $section "main" -}}
+  {{- $data = .Site.Data.developer.main -}}
+{{- else if eq $section "main-inactive" -}}
+  {{- $data = index .Site.Data.developer "main-inactive" -}}
+{{- else if eq $section "contributors" -}}
+  {{- $data = .Site.Data.developer.contributors -}}
+{{- end -}}
+
+{{- $html := "" -}}
+{{- $html = printf "%s<div class=\"devlist-grid%s\">" $html (cond (eq $section "contributors") " devlist-grid--compact" "") -}}
+
+{{- range $loop, $p := $data -}}
+  {{- $featuredClass := cond (eq $section "main") " devcard--featured" "" -}}
+  {{- $html = printf "%s<div class=\"devcard%s\">" $html $featuredClass -}}
+
+  {{- if and (eq $section "main") $p.img -}}
+    {{- $html = printf "%s<div class=\"devcard__avatar devcard__avatar--photo\"><img src=\"images/developer/%s.jpg\" alt=\"Portrait of %s\"></div>" $html $p.img $p.fullname -}}
+  {{- else -}}
+    {{- $parts := split $p.fullname " " -}}
+    {{- $first := index $parts 0 | truncate 1 "" -}}
+    {{- $last := index $parts (sub (len $parts) 1) | truncate 1 "" -}}
+    {{- $html = printf "%s<div class=\"devcard__avatar devcard__avatar--initials\">%s%s</div>" $html $first $last -}}
+  {{- end -}}
+
+  {{- $html = printf "%s<div class=\"devcard__info\"><strong class=\"devcard__name\">%s</strong><span class=\"devcard__institution\">%s</span></div>" $html $p.fullname $p.institution -}}
+
+  {{- $html = printf "%s<div class=\"devcard__links\">" $html -}}
+  {{- if $p.orcid -}}
+    {{- $html = printf "%s<a href=\"%s\" class=\"devcard__link devcard__link--orcid no-icon\" title=\"ORCID profile\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-orcid\"></i></a>" $html $p.orcid -}}
+  {{- end -}}
+  {{- if $p.github -}}
+    {{- $html = printf "%s<a href=\"https://github.com/%s\" class=\"devcard__link devcard__link--github no-icon\" title=\"GitHub profile\" target=\"_blank\" rel=\"noopener\"><i class=\"fab fa-github\"></i></a>" $html $p.github -}}
+  {{- end -}}
+  {{- $html = printf "%s</div>" $html -}}
+
+  {{- $html = printf "%s</div>" $html -}}
+{{- end -}}
+
+{{- $html = printf "%s</div>" $html -}}
+{{- $html | safeHTML -}}

@@ -61,7 +61,6 @@
         });
     </script>
     {{- if .Params.datatable -}}
-    <!-- Include the standard DataTables bits -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
     <script>
@@ -83,11 +82,11 @@
     </header>
     <div class="container-xl px-4" style="margin-bottom:50px">
         {{- if not (.Params.hide_sidebar) -}}
-        <div class="row">
-          <div class="col-md-3" id="tg-sb-sidebar">
+        <div class="d-flex flex-column flex-lg-row align-items-lg-start">
+          <div id="tg-sb-sidebar">
             {{- partial "sidebar.html" . -}}
           </div>
-          <main class="col-md-left margin-left" id="tg-sb-content">
+          <main class="flex-grow-1" id="tg-sb-content" style="min-width: 0;">
             {{ .Content }}
           </main>
         </div>

@@ -1,115 +1,99 @@
-$('#mysidebar').height($(".nav").height());
+$(document).ready(function () {
 
-$( document ).ready(function() {
+  // ── Tooltips ───────────────────────────────────────────────
+  $('[data-toggle="tooltip"]').tooltip({
+    placement: 'top'
+  });
 
-    //this script says, if the height of the viewport is greater than 800px, then insert affix class, which makes the nav bar float in a fixed
-    // position as your scroll. if you have a lot of nav items, this height may not work for you.
-    var h = $(window).height();
-    //console.log (h);
-    if (h > 700) {
-        $( "#mysidebar" ).attr("class", "nav affix");
-    }
-    // activate tooltips. although this is a bootstrap js function, it must be activated this way in your theme.
-    $('[data-toggle="tooltip"]').tooltip({
-    // <!-- TODO-BS5: jQuery tooltip() — use Bootstrap 5 Tooltip JS API instead -->
-        placement : 'top'
-    });
+  // ── AnchorJS ──────────────────────────────────────────────
+  anchors.add('main h2:not(.no-anchor),main h3:not(.no-anchor),main h4:not(.no-anchor),main h5:not(.no-anchor)');
 
-    /**
-     * AnchorJS
-     */
-    anchors.add('main h2:not(.no-anchor),main h3:not(.no-anchor),main h4:not(.no-anchor),main h5:not(.no-anchor)');
+  // ── Sidebar: bubble active class up to parent <li> ────────
+  // Only runs if Hugo already set class="active" on a child <li>
+  // (i.e. the current page matched a folderitem URL in sidebar.html)
+  $("#mysidebar li.active").parents("li").addClass("active");
 
-});
-
-// needed for nav tabs on pages. See Formatting > Nav tabs for more details.
-// script from http://stackoverflow.com/questions/10523433/how-do-i-keep-the-current-tab-active-with-twitter-bootstrap-after-a-page-reload
-$(function() {
-    var json, tabsState;
-    $('a[data-toggle="pill"], a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
-        var href, json, parentId, tabsState;
-
-        tabsState = localStorage.getItem("tabs-state");
-        json = JSON.parse(tabsState || "{}");
-        parentId = $(e.target).parents("ul.nav.nav-pills, ul.nav.nav-tabs").attr("id");
-        href = $(e.target).attr('href');
-        json[parentId] = href;
-
-        return localStorage.setItem("tabs-state", JSON.stringify(json));
-    });
-
-    tabsState = localStorage.getItem("tabs-state");
-    json = JSON.parse(tabsState || "{}");
-
-    $.each(json, function(containerId, href) {
-        return $("#" + containerId + " a[href=" + href + "]").tab('show');
-    });
-
-    $("ul.nav.nav-pills, ul.nav.nav-tabs").each(function() {
-        var $this = $(this);
-        if (!json[$this.attr("id")]) {
-            return $this.find("a[data-toggle=tab]:first, a[data-toggle=pill]:first").tab("show");
-        }
-    });
-});
-
-$(document).ready(function() {
-
-  // ── Sidebar: highlight active parents ─────────────────────
-  $("li.active").parents("li").addClass("active");
-
-  // ── Top-level: collapse all, expand only active ───────────
+  // ── Top-level: collapse all, then open only the active one ─
   $("#mysidebar > li > ul").hide();
   $("#mysidebar > li.active > ul").show();
   $("#mysidebar > li.active > a").addClass("expanded");
 
   // ── Top-level: toggle on click ────────────────────────────
-  $("#mysidebar > li > a").on("click", function(e) {
+  $("#mysidebar > li > a").on("click", function (e) {
     var $li = $(this).parent();
     var $ul = $li.children("ul");
 
-    if ($ul.length === 0) return; // no submenu, follow link
+    // No submenu — let the link navigate normally
+    if ($ul.length === 0) return;
 
     e.preventDefault();
 
     var isOpen = $ul.is(":visible");
 
-    // Close all top-level sections
+    // Close every top-level section first
     $("#mysidebar > li > ul").slideUp(200);
     $("#mysidebar > li > a").removeClass("expanded");
 
-    // Open clicked if it was closed
+    // If it was closed, open it now
     if (!isOpen) {
       $ul.slideDown(200);
       $(this).addClass("expanded");
     }
   });
 
-  // ── Subfolder: collapse all, expand only active ───────────
+  // ── Subfolder: collapse all, then open only the active one ─
   $("#mysidebar > li > ul > li.subfolders > ul").hide();
   $("#mysidebar > li > ul > li.subfolders.active > ul").show();
   $("#mysidebar > li > ul > li.subfolders.active > a").addClass("expanded");
 
   // ── Subfolder: toggle on click ────────────────────────────
-  $("#mysidebar > li > ul > li.subfolders > a").on("click", function(e) {
+  $("#mysidebar > li > ul > li.subfolders > a").on("click", function (e) {
     var $li = $(this).parent();
     var $ul = $li.children("ul");
 
-    if ($ul.length === 0) return; // no submenu, follow link
+    if ($ul.length === 0) return;
 
     e.preventDefault();
 
     var isOpen = $ul.is(":visible");
 
-    // Close all subfolders within the same parent
-    $(this).closest("ul").find("li.subfolders > ul").slideUp(200);
-    $(this).closest("ul").find("li.subfolders > a").removeClass("expanded");
+    // Close all sibling subfolders within the same parent ul
+    var $parentUl = $(this).closest("ul");
+    $parentUl.find("li.subfolders > ul").slideUp(200);
+    $parentUl.find("li.subfolders > a").removeClass("expanded");
 
-    // Open clicked if it was closed
     if (!isOpen) {
       $ul.slideDown(200);
       $(this).addClass("expanded");
     }
   });
 
+});
+
+// ── Nav tabs: persist active tab across page loads ───────────
+$(function () {
+  var json, tabsState;
+
+  $('a[data-toggle="pill"], a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    tabsState = localStorage.getItem("tabs-state");
+    json = JSON.parse(tabsState || "{}");
+    var parentId = $(e.target).parents("ul.nav.nav-pills, ul.nav.nav-tabs").attr("id");
+    var href = $(e.target).attr('href');
+    json[parentId] = href;
+    localStorage.setItem("tabs-state", JSON.stringify(json));
+  });
+
+  tabsState = localStorage.getItem("tabs-state");
+  json = JSON.parse(tabsState || "{}");
+
+  $.each(json, function (containerId, href) {
+    $("#" + containerId + " a[href=" + href + "]").tab('show');
+  });
+
+  $("ul.nav.nav-pills, ul.nav.nav-tabs").each(function () {
+    var $this = $(this);
+    if (!json[$this.attr("id")]) {
+      $this.find("a[data-toggle=tab]:first, a[data-toggle=pill]:first").tab("show");
+    }
+  });
 });
