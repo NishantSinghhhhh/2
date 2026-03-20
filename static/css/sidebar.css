@@ -1,14 +1,16 @@
 /* ============================================================
    SIDEBAR — sidebar.css
+   Font: Figtree
+   Design: Clean, minimal, modern docs sidebar
    ============================================================ */
 
-/* ── Sidebar container width ────────────────────────────────── */
+/* ── Sidebar container ──────────────────────────────────────── */
 div#tg-sb-sidebar,
 #mysidebar-container {
-  width: 280px; /* Keeps the sidebar on the side in desktop mode */
-  min-width: 280px;
+  width: 272px;
+  min-width: 272px;
   flex-shrink: 0;
-  margin-right: 32px; /* Gives some breathing room between sidebar and main content */
+  margin-right: 36px;
 }
 
 ul#mysidebar {
@@ -26,27 +28,30 @@ ul#mysidebar {
   border: none;
   width: 100%;
   display: block;
+  font-family: 'Figtree', sans-serif;
 }
 
-/* ── sidebarTitle ───────────────────────────────────────────── */
+/* ── Sidebar title ──────────────────────────────────────────── */
 #mysidebar li.sidebarTitle {
-  font-size: 1.6rem;
+  font-family: 'Figtree', sans-serif;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #ED762C;
-  padding: 0 0 16px 2px;
-  margin: 0;
+  color: #e87722;
+  padding: 0 4px 20px 4px;
+  margin: 0 0 4px 0;
   line-height: 1.2;
   background: transparent !important;
   border: none;
   cursor: default;
+  letter-spacing: -0.01em;
 }
 [data-bs-theme="dark"] #mysidebar li.sidebarTitle {
-  color: #ff9955;
+  color: #f5a24a;
 }
 
 /* ── Top-level <li> ─────────────────────────────────────────── */
 #mysidebar > li {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   width: 100%;
   display: block;
 }
@@ -56,60 +61,66 @@ ul#mysidebar {
   display: flex !important;
   align-items: center;
   justify-content: space-between;
-  background-color: #8D8D8D !important;
-  color: #ffffff !important;
-  border-radius: 5px !important;
-  padding: 0 14px !important;
-  font-size: 0.92rem !important;
-  font-weight: 500;
+  background-color: transparent !important;
+  color: #374151 !important;
+  border-radius: 8px !important;
+  padding: 0 12px !important;
+  font-family: 'Figtree', sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
   line-height: 1.3;
   text-decoration: none !important;
   border: none !important;
-  height: 40px;
+  height: 38px;
   width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
   box-sizing: border-box;
-  transition: background-color 150ms;
+  transition: background-color 150ms, color 150ms;
+  letter-spacing: 0.01em;
 }
 
-/* Arrow — rotates when expanded */
+/* Arrow */
 #mysidebar > li > a::after {
   content: '›';
-  font-size: 1.3rem;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 300;
   flex-shrink: 0;
-  margin-left: 8px;
+  margin-left: 6px;
   display: inline-block;
   transition: transform 200ms ease;
   transform: rotate(0deg);
+  opacity: 0.5;
 }
 #mysidebar > li > a.expanded::after {
   transform: rotate(90deg);
+  opacity: 1;
 }
 
 #mysidebar > li > a:hover {
-  background-color: #767676 !important;
-  color: #ffffff !important;
+  background-color: rgba(10, 118, 187, 0.07) !important;
+  color: #0a76bb !important;
   text-decoration: none !important;
 }
 
-/* Active top-level — blue */
+/* Active top-level */
 #mysidebar > li.active > a,
 #mysidebar > li.active > a:hover,
 #mysidebar > li.active > a:focus {
-  background-color: #0A76BB !important;
-  color: #ffffff !important;
+  background-color: rgba(10, 118, 187, 0.1) !important;
+  color: #0a76bb !important;
+}
+#mysidebar > li.active > a::after {
+  opacity: 1;
+  transform: rotate(90deg);
 }
 
 /* ── Sub-items container ────────────────────────────────────── */
 #mysidebar > li > ul {
-  background-color: #e8e8e8 !important;
-  border-radius: 0 0 5px 5px;
-  padding: 6px 0 8px !important;
-  margin-top: -3px;
-  margin-bottom: 5px;
-  display: none; /* JS controls */
+  background-color: transparent !important;
+  border-left: 2px solid #e5e7eb;
+  border-radius: 0;
+  padding: 4px 0 8px 0 !important;
+  margin: 2px 0 4px 14px;
+  display: none;
 }
 
 /* ── Sub-item <li> ──────────────────────────────────────────── */
@@ -121,108 +132,118 @@ ul#mysidebar {
 #mysidebar > li > ul > li > a {
   display: block !important;
   background-color: transparent !important;
-  color: #333333 !important;
-  padding: 6px 12px 6px 18px !important;
-  font-size: 0.875rem !important;
-  font-weight: 400;
+  color: #6b7280 !important;
+  padding: 5px 10px 5px 14px !important;
+  font-family: 'Figtree', sans-serif !important;
+  font-size: 0.845rem !important;
+  font-weight: 400 !important;
   line-height: 1.5;
   text-decoration: none !important;
   border: none !important;
   width: 100%;
   box-sizing: border-box;
+  border-radius: 5px;
+  transition: background-color 130ms, color 130ms;
 }
 #mysidebar > li > ul > li > a:hover {
-  background-color: rgba(0, 0, 0, 0.08) !important;
-  color: #111111 !important;
-  border-radius: 3px;
+  background-color: rgba(10, 118, 187, 0.06) !important;
+  color: #0a76bb !important;
   text-decoration: none !important;
 }
 
 /* Active sub-item */
 #mysidebar > li > ul > li.active > a {
-  font-weight: 600;
-  color: #0A76BB !important;
-  background-color: transparent !important;
+  font-weight: 600 !important;
+  color: #0a76bb !important;
+  background-color: rgba(10, 118, 187, 0.08) !important;
 }
 
-/* ── Subfolder <li> — has children, styled as button ────────── */
+/* ── Subfolder button ───────────────────────────────────────── */
 #mysidebar > li > ul > li.subfolders > a {
   display: flex !important;
   align-items: center;
   justify-content: space-between;
-  background-color: #a0a0a0 !important;
-  color: #ffffff !important;
-  border-radius: 4px !important;
-  padding: 0 12px !important;
-  height: 32px;
-  font-size: 0.875rem !important;
-  font-weight: 500;
-  margin: 3px 4px 3px 6px !important;
-  width: calc(100% - 10px) !important;
+  background-color: transparent !important;
+  color: #4b5563 !important;
+  border-radius: 5px !important;
+  padding: 5px 10px 5px 14px !important;
+  height: auto;
+  font-family: 'Figtree', sans-serif !important;
+  font-size: 0.845rem !important;
+  font-weight: 500 !important;
+  margin: 1px 0 !important;
+  width: 100% !important;
   box-sizing: border-box;
   text-decoration: none !important;
   border: none !important;
-  transition: background-color 150ms;
+  transition: background-color 130ms, color 130ms;
   cursor: pointer;
 }
 
-/* Arrow on subfolder button */
+/* Arrow on subfolder */
 #mysidebar > li > ul > li.subfolders > a::after {
   content: '›';
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 300;
   flex-shrink: 0;
   margin-left: 6px;
   display: inline-block;
   transition: transform 200ms ease;
   transform: rotate(0deg);
+  opacity: 0.45;
 }
 #mysidebar > li > ul > li.subfolders > a.expanded::after {
   transform: rotate(90deg);
+  opacity: 1;
 }
 
 #mysidebar > li > ul > li.subfolders > a:hover {
-  background-color: #888888 !important;
-  color: #ffffff !important;
+  background-color: rgba(10, 118, 187, 0.06) !important;
+  color: #0a76bb !important;
   text-decoration: none !important;
 }
 
-/* Active subfolder — blue */
+/* Active subfolder */
 #mysidebar > li > ul > li.subfolders.active > a,
 #mysidebar > li > ul > li.subfolders.active > a:hover {
-  background-color: #0A76BB !important;
-  color: #ffffff !important;
+  color: #0a76bb !important;
+  background-color: rgba(10, 118, 187, 0.08) !important;
+  font-weight: 600 !important;
 }
 
 /* ── Third-level container ──────────────────────────────────── */
 #mysidebar > li > ul > li.subfolders > ul {
   background-color: transparent !important;
-  padding: 0 !important;
-  margin: 0;
-  display: none; /* JS controls */
+  border-left: 2px solid #e5e7eb;
+  padding: 2px 0 4px 0 !important;
+  margin: 2px 0 2px 12px;
+  display: none;
 }
 
 /* ── Third-level <a> ────────────────────────────────────────── */
 #mysidebar > li > ul > li.subfolders > ul > li > a {
   display: block !important;
   background-color: transparent !important;
-  color: #444444 !important;
-  padding: 4px 12px 4px 28px !important;
-  font-size: 0.84rem !important;
-  font-weight: 400;
+  color: #9ca3af !important;
+  padding: 4px 10px 4px 14px !important;
+  font-family: 'Figtree', sans-serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 400 !important;
   line-height: 1.5;
   text-decoration: none !important;
   border: none !important;
+  border-radius: 4px;
+  transition: background-color 130ms, color 130ms;
 }
 #mysidebar > li > ul > li.subfolders > ul > li > a:hover {
-  background-color: rgba(0, 0, 0, 0.06) !important;
-  border-radius: 3px;
-  color: #111111 !important;
+  background-color: rgba(10, 118, 187, 0.05) !important;
+  color: #0a76bb !important;
   text-decoration: none !important;
 }
 #mysidebar > li > ul > li.subfolders > ul > li.active > a {
-  font-weight: 600;
-  color: #0A76BB !important;
+  font-weight: 600 !important;
+  color: #0a76bb !important;
+  background-color: rgba(10, 118, 187, 0.08) !important;
 }
 
 /* ── Hide old span arrows ───────────────────────────────────── */
@@ -230,69 +251,78 @@ ul#mysidebar {
   display: none !important;
 }
 
-/* ── Dark mode ──────────────────────────────────────────────── */
+/* ══════════════════════════════
+   DARK MODE
+══════════════════════════════ */
 [data-bs-theme="dark"] #mysidebar > li > a {
-  background-color: #3a3a3a !important;
-  color: #e0e0e0 !important;
+  color: #d1d5db !important;
+  background-color: transparent !important;
 }
 [data-bs-theme="dark"] #mysidebar > li > a:hover {
-  background-color: #484848 !important;
-  color: #ffffff !important;
+  background-color: rgba(77, 166, 255, 0.1) !important;
+  color: #4da6ff !important;
 }
 [data-bs-theme="dark"] #mysidebar > li.active > a,
 [data-bs-theme="dark"] #mysidebar > li.active > a:hover,
 [data-bs-theme="dark"] #mysidebar > li.active > a:focus {
-  background-color: #0A76BB !important;
-  color: #ffffff !important;
+  background-color: rgba(77, 166, 255, 0.12) !important;
+  color: #4da6ff !important;
 }
+
 [data-bs-theme="dark"] #mysidebar > li > ul {
-  background-color: #252525 !important;
+  background-color: transparent !important;
+  border-left-color: #374151;
 }
 [data-bs-theme="dark"] #mysidebar > li > ul > li > a {
-  color: #cccccc !important;
+  color: #9ca3af !important;
 }
 [data-bs-theme="dark"] #mysidebar > li > ul > li > a:hover {
-  background-color: rgba(255, 255, 255, 0.07) !important;
-  color: #ffffff !important;
+  background-color: rgba(77, 166, 255, 0.08) !important;
+  color: #4da6ff !important;
 }
 [data-bs-theme="dark"] #mysidebar > li > ul > li.active > a {
   color: #4da6ff !important;
+  background-color: rgba(77, 166, 255, 0.1) !important;
 }
+
 [data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > a {
-  background-color: #444444 !important;
-  color: #e0e0e0 !important;
+  color: #9ca3af !important;
+  background-color: transparent !important;
 }
 [data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > a:hover {
-  background-color: #555555 !important;
+  background-color: rgba(77, 166, 255, 0.08) !important;
+  color: #4da6ff !important;
 }
 [data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders.active > a {
-  background-color: #0A76BB !important;
-  color: #ffffff !important;
+  color: #4da6ff !important;
+  background-color: rgba(77, 166, 255, 0.1) !important;
+}
+
+[data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > ul {
+  border-left-color: #374151;
 }
 [data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > ul > li > a {
-  color: #aaaaaa !important;
+  color: #6b7280 !important;
 }
 [data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > ul > li > a:hover {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  color: #ffffff !important;
+  background-color: rgba(77, 166, 255, 0.06) !important;
+  color: #4da6ff !important;
 }
 [data-bs-theme="dark"] #mysidebar > li > ul > li.subfolders > ul > li.active > a {
   color: #4da6ff !important;
+  background-color: rgba(77, 166, 255, 0.08) !important;
 }
 
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 991px) {
   div#tg-sb-sidebar,
   #mysidebar-container {
-    width: 100%;       /* Snaps to full width on mobile/tablet */
-    min-width: 100%;
-    margin-right: 0;   /* Removes the right margin */
-    margin-bottom: 24px; /* Drops it on top with a bit of space below for the content */
-  }
-  ul#mysidebar {
     width: 100%;
-    max-width: 100%;
+    min-width: 100%;
+    margin-right: 0;
+    margin-bottom: 24px;
   }
+  ul#mysidebar { width: 100%; max-width: 100%; }
   #mysidebar > li > a {
     height: auto;
     min-height: 40px;
