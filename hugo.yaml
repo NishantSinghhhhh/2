@@ -236,7 +236,7 @@ module:
       target: content/imported/dumux-adapter
     - source: imported/preeco-orga
       target: content/imported/preeco-orga
-      
+
 frontmatter:
   date:
     - date
@@ -246,7 +246,11 @@ frontmatter:
     - permalink
     - url
 
-
+# -------------------------------------------------------------
+# PERMALINKS
+# Hugo 0.144.0+: :contentbasename is valid and preferred
+# for imported submodule content to preserve correct URLs
+# -------------------------------------------------------------
 permalinks:
   page:
     docs: "/:filename"
