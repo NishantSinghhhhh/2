@@ -6,7 +6,7 @@
 {{- end -}}
 <meta name="keywords" content="{{ .Params.tags }}{{- if .Params.tags -}}, {{- end -}} {{ .Params.keywords }}">
 <meta name="theme-color" content="#0A76BB">
-<meta name="msapplication-square310x310logo" content="images/icon-310x310.png">
+<meta name="msapplication-square310x310logo" content="{{ "images/icon-310x310.png" | relURL }}">
 
 <title>{{ .Title }} | {{ .Site.Params.site_title }}</title>
 <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "/feed.xml" | absURL }}">
@@ -37,27 +37,27 @@
 <link rel="canonical" href="{{ .Permalink }}">
 {{- end -}}
 
-<link rel="shortcut icon" href="images/favicon.ico">
-<link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}">
-<link rel="icon" sizes="192x192" href="images/icon.png">
-<link rel="apple-touch-icon" sizes="310x310" href="images/icon-310x310.png">
+<link rel="shortcut icon" href="{{ "images/favicon.ico" | relURL }}">
+<link rel="icon" sizes="192x192" href="{{ "images/icon.png" | relURL }}">
+<link rel="apple-touch-icon" sizes="310x310" href="{{ "images/icon-310x310.png" | relURL }}">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
 
-<link rel="stylesheet" href="css/modern-business.css">
-<link rel="stylesheet" href="css/customstyles.css">
-<link rel="stylesheet" href="css/customstyles-precice.css">
-<link rel="stylesheet" href="css/topnav.css">
-<link rel="stylesheet" href="css/boxshadowproperties.css">
-<link rel="stylesheet" href="/css/sidebar.css">
-<link rel="stylesheet" href="css/bookcover.css">
-<link rel="stylesheet" href="css/theme-precice.css">
-<link rel="stylesheet" href="css/about.css">
+<link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/modern-business.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/customstyles.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/customstyles-precice.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/topnav.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/boxshadowproperties.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/sidebar.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/bookcover.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/theme-precice.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/about.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/footer.css" | relURL }}">
 
 {{- if eq .RelPermalink "/index.html" -}}
-<link rel="stylesheet" href="css/landing-page.css">
+<link rel="stylesheet" href="{{ "css/landing-page.css" | relURL }}">
 {{- end -}}
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
