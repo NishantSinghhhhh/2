@@ -18,6 +18,10 @@ ignoreFiles:
   - "LICENSE\\.md$"
   - "tools/"
 
+algolia:
+  application_id: "LIT6P0EW26"
+  index_name: "precice"           # was "jekyll"
+  search_only_api_key: "760ed6be3e165d08b4a798ac4aa82fe4"
 # -------------------------------------------------------------
 # CASCADE: Automatically applies frontmatter based on folder
 # -------------------------------------------------------------

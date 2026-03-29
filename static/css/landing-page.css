@@ -1079,3 +1079,51 @@ body { font-family: 'Figtree', sans-serif; }
     border-color: #ffffff !important;
 }
 
+/* ============================================================
+   HERO DESCRIPTION + LEAD IMAGE ROW
+   ============================================================ */
+
+.hero-desc-image-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 36px;
+  text-align: left;
+}
+.hero-desc-image-row .hero-description {
+  max-width: none;
+  margin: 0;
+  flex: 1 1 0;
+  text-align: left !important;  /* override hero-stage center */
+}
+
+.hero-lead-image {
+  flex: 0 0 420px;
+  width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-lead-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero-desc-image-row {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+  .hero-desc-image-row .hero-description {
+    text-align: center !important;
+  }
+  .hero-lead-image {
+    flex: 0 0 auto;
+    width: 220px;
+    margin: 0 auto;
+  }
+}

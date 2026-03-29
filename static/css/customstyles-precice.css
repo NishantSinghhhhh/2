@@ -74,79 +74,122 @@ div.col-flex {
   align-content: stretch;
 }
 
-/* Search bar and results */
+/* ─── SEARCH RESULTS PANEL ───────────────────────────────── */
+#search-demo-container {
+    position: relative;
+    width: 20.625rem;
+}
+
 #search-demo-container div#search-results {
-  list-style: none;
-  font-size: 12px;
-  background-color: white;
-  position: absolute;
-  top: 80px;
-  left: 20px;
-  z-index: 69;
-  width: 380px;
-  border-left: 1px solid #dedede;
-  box-shadow: 2px 3px 2px #dedede;
-  max-height: 800px;
-  overflow: auto;
+    position: absolute;
+    top: 100%;          /* flush below the search input */
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 480px;
+    overflow-y: auto;
+    list-style: none;
+    box-shadow: none;
 }
+
 .result-item {
-  border-top: 1px solid whitesmoke;
+    padding: 10px 14px;
+    border-top: 1px solid #f5f5f5;
+    cursor: pointer;
+    transition: background 0.15s ease;
 }
+.result-item:first-child { border-top: none; }
+.result-item:hover { background: #f7fbff; }
+
 a.result-link {
-  font-size: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333333;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 3px;
 }
-.result-link .ais-Highlight {
-  color: #111;
-  font-style: normal;
-  text-decoration: underline;
+a.result-link:hover { color: #0a76bb; }
+
+.result-link .ais-Highlight-highlighted,
+.result-link mark {
+    background: #fff3cd;
+    color: #7a5500;
+    font-style: normal;
+    border-radius: 2px;
+    padding: 0 2px;
 }
-.nav li #search-results a.result-breadcrumbs {
-  color: #424242;
-  font-size: 15px;
-  display: block;
-  padding-left: 10px;
+
+.result-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
 }
+
 .result-breadcrumb {
-  color: #424242;
+    font-size: 11px;
+    color: #666666;
+    background: #F2F2F3;
+    border-radius: 4px;
+    padding: 1px 7px;
 }
-.result-breadcrumb .ais-Highlight {
-  font-weight: bold;
-  font-style: normal;
-}
-.result-snippet .ais-Highlight {
-  color: #2a7ae2;
-  font-style: normal;
-  font-weight: bold;
-}
-.result-snippet img {
-  display: none;
-}
+
 .result-snippet {
-  color: #333;
-  padding-left: 10px;
+    font-size: 12px;
+    color: #555555;
+    line-height: 1.5;
+    padding-left: 0;   /* remove old 10px indent */
 }
-#search-results h2 {
-  font-size: 18px;
-  margin: 0;
-  line-height: 1.2em;
-  margin-top: 5px;
-  padding-left: 10px;
+.result-snippet img { display: none; }
+
+.result-snippet .ais-Snippet-highlighted,
+.result-snippet mark {
+    color: #0a76bb;
+    font-style: normal;
+    font-weight: 600;
+    background: none;
 }
-#search-results a {
-  background-color: transparent;
-  display: inline;
+
+.result-empty {
+    padding: 18px 14px;
+    font-size: 13px;
+    color: #888888;
+    text-align: center;
 }
-#search-results a:hover {
-  color: #333;
+
+#search-results #search-powered-by,
+#search-results .ais-PoweredBy {
+    padding: 6px 14px;
+    background: #F2F2F3;
+    border-top: 1px solid #dee2e6;
+    font-size: 11px;
+    color: #999999;
 }
-.nav li #search-results a {
-  line-height: 1em;
-  font-size: 1em;
-  display: inline;
-  padding: 0px;
+
+
+/* ─── DARK MODE ──────────────────────────────────────────── */
+[data-bs-theme="dark"] #search-demo-container div#search-results {
+    background: #1e1e1e;
+    border-color: #444444;
 }
-#search-results p {
-  margin-bottom: 5px;
+[data-bs-theme="dark"] .result-item { border-top-color: #2a2a2a; }
+[data-bs-theme="dark"] .result-item:hover { background: #252525; }
+[data-bs-theme="dark"] a.result-link { color: #f0f0f0; }
+[data-bs-theme="dark"] a.result-link:hover { color: #4fc3f7; }
+[data-bs-theme="dark"] .result-crumb,
+[data-bs-theme="dark"] .result-breadcrumb { background: #2e2e2e; color: #aaaaaa; }
+[data-bs-theme="dark"] .result-snippet { color: #aaaaaa; }
+[data-bs-theme="dark"] .result-snippet .ais-Snippet-highlighted,
+[data-bs-theme="dark"] .result-snippet mark { color: #4fc3f7; }
+[data-bs-theme="dark"] #search-results #search-powered-by {
+    background: #1a1a1a;
+    border-top-color: #333333;
 }
 
 /* Contributors section */

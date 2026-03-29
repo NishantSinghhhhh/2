@@ -1,0 +1,3192 @@
+.
+├── 1.py
+├── assets
+│   ├── data
+│   │   ├── faq.json
+│   │   └── news.json
+│   ├── img
+│   │   ├── 404.png
+│   │   ├── community-banner2.jpg
+│   │   ├── community-banner3.jpg
+│   │   ├── community-banner.jpg
+│   │   ├── coupled_OF-CCX-mySolver_path.svg
+│   │   ├── developer
+│   │   │   ├── Benjamin_Uekermann.jpg
+│   │   │   ├── Carme_Homs_Pons.jpg
+│   │   │   ├── David_Schneider.jpg
+│   │   │   ├── Felix_Neubauer.jpg
+│   │   │   ├── Frederic_Simonis.jpg
+│   │   │   ├── Gerasimos_Chourdakis.jpg
+│   │   │   ├── Hans_Bungartz.jpg
+│   │   │   ├── Ishaan_Desai.jpg
+│   │   │   ├── Jun_Chen.jpg
+│   │   │   ├── Miriam_Mehl.jpg
+│   │   │   └── precice-devs.png
+│   │   ├── docs
+│   │   │   ├── adapter-codeaster-astk-settings.png
+│   │   │   ├── adapter-codeaster-configurations.png
+│   │   │   ├── adapter-codeaster-success.png
+│   │   │   ├── adapter-codeaster-testing.png
+│   │   │   ├── Bindings.drawio
+│   │   │   ├── Bindings.png
+│   │   │   ├── configuration
+│   │   │   │   ├── doc-base.dot
+│   │   │   │   ├── doc-base.png
+│   │   │   │   ├── doc-cplscheme.dot
+│   │   │   │   ├── doc-cplscheme.png
+│   │   │   │   ├── doc-m2n.dot
+│   │   │   │   ├── doc-m2n.png
+│   │   │   │   ├── doc-mapping.dot
+│   │   │   │   ├── doc-mapping-options.svg
+│   │   │   │   ├── doc-mapping.png
+│   │   │   │   ├── doc-mapping-rbf-alias.svg
+│   │   │   │   ├── doc-mapping-rbf-executors.svg
+│   │   │   │   ├── doc-participants.dot
+│   │   │   │   └── doc-participants.png
+│   │   │   ├── configuration-diameter-python-action.png
+│   │   │   ├── configuration-elastic-tube-diameter.png
+│   │   │   ├── configuration-mapping-geometric-multiscale-axial-1d-3d.png
+│   │   │   ├── configuration-mapping-geometric-multiscale-axial-radial.png
+│   │   │   ├── configuration-mapping-geometric-multiscale-radial-1d-3d.png
+│   │   │   ├── configuration-mapping-variants.png
+│   │   │   ├── configuration-mesh-exchange.png
+│   │   │   ├── couple-your-code
+│   │   │   │   ├── adapter-software-engineering
+│   │   │   │   │   ├── adapter-software-engineering-approaches.drawio
+│   │   │   │   │   ├── adapter-software-engineering-approaches.svg
+│   │   │   │   │   └── configuration-files-precice-adapter.svg
+│   │   │   │   └── couple-your-code-waveform
+│   │   │   │       ├── APIRelativeReadTime.pdf
+│   │   │   │       ├── APIRelativeReadTime.png
+│   │   │   │       ├── APIRelativeReadTime.tex
+│   │   │   │       ├── WaveformConstant.png
+│   │   │   │       └── WaveformLinear.png
+│   │   │   ├── couple-your-code-fem-meshes.png
+│   │   │   ├── couple-your-code-parallel-coupling.svg
+│   │   │   ├── couple-your-code-parallel-coupling.tex
+│   │   │   ├── couple-your-code-serial-coupling.svg
+│   │   │   ├── couple-your-code-serial-coupling.tex
+│   │   │   ├── couple-your-code-timestepping-first.odg
+│   │   │   ├── couple-your-code-timestepping-first.png
+│   │   │   ├── couple-your-code-timestepping-fixed.odg
+│   │   │   ├── couple-your-code-timestepping-fixed.png
+│   │   │   ├── dev-docs-release-dependencies.dot
+│   │   │   ├── dev-docs-release-dependencies.svg
+│   │   │   ├── dev-docs-release-example.svg
+│   │   │   ├── docs-installation-vm-screenshot.jpg
+│   │   │   ├── install-decision.png
+│   │   │   ├── install-decision.xml
+│   │   │   ├── install-wsl.png
+│   │   │   ├── parallelizationSingleMeshDuplicate.png
+│   │   │   ├── parallelizationSingleMesh.png
+│   │   │   ├── parallelizationTwoMeshes.png
+│   │   │   ├── parallelizationWOCoupling.png
+│   │   │   └── tooling
+│   │   │       ├── config-visualizer-gui-heat-exchanger.png
+│   │   │       ├── config-visualizer-gui-main.png
+│   │   │       ├── elastictube1d-cpl-com-merged.svg
+│   │   │       ├── elastictube1d-data-flow.svg
+│   │   │       ├── elastictube1d-events.png
+│   │   │       ├── elastictube1d-full.svg
+│   │   │       ├── profiling-aste-perfetto-parallel-all.png
+│   │   │       ├── profiling-aste-perfetto-parallel-fundamental.png
+│   │   │       └── profiling-elastictube1d-serial.png
+│   │   ├── doughnuts.jpg
+│   │   ├── events
+│   │   │   ├── precice2020-group-cropped.jpg
+│   │   │   ├── precice2020-group.jpeg
+│   │   │   ├── precice2020-support.jpeg
+│   │   │   ├── precice2020.svg
+│   │   │   ├── precice2021-group.png
+│   │   │   ├── precice2021.svg
+│   │   │   ├── precice2022-group.png
+│   │   │   ├── precice2022.svg
+│   │   │   ├── precice2023-course.jpeg
+│   │   │   ├── precice2023-group-inside.jpeg
+│   │   │   ├── precice2023-group.jpg
+│   │   │   ├── precice2023-material.jpeg
+│   │   │   ├── precice2023.svg
+│   │   │   ├── precice2023-world-cafe.jpeg
+│   │   │   ├── precice2024.svg
+│   │   │   ├── precice2025
+│   │   │   │   ├── precice2025-logo-dtec.bw.jpg
+│   │   │   │   ├── precice2025-logo-hpc-bw.png
+│   │   │   │   └── precice2025.svg
+│   │   │   ├── precice2027
+│   │   │   │   └── precice2027-path.svg
+│   │   │   └── workshop24-group.jpg
+│   │   ├── favicon.ico
+│   │   ├── funding
+│   │   │   ├── bmuv.png
+│   │   │   ├── dfg.jpg
+│   │   │   ├── eu.png
+│   │   │   ├── konwihr.png
+│   │   │   ├── simtech.png
+│   │   │   └── sppexa.jpg
+│   │   ├── heat-exchange.jpg
+│   │   ├── icon-310x310.png
+│   │   ├── icon_filled2.svg
+│   │   ├── icon_filled.svg
+│   │   ├── icon.png
+│   │   ├── icon.svg
+│   │   ├── icon_white.svg
+│   │   ├── lead-image-precice.svg
+│   │   ├── licensebutton-by-40_88x31.png
+│   │   ├── logo
+│   │   │   ├── LICENSE.md
+│   │   │   ├── logo-ait.png
+│   │   │   ├── logo-ariane.png
+│   │   │   ├── logo-astar.png
+│   │   │   ├── logo-ata.jpg
+│   │   │   ├── logo-awi.svg
+│   │   │   ├── logo-bgu.png
+│   │   │   ├── logo-bitron.jpeg
+│   │   │   ├── logo-braunschweig.jpg
+│   │   │   ├── logo-calculix.png
+│   │   │   ├── logo-cira.jpg
+│   │   │   ├── logo-codeaster.png
+│   │   │   ├── logo-corvid.png
+│   │   │   ├── logo-darmstadt.png
+│   │   │   ├── logo-dealii.png
+│   │   │   ├── logo-delft.png
+│   │   │   ├── logo-dhcae.png
+│   │   │   ├── logo-eth-psi.png
+│   │   │   ├── logo-eurocfd.png
+│   │   │   ├── logo-exeter.png
+│   │   │   ├── logo-ex-mente.png
+│   │   │   ├── logo-fenics.png
+│   │   │   ├── logo-fnb.png
+│   │   │   ├── logo-grs.jpeg
+│   │   │   ├── logo-gzhy.png
+│   │   │   ├── logo-hokkaido.png
+│   │   │   ├── logo-hsu.svg
+│   │   │   ├── logo-hwu.png
+│   │   │   ├── logo-iag.png
+│   │   │   ├── logo-ices.png
+│   │   │   ├── logo-ifpen.jpg
+│   │   │   ├── logo-iit.png
+│   │   │   ├── logo-ikz.svg
+│   │   │   ├── logo-illinois.png
+│   │   │   ├── logo-ipp.jpeg
+│   │   │   ├── logo-iws.jpg
+│   │   │   ├── logo-kaeri.png
+│   │   │   ├── logo-kit.png
+│   │   │   ├── logo-kth.png
+│   │   │   ├── logo-leonardo.svg
+│   │   │   ├── logo-leuven.png
+│   │   │   ├── logo-llnl.png
+│   │   │   ├── logo-lsm.gif
+│   │   │   ├── logo-lux.png
+│   │   │   ├── logo-manchester.png
+│   │   │   ├── logo-mintek.jpeg
+│   │   │   ├── logo-mtu.png
+│   │   │   ├── logo-ndorms.jpeg
+│   │   │   ├── logo-nrg.png
+│   │   │   ├── logo-ntua.jpeg
+│   │   │   ├── logo-nutils.png
+│   │   │   ├── logo-openfoam.png
+│   │   │   ├── logo-ornl.svg
+│   │   │   ├── logo-oxford.png
+│   │   │   ├── logo-pol-milano.png
+│   │   │   ├── logo-pprime.png
+│   │   │   ├── logo-rwth-mbd.svg
+│   │   │   ├── logo-sc.png
+│   │   │   ├── logo-siegen.png
+│   │   │   ├── logo-split.png
+│   │   │   ├── logo-strathclyde.png
+│   │   │   ├── logo-sts.png
+│   │   │   ├── logo_stuttgart_400px.png
+│   │   │   ├── logo-stuttgart.png
+│   │   │   ├── logo-SU2.png
+│   │   │   ├── logo-sunyatsen.png
+│   │   │   ├── logo_tue_400px.png
+│   │   │   ├── logo-tue.png
+│   │   │   ├── logo_tum_400px.png
+│   │   │   ├── logo-tum.png
+│   │   │   ├── logo-ucl.png
+│   │   │   ├── logo-ufs.png
+│   │   │   └── logo-upc.png
+│   │   ├── logo-infos.png
+│   │   ├── paper-thumbnail.jpg
+│   │   ├── paper-v2-new-thumbnail.jpg
+│   │   ├── paper-v2-thumbnail.jpg
+│   │   ├── placeholder
+│   │   │   ├── placeholder_icon.png
+│   │   │   └── placeholder.png
+│   │   ├── plugandplay.png
+│   │   ├── precice-icon_grey.svg
+│   │   ├── precice-icon_small.svg
+│   │   ├── precice-icon.svg
+│   │   ├── preCICE_logo_28px.svg
+│   │   ├── preCICE_logo_42px.svg
+│   │   ├── preCICE_logo_whiteborder_small.png
+│   │   ├── preCICE_logo_whiteborder_small.svg
+│   │   ├── precice.png
+│   │   ├── precice-support.svg
+│   │   ├── preCICE_text_28px.svg
+│   │   ├── simtech.png
+│   │   ├── testimonial_derek_square.jpg
+│   │   ├── testimonial_kyle_square.jpg
+│   │   ├── testimonial_manchester_square.jpg
+│   │   ├── testimonials
+│   │   │   ├── testimonial-24-LuXDEM.png
+│   │   │   ├── testimonial-25-GOVIKING.png
+│   │   │   ├── testimonial-26-vki-closed-loop.png
+│   │   │   ├── testimonial-ait-ranshofen.png
+│   │   │   ├── testimonial-cira.jpg
+│   │   │   ├── testimonial-darmstadt.jpg
+│   │   │   ├── testimonial-delft-aerodynamics.jpg
+│   │   │   ├── testimonial-delft-wind-energy.jpg
+│   │   │   ├── testimonial-dhcae.jpg
+│   │   │   ├── testimonial-espinosa.png
+│   │   │   ├── testimonial-geokw.png
+│   │   │   ├── testimonial-hokkaido.png
+│   │   │   ├── testimonial-karlsruhe-fast.jpg
+│   │   │   ├── testimonial-leuven.png
+│   │   │   ├── testimonial-manchester.jpg
+│   │   │   ├── testimonial-precice-mbdyn.png
+│   │   │   ├── testimonial-siegen.jpg
+│   │   │   ├── testimonial-singapore.png
+│   │   │   ├── testimonial-south-africa.jpg
+│   │   │   ├── testimonial-strathclyde-2.jpg
+│   │   │   ├── testimonial-strathclyde.jpg
+│   │   │   ├── testimonial-stuttgart-cyclorotor.jpg
+│   │   │   ├── testimonial-stuttgart-dumux.png
+│   │   │   ├── testimonial-stuttgart-fractures.png
+│   │   │   ├── testimonial-stuttgart-inprecice.png
+│   │   │   ├── testimonial-stuttgart-opendihu.png
+│   │   │   └── testimonial-thermos.jpg
+│   │   ├── testimonial_vinhtan_square.jpg
+│   │   ├── training
+│   │   │   ├── training-basics.png
+│   │   │   ├── training-fsi.png
+│   │   │   ├── training-hpc.png
+│   │   │   ├── training-implicit-coupling.png
+│   │   │   ├── training-mapping.png
+│   │   │   └── training-tools.png
+│   │   └── usp
+│   │       ├── usp-arbitrary.svg
+│   │       ├── usp-minimal.svg
+│   │       ├── usp-numerics.svg
+│   │       └── usp-scalability.svg
+│   ├── openfoam-precice.bib
+│   ├── organizing-workshops.bib
+│   ├── precice-adapters-gacm2017.bib
+│   ├── precice.bib
+│   ├── precice-v2.bib
+│   └── rodenberg2021.bib
+├── CNAME
+├── collections
+│   ├── _publications
+│   │   ├── 2009-GatzhammerMehl.md
+│   │   ├── 2009-GatzhammerMehlWeinzierl.md
+│   │   ├── 2010-BenkBungartzGatzhammerMehlNeckel.md
+│   │   ├── 2011-BungartzGatzhammerLiebMehlNeckel.md
+│   │   ├── 2011-GatzhammerMehlNeckel.md
+│   │   ├── 2013-BungartzGatzhammerMehlUekermann.md
+│   │   ├── 2014-CajasGatzhammerHouzeauxMehlUekermannVazquez.md
+│   │   ├── 2014-GatzhammerMehlUekermann.md
+│   │   ├── 2015-BlomLindnerMehlScheufeleUekermannZuijlen.md
+│   │   ├── 2015-BungartzKlimachKruppLindnerMehlRollerUekermann.md
+│   │   ├── 2015-BungartzLindnerMehlUekermann.md
+│   │   ├── 2015-Farcas.md
+│   │   ├── 2015-Gatzhammer.md
+│   │   ├── 2015-LindnerMehlScheufeleUekermann.md
+│   │   ├── 2015-LindnerMehlUekermann.md
+│   │   ├── 2015-Mikerov.md
+│   │   ├── 2015-Scheufele.md
+│   │   ├── 2015-Shukaev.md
+│   │   ├── 2016-BlomEtAl.md
+│   │   ├── 2016-BungartzLindnerGatzhammerMehlScheufeleShukaevUekermann.md
+│   │   ├── 2016-BungartzLindnerMehlScheufeleShukaevUekermann.md
+│   │   ├── 2016-Cheung.md
+│   │   ├── 2016-HaeltermanBogaersUekermannScheufeleMehl.md
+│   │   ├── 2016-MehlUekermannBijlBlomGatzhammerZuijlen.md
+│   │   ├── 2016-Rusch.md
+│   │   ├── 2016-Uekermann2.md
+│   │   ├── 2016-Uekermann.md
+│   │   ├── 2017-Abrams.md
+│   │   ├── 2017-Chourdakis.md
+│   │   ├── 2017-LindnerMehlUekermann.md
+│   │   ├── 2017-UekermannBungartzCheungChourdakisRusch.md
+│   │   ├── 2017-Vollmer.md
+│   │   ├── 2018-Bungartz-LRZ.md
+│   │   ├── 2018-Chourdakis_CoSaS.md
+│   │   ├── 2018-Hoshaber.md
+│   │   ├── 2018-Reiser.md
+│   │   ├── 2018-Rueth-ECCMECFD.md
+│   │   ├── 2018-Rueth-ISC.md
+│   │   ├── 2018-Rueth-SCSwed.md
+│   │   ├── 2018-Trujillo.md
+│   │   ├── 2019-Chourdakis_NLRSE19.md
+│   │   ├── 2019-Chourdakis_OFW.md
+│   │   ├── 2019-Hertrich.md
+│   │   ├── 2019-Huang.md
+│   │   ├── 2019-Lindner.md
+│   │   ├── 2019-Risseeuw.md
+│   │   ├── 2019-Simonis_DERSE19.md
+│   │   ├── 2019-Volland.md
+│   │   ├── 2020-Desai.md
+│   │   ├── 2020-Espinosa.md
+│   │   ├── 2020-ExaFSA.md
+│   │   ├── 2020-OFW15-training.md
+│   │   ├── 2020-Rueth-QNWI.md
+│   │   ├── 2021-Rodenberg-FEniCS.md
+│   │   ├── 2022-preCICEv2.md
+│   │   ├── 2023-OpenFOAM-preCICE.md
+│   │   └── 2025-Workshops.md
+│   └── _testimonials
+│       ├── 01-CIRA.md
+│       ├── 02-Siegen.md
+│       ├── 03-Strathclyde.md
+│       ├── 04-Darmstadt.md
+│       ├── 05-South-Africa.md
+│       ├── 06-Singapore.md
+│       ├── 07-Manchester.md
+│       ├── 08-Delft-Wind-Energy.md
+│       ├── 09-AIT-Ranshofen.md
+│       ├── 10-Delft-Aerodynamics.md
+│       ├── 11-Karlsruhe-FAST.md
+│       ├── 12-THerMoS.md
+│       ├── 13-DHCAE.md
+│       ├── 14-Espinosa.md
+│       ├── 15-Stuttgart-DuMuX.md
+│       ├── 16-Stuttgart-Fractures.md
+│       ├── 17-geoKW.md
+│       ├── 18-precice-mbdyn.md
+│       ├── 19-leuven.md
+│       ├── 20-Stuttgart-OpenDiHu.md
+│       ├── 21-hokkaido.md
+│       ├── 22-Stuttgart-Cyclorotor.md
+│       ├── 22-Stuttgart-inpreCICE.md
+│       ├── 23-Strathclyde.md
+│       ├── 24-LuXDEM.md
+│       ├── 25-GOVIKING.md
+│       └── 26-vki-closed-loop.md
+├── content
+│   ├── 404.md
+│   ├── about
+│   │   ├── about.md
+│   │   └── _index.md
+│   ├── community
+│   │   ├── community-channels.md
+│   │   ├── community-contributors.md
+│   │   ├── community.md
+│   │   ├── community-projects.md
+│   │   ├── community-support-precice.md
+│   │   ├── community-training.md
+│   │   ├── contribute
+│   │   │   ├── community-contribute-open-projects.md
+│   │   │   └── community-contribute-to-precice.md
+│   │   ├── _index.md
+│   │   ├── minisymposia
+│   │   │   ├── community-events-wccm-2021.md
+│   │   │   ├── eccomas-congress-2022.md
+│   │   │   ├── eccomas-coupled-2019.md
+│   │   │   ├── eccomas-coupled-2021.md
+│   │   │   ├── eccomas-coupled-2023.md
+│   │   │   ├── eccomas-coupled-2025.md
+│   │   │   ├── eccomas-eccm-ecfd-2018.md
+│   │   │   ├── iacm-wccm-2024.md
+│   │   │   └── wccomas-wccm-2026.md
+│   │   └── workshops
+│   │       ├── precice-workshop-2020.md
+│   │       ├── precice-workshop-2021.md
+│   │       ├── precice-workshop-2022.md
+│   │       ├── precice-workshop-2023.md
+│   │       ├── precice-workshop-2024.md
+│   │       ├── precice-workshop-2025.md
+│   │       ├── precice-workshop-2027.md
+│   │       ├── precice-workshop.md
+│   │       └── precice-workshop-organizing.md
+│   ├── docs
+│   │   ├── adapters
+│   │   │   ├── adapter-overview.md
+│   │   │   ├── calculix
+│   │   │   │   ├── adapter-calculix-configure.md
+│   │   │   │   ├── adapter-calculix-get-adapter.md
+│   │   │   │   ├── adapter-calculix-get-calculix.md
+│   │   │   │   ├── adapter-calculix-overview.md
+│   │   │   │   ├── adapter-calculix-pastix-build.md
+│   │   │   │   ├── adapter-calculix-supermuc.md
+│   │   │   │   └── adapter-calculix-troubleshooting.md
+│   │   │   ├── code_aster
+│   │   │   │   └── adapter-code_aster.md
+│   │   │   ├── deal.II
+│   │   │   │   ├── adapter-dealii-configure.md
+│   │   │   │   ├── adapter-dealii-coupling-meshes.md
+│   │   │   │   ├── adapter-dealii-get.md
+│   │   │   │   ├── adapter-dealii-limitations.md
+│   │   │   │   ├── adapter-dealii-overview.md
+│   │   │   │   ├── adapter-dealii-own-project.md
+│   │   │   │   └── adapter-dealii-solver-details.md
+│   │   │   ├── fenics
+│   │   │   │   └── adapter-fenics.md
+│   │   │   ├── gismo
+│   │   │   │   └── adapter-gismo.md
+│   │   │   └── nutils
+│   │   │       └── adapter-nutils.md
+│   │   ├── configuration
+│   │   │   ├── advanced
+│   │   │   │   ├── configuration-action.md
+│   │   │   │   ├── configuration-coupling-multi.md
+│   │   │   │   ├── configuration-export.md
+│   │   │   │   ├── configuration-logging.md
+│   │   │   │   ├── configuration-watchintegral.md
+│   │   │   │   └── configuration-watchpoint.md
+│   │   │   ├── basics
+│   │   │   │   ├── configuration-acceleration.md
+│   │   │   │   ├── configuration-basics.md
+│   │   │   │   ├── configuration-communication.md
+│   │   │   │   ├── configuration-coupling.md
+│   │   │   │   ├── configuration-coupling-mesh-exchange.md
+│   │   │   │   ├── configuration-mapping.md
+│   │   │   │   └── running-distributed.html
+│   │   │   ├── configuration-overview.md
+│   │   │   └── configuration-xml-reference.md
+│   │   ├── couple-your-code
+│   │   │   ├── advanced
+│   │   │   │   ├── couple-your-code-adapter-software-engineering.md
+│   │   │   │   ├── couple-your-code-coupling-flow.md
+│   │   │   │   ├── couple-your-code-direct-access.md
+│   │   │   │   ├── couple-your-code-distributed-meshes.md
+│   │   │   │   ├── couple-your-code-existing-mpi-environment.md
+│   │   │   │   ├── couple-your-code-fem-meshes.md
+│   │   │   │   ├── couple-your-code-global-data.md
+│   │   │   │   ├── couple-your-code-just-in-time-mapping.md
+│   │   │   │   ├── couple-your-code-moving-or-changing-meshes.md
+│   │   │   │   └── couple-your-code-waveform.md
+│   │   │   ├── couple-your-code-api.md
+│   │   │   ├── couple-your-code-overview.md
+│   │   │   ├── porting
+│   │   │   │   ├── couple-your-code-porting-overview.md
+│   │   │   │   ├── couple-your-code-porting-v1-2.md
+│   │   │   │   └── couple-your-code-porting-v2-3.md
+│   │   │   └── step-by-step
+│   │   │       ├── couple-your-code-defining-mesh-connectivity.md
+│   │   │       ├── couple-your-code-gradient-data.md
+│   │   │       ├── couple-your-code-implicit-coupling.md
+│   │   │       ├── couple-your-code-initializing-coupling-data.md
+│   │   │       ├── couple-your-code-mesh-and-data-access.md
+│   │   │       ├── couple-your-code-preparing-your-solver.md
+│   │   │       ├── couple-your-code-steering-methods.md
+│   │   │       └── couple-your-code-time-step-sizes.md
+│   │   ├── dev-docs
+│   │   │   ├── dev-conventions.md
+│   │   │   ├── dev-eventtimings.md
+│   │   │   ├── dev-logging.md
+│   │   │   ├── dev-naming.md
+│   │   │   ├── dev-optimization.md
+│   │   │   ├── dev-overview.md
+│   │   │   ├── dev-publications.md
+│   │   │   ├── dev-release.md
+│   │   │   ├── dev-sourcedocs.md
+│   │   │   ├── dev-testing.md
+│   │   │   ├── dev-tooling.md
+│   │   │   └── release-strategy.md
+│   │   ├── docs-meta
+│   │   │   ├── docs-meta-cheatsheet.md
+│   │   │   ├── docs-meta-common-issues.md
+│   │   │   ├── docs-meta-content-guidelines.md
+│   │   │   ├── docs-meta-landing-page.md
+│   │   │   ├── docs-meta-migration-guide.md
+│   │   │   ├── docs-meta-overview.md
+│   │   │   ├── docs-meta-publish-to-pdf.md
+│   │   │   └── docs-meta-search.md
+│   │   ├── fundamentals
+│   │   │   ├── fundamentals-faq.md
+│   │   │   ├── fundamentals-license.md
+│   │   │   ├── fundamentals-literature-guide.md
+│   │   │   ├── fundamentals-overview.md
+│   │   │   ├── fundamentals-previous-versions.md
+│   │   │   ├── fundamentals-roadmap.md
+│   │   │   └── fundamentals-terminology.md
+│   │   ├── _index.md
+│   │   ├── installation
+│   │   │   ├── bindings
+│   │   │   │   ├── installation-bindings-fortran.md
+│   │   │   │   ├── installation-bindings-julia.md
+│   │   │   │   ├── installation-bindings-matlab.md
+│   │   │   │   ├── installation-bindings-python.md
+│   │   │   │   └── installation-bindings-rust.md
+│   │   │   ├── building-from-source
+│   │   │   │   ├── installation-source-building.md
+│   │   │   │   ├── installation-source-cmake.md
+│   │   │   │   ├── installation-source-configuration.md
+│   │   │   │   ├── installation-source-dependencies.md
+│   │   │   │   ├── installation-source-finding.md
+│   │   │   │   ├── installation-source-installation.md
+│   │   │   │   ├── installation-source-preparation.md
+│   │   │   │   ├── installation-source-testing.md
+│   │   │   │   └── installation-source-troubleshooting.md
+│   │   │   ├── installation-distribution.md
+│   │   │   ├── installation-linking.md
+│   │   │   ├── installation-overview.md
+│   │   │   ├── installation-packages.md
+│   │   │   ├── installation-source-advanced.md
+│   │   │   ├── installation-spack.md
+│   │   │   ├── installation-special-systems.md
+│   │   │   └── installation-vm.md
+│   │   ├── running
+│   │   │   ├── running-distributed.md
+│   │   │   ├── running-output-files.md
+│   │   │   ├── running-overview.md
+│   │   │   ├── running-simple.md
+│   │   │   └── running-slurm.md
+│   │   └── tooling
+│   │       ├── tooling-builtin.md
+│   │       ├── tooling-cli.md
+│   │       ├── tooling-config-visualization.md
+│   │       ├── tooling-overview.md
+│   │       ├── tooling-performance-analysis.md
+│   │       └── tooling-rbf-shape.md
+│   ├── imported
+│   │   ├── aste
+│   │   │   ├── changelog-entries
+│   │   │   │   ├── 210.md
+│   │   │   │   ├── 212.md
+│   │   │   │   ├── 215.md
+│   │   │   │   ├── 220.md
+│   │   │   │   ├── 225.md
+│   │   │   │   ├── 226.md
+│   │   │   │   ├── 231.md
+│   │   │   │   ├── 235.md
+│   │   │   │   ├── 236.md
+│   │   │   │   ├── 237.md
+│   │   │   │   ├── 238.md
+│   │   │   │   ├── 239.md
+│   │   │   │   ├── 243.md
+│   │   │   │   └── 245.md
+│   │   │   ├── CHANGELOG.md
+│   │   │   ├── CITATION.cff
+│   │   │   ├── cmake
+│   │   │   │   └── FindMETIS.cmake
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── CMakePresets.json
+│   │   │   ├── CODE_OF_CONDUCT.md
+│   │   │   ├── docs
+│   │   │   │   ├── CONTRIBUTING.md
+│   │   │   │   └── README.md
+│   │   │   ├── examples
+│   │   │   │   ├── clean-all.sh
+│   │   │   │   ├── coarse_mesh.vtk
+│   │   │   │   ├── fine_mesh.vtk
+│   │   │   │   ├── lci_2d
+│   │   │   │   │   ├── clean.sh
+│   │   │   │   │   ├── coarse_mesh.vtk
+│   │   │   │   │   ├── fine_mesh.vtk
+│   │   │   │   │   ├── precice-config.xml
+│   │   │   │   │   └── run.sh
+│   │   │   │   ├── lci_3d
+│   │   │   │   │   ├── clean.sh
+│   │   │   │   │   ├── coarse_mesh.vtk
+│   │   │   │   │   ├── fine_mesh.vtk
+│   │   │   │   │   ├── precice-config.xml
+│   │   │   │   │   └── run.sh
+│   │   │   │   ├── mapping_tester
+│   │   │   │   │   ├── clean.sh
+│   │   │   │   │   ├── coarse_mesh.vtk
+│   │   │   │   │   ├── fine_mesh.vtk
+│   │   │   │   │   ├── reference-statistics.csv
+│   │   │   │   │   ├── run.sh
+│   │   │   │   │   └── setup-test.json
+│   │   │   │   ├── mapping_tester_conv
+│   │   │   │   │   ├── clean.sh
+│   │   │   │   │   ├── meshes
+│   │   │   │   │   │   ├── 0.01.vtk
+│   │   │   │   │   │   ├── 0.0325.vtk
+│   │   │   │   │   │   ├── 0.055.vtk
+│   │   │   │   │   │   ├── 0.06.vtk
+│   │   │   │   │   │   ├── 0.0775.vtk
+│   │   │   │   │   │   ├── 0.1.vtk
+│   │   │   │   │   │   └── create_meshes.sh
+│   │   │   │   │   ├── reference-statistics.csv
+│   │   │   │   │   ├── run.sh
+│   │   │   │   │   └── setup-test.json
+│   │   │   │   ├── mapping_tester_runtime
+│   │   │   │   │   ├── clean.sh
+│   │   │   │   │   ├── coarse_mesh.vtk
+│   │   │   │   │   ├── fine_mesh.vtk
+│   │   │   │   │   ├── reference-aggregated.csv
+│   │   │   │   │   ├── reference-statistics.csv
+│   │   │   │   │   ├── run.sh
+│   │   │   │   │   └── setup.json
+│   │   │   │   ├── mapping_tester_serial
+│   │   │   │   │   ├── clean.sh
+│   │   │   │   │   ├── coarse_mesh.vtk
+│   │   │   │   │   ├── fine_mesh.vtk
+│   │   │   │   │   ├── reference-statistics.csv
+│   │   │   │   │   ├── run.sh
+│   │   │   │   │   └── setup-test.json
+│   │   │   │   ├── nn
+│   │   │   │   │   ├── clean.sh
+│   │   │   │   │   ├── precice-config.xml
+│   │   │   │   │   └── run.sh
+│   │   │   │   ├── nng_scalar
+│   │   │   │   │   ├── clean.sh
+│   │   │   │   │   ├── precice-config.xml
+│   │   │   │   │   └── run.sh
+│   │   │   │   ├── nng_vector
+│   │   │   │   │   ├── clean.sh
+│   │   │   │   │   ├── precice-config.xml
+│   │   │   │   │   └── run.sh
+│   │   │   │   ├── replay_mode
+│   │   │   │   │   ├── aste-config-fluid.json
+│   │   │   │   │   ├── aste-config-solid.json
+│   │   │   │   │   ├── clean.sh
+│   │   │   │   │   ├── Fluid
+│   │   │   │   │   │   ├── Fluid-Mesh-Fluid.dt10.vtu
+│   │   │   │   │   │   ├── Fluid-Mesh-Fluid.dt1.vtu
+│   │   │   │   │   │   ├── Fluid-Mesh-Fluid.dt2.vtu
+│   │   │   │   │   │   ├── Fluid-Mesh-Fluid.dt3.vtu
+│   │   │   │   │   │   ├── Fluid-Mesh-Fluid.dt4.vtu
+│   │   │   │   │   │   ├── Fluid-Mesh-Fluid.dt5.vtu
+│   │   │   │   │   │   ├── Fluid-Mesh-Fluid.dt6.vtu
+│   │   │   │   │   │   ├── Fluid-Mesh-Fluid.dt7.vtu
+│   │   │   │   │   │   ├── Fluid-Mesh-Fluid.dt8.vtu
+│   │   │   │   │   │   └── Fluid-Mesh-Fluid.dt9.vtu
+│   │   │   │   │   ├── precice-config.xml
+│   │   │   │   │   ├── run.sh
+│   │   │   │   │   └── Solid
+│   │   │   │   │       ├── Solid-Mesh-Solid.dt10.vtu
+│   │   │   │   │       ├── Solid-Mesh-Solid.dt1.vtu
+│   │   │   │   │       ├── Solid-Mesh-Solid.dt2.vtu
+│   │   │   │   │       ├── Solid-Mesh-Solid.dt3.vtu
+│   │   │   │   │       ├── Solid-Mesh-Solid.dt4.vtu
+│   │   │   │   │       ├── Solid-Mesh-Solid.dt5.vtu
+│   │   │   │   │       ├── Solid-Mesh-Solid.dt6.vtu
+│   │   │   │   │       ├── Solid-Mesh-Solid.dt7.vtu
+│   │   │   │   │       ├── Solid-Mesh-Solid.dt8.vtu
+│   │   │   │   │       └── Solid-Mesh-Solid.dt9.vtu
+│   │   │   │   └── run-all.sh
+│   │   │   ├── LICENSE
+│   │   │   ├── requirements.txt
+│   │   │   ├── src
+│   │   │   │   ├── common.cpp
+│   │   │   │   ├── common.hpp
+│   │   │   │   ├── configreader.cpp
+│   │   │   │   ├── configreader.hpp
+│   │   │   │   ├── logger.cpp
+│   │   │   │   ├── logger.hpp
+│   │   │   │   ├── mesh.cpp
+│   │   │   │   ├── mesh.hpp
+│   │   │   │   ├── metisAPI.cpp
+│   │   │   │   ├── modes.cpp
+│   │   │   │   ├── modes.hpp
+│   │   │   │   ├── precice-aste-evaluate
+│   │   │   │   ├── precice-aste-join
+│   │   │   │   ├── precice-aste-partition
+│   │   │   │   ├── precice-aste-run.cpp
+│   │   │   │   ├── utilities.cpp
+│   │   │   │   └── utilities.hpp
+│   │   │   ├── tests
+│   │   │   │   ├── read_test.cpp
+│   │   │   │   ├── reference_scalars.vtk
+│   │   │   │   ├── reference_vector2d.vtk
+│   │   │   │   ├── reference_vector3d.vtk
+│   │   │   │   ├── testing.cpp
+│   │   │   │   ├── testing.hpp
+│   │   │   │   └── write_test.cpp
+│   │   │   ├── thirdparty
+│   │   │   │   └── json.hpp
+│   │   │   └── tools
+│   │   │       ├── mapping-tester
+│   │   │       │   ├── aggregate.py
+│   │   │       │   ├── compare.py
+│   │   │       │   ├── config-template.xml
+│   │   │       │   ├── gatherstats.py
+│   │   │       │   ├── generate.py
+│   │   │       │   ├── local_rbf.py
+│   │   │       │   ├── plotconv.py
+│   │   │       │   ├── plots
+│   │   │       │   │   ├── paperplot.py
+│   │   │       │   │   └── plot.py
+│   │   │       │   ├── preparemeshes.py
+│   │   │       │   ├── README.md
+│   │   │       │   ├── repeat.py
+│   │   │       │   ├── setup.json
+│   │   │       │   ├── setup-turbine-big.json
+│   │   │       │   ├── setup-turbine-small.json
+│   │   │       │   └── setup-turbine-small-tps.json
+│   │   │       ├── mesh-generators
+│   │   │       │   ├── generate_halton_mesh.py
+│   │   │       │   ├── generate_unit_cube.py
+│   │   │       │   ├── generate_unit_grid.py
+│   │   │       │   ├── generate_unit_square.py
+│   │   │       │   ├── README.md
+│   │   │       │   └── requirements.txt
+│   │   │       ├── mesh-tools
+│   │   │       │   ├── makefile
+│   │   │       │   ├── mesh.cpp
+│   │   │       │   └── scale.cpp
+│   │   │       └── split-mesh-error
+│   │   │           └── elasticTube
+│   │   │               ├── fluid_solver.cpp
+│   │   │               ├── precice-config.xml
+│   │   │               └── structure_solver.cpp
+│   │   ├── dumux-adapter
+│   │   │   ├── CHANGELOG.md
+│   │   │   ├── cmake
+│   │   │   │   └── modules
+│   │   │   │       ├── AddPreciceConfigurationFileLinks.cmake
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       └── DumuxPreciceMacros.cmake
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── config.h.cmake
+│   │   │   ├── docker
+│   │   │   │   ├── 01_nodoc
+│   │   │   │   ├── checkout_repositories.sh
+│   │   │   │   ├── cmake-test.opts
+│   │   │   │   ├── dockerfile.base
+│   │   │   │   ├── dockerfile_dune-precice.slim
+│   │   │   │   ├── dockerfile.large
+│   │   │   │   ├── dockerfile.slim
+│   │   │   │   ├── README.md
+│   │   │   │   └── rebuild-docker-images.sh
+│   │   │   ├── docs
+│   │   │   │   ├── get.md
+│   │   │   │   ├── overview.md
+│   │   │   │   └── use.md
+│   │   │   ├── docs-api
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── doxygen
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── Doxylocal
+│   │   │   │   │   └── main.dox
+│   │   │   │   └── README.md
+│   │   │   ├── dumux-precice
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── couplingadapter.cc
+│   │   │   │   ├── couplingadapter.hh
+│   │   │   │   ├── dumuxpreciceindexmapper.cc
+│   │   │   │   ├── dumuxpreciceindexmapper.hh
+│   │   │   │   ├── solverstate.cc
+│   │   │   │   └── solverstate.hh
+│   │   │   ├── dumux-precice.pc.in
+│   │   │   ├── dune.module
+│   │   │   ├── examples
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── dummysolver
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── params_one.input
+│   │   │   │   │   ├── params_two.input
+│   │   │   │   │   ├── participantOne.cc
+│   │   │   │   │   ├── participantTwo.cc
+│   │   │   │   │   ├── precice-dummy-solver-config.xml
+│   │   │   │   │   ├── runFirst.sh
+│   │   │   │   │   └── runSecond.sh
+│   │   │   │   └── README.md
+│   │   │   ├── LICENSE
+│   │   │   ├── README.md
+│   │   │   ├── scripts
+│   │   │   │   ├── Allclean.sh
+│   │   │   │   ├── Allrun.sh
+│   │   │   │   ├── cleanup_directory.sh
+│   │   │   │   ├── run-iterative-parallel-simulations.sh
+│   │   │   │   └── run-iterative-simulations.sh
+│   │   │   └── test
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── cmake-test-clang-tidy.opts
+│   │   │       ├── cmake-test.opts
+│   │   │       └── singleCheckpointTest
+│   │   │           ├── Allrun.sh
+│   │   │           ├── CMakeLists.txt
+│   │   │           ├── main.cc
+│   │   │           ├── params_one.input
+│   │   │           ├── params_two.input
+│   │   │           └── test.xml
+│   │   ├── dune-adapter
+│   │   │   ├── docs
+│   │   │   │   └── overview.md
+│   │   │   ├── dune-precice
+│   │   │   │   ├── cmake
+│   │   │   │   │   └── modules
+│   │   │   │   │       ├── CMakeLists.txt
+│   │   │   │   │       └── DunePreciceMacros.cmake
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── config.h.cmake
+│   │   │   │   ├── dune.module
+│   │   │   │   ├── dune-precice
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── couplinginterface.hh
+│   │   │   │   └── dune-precice.pc.in
+│   │   │   ├── dune-precice-howto
+│   │   │   │   ├── cmake
+│   │   │   │   │   └── modules
+│   │   │   │   │       ├── CMakeLists.txt
+│   │   │   │   │       └── DunePreciceHowtoMacros.cmake
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── config.h.cmake
+│   │   │   │   ├── dune.module
+│   │   │   │   ├── dune-precice-howto.pc.in
+│   │   │   │   └── examples
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       └── dune-perpendicular-flap.cc
+│   │   │   ├── LICENSE
+│   │   │   └── README.md
+│   │   ├── fmi-runner
+│   │   │   ├── docs
+│   │   │   │   ├── images
+│   │   │   │   │   └── docs-tooling-fmi-runner-setup.png
+│   │   │   │   └── README.md
+│   │   │   ├── fmiprecice
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── runner.py
+│   │   │   ├── LICENSE
+│   │   │   ├── pyproject.toml
+│   │   │   ├── README.md
+│   │   │   ├── setup.py
+│   │   │   ├── tests
+│   │   │   │   ├── clean.sh
+│   │   │   │   ├── Dummy.fmu
+│   │   │   │   ├── fmu
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── Dummy
+│   │   │   │   │   │   ├── buildDescription.xml
+│   │   │   │   │   │   ├── config.h
+│   │   │   │   │   │   ├── FMI1CS.xml
+│   │   │   │   │   │   ├── FMI1ME.xml
+│   │   │   │   │   │   ├── FMI2.xml
+│   │   │   │   │   │   ├── FMI3.xml
+│   │   │   │   │   │   ├── model.c
+│   │   │   │   │   │   ├── readme.html
+│   │   │   │   │   │   └── readme.md
+│   │   │   │   │   ├── include
+│   │   │   │   │   │   ├── cosimulation.h
+│   │   │   │   │   │   ├── fmi1Functions.h
+│   │   │   │   │   │   ├── FMI1.h
+│   │   │   │   │   │   ├── fmi2Functions.h
+│   │   │   │   │   │   ├── fmi2FunctionTypes.h
+│   │   │   │   │   │   ├── FMI2.h
+│   │   │   │   │   │   ├── fmi2TypesPlatform.h
+│   │   │   │   │   │   ├── fmi3Functions.h
+│   │   │   │   │   │   ├── fmi3FunctionTypes.h
+│   │   │   │   │   │   ├── FMI3.h
+│   │   │   │   │   │   ├── fmi3PlatformTypes.h
+│   │   │   │   │   │   ├── fmiFunctions.h
+│   │   │   │   │   │   ├── FMI.h
+│   │   │   │   │   │   ├── fmiModelFunctions.h
+│   │   │   │   │   │   ├── fmiModelTypes.h
+│   │   │   │   │   │   ├── fmiPlatformTypes.h
+│   │   │   │   │   │   └── model.h
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── set_tool_version.py
+│   │   │   │   │   └── src
+│   │   │   │   │       ├── cosimulation.c
+│   │   │   │   │       ├── FMI1.c
+│   │   │   │   │       ├── fmi1Functions.c
+│   │   │   │   │       ├── FMI2.c
+│   │   │   │   │       ├── fmi2Functions.c
+│   │   │   │   │       ├── FMI3.c
+│   │   │   │   │       ├── fmi3Functions.c
+│   │   │   │   │       └── FMI.c
+│   │   │   │   ├── precice-config.xml
+│   │   │   │   ├── README.md
+│   │   │   │   ├── SolverOne
+│   │   │   │   │   ├── fmi-settings.json
+│   │   │   │   │   ├── precice-settings.json
+│   │   │   │   │   └── run.sh
+│   │   │   │   ├── SolverTwo
+│   │   │   │   │   ├── fmi-settings.json
+│   │   │   │   │   ├── precice-settings.json
+│   │   │   │   │   └── run.sh
+│   │   │   │   └── test.py
+│   │   │   └── thirdparty
+│   │   │       └── LICENSE.txt
+│   │   ├── micro-manager
+│   │   │   ├── CHANGELOG.md
+│   │   │   ├── check_coverage.py
+│   │   │   ├── CITATION.cff
+│   │   │   ├── CONTRIBUTING.md
+│   │   │   ├── docs
+│   │   │   │   ├── adaptivity.md
+│   │   │   │   ├── configuration.md
+│   │   │   │   ├── images
+│   │   │   │   │   └── docs-tooling-micro-manager-manager-solution.png
+│   │   │   │   ├── installation.md
+│   │   │   │   ├── logging.md
+│   │   │   │   ├── micro-simulation-convert-to-library.md
+│   │   │   │   ├── model-adaptivity.md
+│   │   │   │   ├── README.md
+│   │   │   │   ├── ReleaseGuide.md
+│   │   │   │   ├── running.md
+│   │   │   │   └── snapshot_configuration.md
+│   │   │   ├── examples
+│   │   │   │   ├── clean-example.sh
+│   │   │   │   ├── cpp-dummy
+│   │   │   │   │   ├── micro_cpp_dummy.cpp
+│   │   │   │   │   └── micro_cpp_dummy.hpp
+│   │   │   │   ├── macro_dummy.py
+│   │   │   │   ├── mada_switcher.py
+│   │   │   │   ├── micro-manager-cpp-adaptivity-config.json
+│   │   │   │   ├── micro-manager-cpp-config.json
+│   │   │   │   ├── micro-manager-python-adaptivity-config.json
+│   │   │   │   ├── micro-manager-python-config.json
+│   │   │   │   ├── micro-manager-python-mada-config.json
+│   │   │   │   ├── parameter.hdf5
+│   │   │   │   ├── precice-config-adaptivity.xml
+│   │   │   │   ├── precice-config.xml
+│   │   │   │   ├── python-dummy
+│   │   │   │   │   └── micro_dummy.py
+│   │   │   │   ├── README.md
+│   │   │   │   ├── snapshot-config.json
+│   │   │   │   └── snapshot_postprocessing.py
+│   │   │   ├── LICENSE
+│   │   │   ├── micro_manager
+│   │   │   │   ├── adaptivity
+│   │   │   │   │   ├── adaptivity.py
+│   │   │   │   │   ├── adaptivity_selection.py
+│   │   │   │   │   ├── global_adaptivity.py
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── local_adaptivity.py
+│   │   │   │   │   └── model_adaptivity.py
+│   │   │   │   ├── config.py
+│   │   │   │   ├── domain_decomposition.py
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── interpolation.py
+│   │   │   │   ├── load_balancing.py
+│   │   │   │   ├── __main__.py
+│   │   │   │   ├── micro_manager_base.py
+│   │   │   │   ├── micro_manager.py
+│   │   │   │   ├── micro_simulation.py
+│   │   │   │   ├── model_manager.py
+│   │   │   │   ├── snapshot
+│   │   │   │   │   ├── dataset.py
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── snapshot.py
+│   │   │   │   ├── tasking
+│   │   │   │   │   ├── connection.py
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── task.py
+│   │   │   │   │   └── worker_main.py
+│   │   │   │   └── tools
+│   │   │   │       ├── __init__.py
+│   │   │   │       ├── logging_wrapper.py
+│   │   │   │       ├── misc.py
+│   │   │   │       └── p2p.py
+│   │   │   ├── pyproject.toml
+│   │   │   ├── README.md
+│   │   │   ├── setup.py
+│   │   │   └── tests
+│   │   │       ├── integration
+│   │   │       │   └── test_unit_cube
+│   │   │       │       ├── clean-test.sh
+│   │   │       │       ├── micro_dummy.py
+│   │   │       │       ├── micro-manager-config-global-adaptivity.json
+│   │   │       │       ├── micro-manager-config-global-adaptivity-parallel.json
+│   │   │       │       ├── micro-manager-config-load-balancing.json
+│   │   │       │       ├── micro-manager-config-local-adaptivity.json
+│   │   │       │       ├── micro-manager-config-parallel-1.json
+│   │   │       │       ├── micro-manager-config-parallel-2.json
+│   │   │       │       ├── precice-config.xml
+│   │   │       │       └── unit_cube.py
+│   │   │       ├── README.md
+│   │   │       └── unit
+│   │   │           ├── hdf_files
+│   │   │           │   └── test_parameter.hdf5
+│   │   │           ├── __init__.py
+│   │   │           ├── micro-manager-config_crash.json
+│   │   │           ├── micro-manager-config.json
+│   │   │           ├── precice.py
+│   │   │           ├── snapshot-config.json
+│   │   │           ├── test_adaptivity_parallel.py
+│   │   │           ├── test_adaptivity_serial.py
+│   │   │           ├── test_domain_decomposition.py
+│   │   │           ├── test_hdf5_functionality.py
+│   │   │           ├── test_interpolation.py
+│   │   │           ├── test_load_balancing.py
+│   │   │           ├── test_micro_manager.py
+│   │   │           ├── test_micro_simulation_crash_handling.py
+│   │   │           ├── test_micro_simulation.py
+│   │   │           ├── test_snapshot_computation.py
+│   │   │           └── test_tasking.py
+│   │   ├── openfoam-adapter
+│   │   │   ├── Adapter.C
+│   │   │   ├── Adapter.H
+│   │   │   ├── Allclean
+│   │   │   ├── Allwmake
+│   │   │   ├── changelog-entries
+│   │   │   │   ├── 338.md
+│   │   │   │   ├── 344.md
+│   │   │   │   ├── 346.md
+│   │   │   │   ├── 347.md
+│   │   │   │   ├── 348.md
+│   │   │   │   ├── 350.md
+│   │   │   │   ├── 351.md
+│   │   │   │   ├── 352.md
+│   │   │   │   ├── 354.md
+│   │   │   │   ├── 358.md
+│   │   │   │   ├── 364.md
+│   │   │   │   ├── 365.md
+│   │   │   │   ├── 366.md
+│   │   │   │   ├── 379.md
+│   │   │   │   ├── 380.md
+│   │   │   │   ├── 386.md
+│   │   │   │   ├── 387.md
+│   │   │   │   ├── 390.md
+│   │   │   │   └── 394.md
+│   │   │   ├── CHANGELOG.md
+│   │   │   ├── CHT
+│   │   │   │   ├── CHT.C
+│   │   │   │   ├── CHT.H
+│   │   │   │   ├── HeatFlux.C
+│   │   │   │   ├── HeatFlux.H
+│   │   │   │   ├── HeatTransferCoefficient.C
+│   │   │   │   ├── HeatTransferCoefficient.H
+│   │   │   │   ├── KappaEffective.C
+│   │   │   │   ├── KappaEffective.H
+│   │   │   │   ├── ModuleCHT.C
+│   │   │   │   ├── SinkTemperature.C
+│   │   │   │   ├── SinkTemperature.H
+│   │   │   │   ├── Temperature.C
+│   │   │   │   └── Temperature.H
+│   │   │   ├── CITATION.cff
+│   │   │   ├── CODE_OF_CONDUCT.md
+│   │   │   ├── CONTRIBUTING.md
+│   │   │   ├── CouplingDataUser.C
+│   │   │   ├── CouplingDataUser.H
+│   │   │   ├── docs
+│   │   │   │   ├── config.md
+│   │   │   │   ├── extend.md
+│   │   │   │   ├── get.md
+│   │   │   │   ├── images
+│   │   │   │   │   ├── docs-adapter-openfoam-implicit-loop.png
+│   │   │   │   │   ├── docs-adapter-openfoam-implicit-loop-src.md
+│   │   │   │   │   ├── docs-adapter-openfoam-modules.png
+│   │   │   │   │   └── docs-adapter-openfoam-modules-src.svg
+│   │   │   │   ├── openfoam-support.md
+│   │   │   │   └── README.md
+│   │   │   ├── FF
+│   │   │   │   ├── Alpha.C
+│   │   │   │   ├── AlphaGradient.C
+│   │   │   │   ├── AlphaGradient.H
+│   │   │   │   ├── Alpha.H
+│   │   │   │   ├── BoundaryConditions
+│   │   │   │   │   ├── coupledPressure
+│   │   │   │   │   │   ├── coupledPressureFvPatchField.C
+│   │   │   │   │   │   └── coupledPressureFvPatchField.H
+│   │   │   │   │   └── coupledVelocity
+│   │   │   │   │       ├── coupledVelocityFvPatchField.C
+│   │   │   │   │       └── coupledVelocityFvPatchField.H
+│   │   │   │   ├── DragForce.C
+│   │   │   │   ├── DragForce.H
+│   │   │   │   ├── ExplicitMomentum.C
+│   │   │   │   ├── ExplicitMomentum.H
+│   │   │   │   ├── FF.C
+│   │   │   │   ├── FF.H
+│   │   │   │   ├── ImplicitMomentum.C
+│   │   │   │   ├── ImplicitMomentum.H
+│   │   │   │   ├── ModuleFF.C
+│   │   │   │   ├── Phi.C
+│   │   │   │   ├── Phi.H
+│   │   │   │   ├── Pressure.C
+│   │   │   │   ├── PressureGradient.C
+│   │   │   │   ├── PressureGradientFull.C
+│   │   │   │   ├── PressureGradientFull.H
+│   │   │   │   ├── PressureGradient.H
+│   │   │   │   ├── Pressure.H
+│   │   │   │   ├── Temperature.C
+│   │   │   │   ├── TemperatureGradient.C
+│   │   │   │   ├── TemperatureGradient.H
+│   │   │   │   ├── Temperature.H
+│   │   │   │   ├── Velocity.C
+│   │   │   │   ├── VelocityGradient.C
+│   │   │   │   ├── VelocityGradient.H
+│   │   │   │   └── Velocity.H
+│   │   │   ├── FSI
+│   │   │   │   ├── Displacement.C
+│   │   │   │   ├── DisplacementDelta.C
+│   │   │   │   ├── DisplacementDelta.H
+│   │   │   │   ├── Displacement.H
+│   │   │   │   ├── ForceBase.C
+│   │   │   │   ├── ForceBase.H
+│   │   │   │   ├── Force.C
+│   │   │   │   ├── Force.H
+│   │   │   │   ├── FSI.C
+│   │   │   │   ├── FSI.H
+│   │   │   │   ├── ModuleFSI.C
+│   │   │   │   ├── Stress.C
+│   │   │   │   └── Stress.H
+│   │   │   ├── Interface.C
+│   │   │   ├── Interface.H
+│   │   │   ├── LICENSE
+│   │   │   ├── Make
+│   │   │   │   ├── files
+│   │   │   │   └── options
+│   │   │   ├── module-generic
+│   │   │   │   ├── Generic.C
+│   │   │   │   ├── Generic.H
+│   │   │   │   ├── ModuleGeneric.C
+│   │   │   │   ├── ReadWrite.C
+│   │   │   │   └── ReadWrite.H
+│   │   │   ├── preciceAdapterFunctionObject.C
+│   │   │   ├── preciceAdapterFunctionObject.H
+│   │   │   ├── README.md
+│   │   │   ├── tools
+│   │   │   │   ├── create-release-archives.sh
+│   │   │   │   ├── format-code.sh
+│   │   │   │   └── release_pull_request_template.md
+│   │   │   ├── Utilities.C
+│   │   │   └── Utilities.H
+│   │   ├── preeco-orga
+│   │   │   ├── adapter-config-schema
+│   │   │   │   ├── export-formats
+│   │   │   │   │   └── issm-example.yaml
+│   │   │   │   ├── meta_configurator_settings.json
+│   │   │   │   ├── precice_adapter_config_schema.json
+│   │   │   │   └── README.md
+│   │   │   ├── guidelines
+│   │   │   │   ├── guideline-adapters-dumux.md
+│   │   │   │   ├── guidelines-adapters-issm.md
+│   │   │   │   ├── guidelines-adapters.md
+│   │   │   │   ├── guidelines-adapters-opendihu.md
+│   │   │   │   ├── guidelines-adapters-openfoam.md
+│   │   │   │   └── guidelines-application-cases.md
+│   │   │   ├── LICENSE
+│   │   │   └── README.md
+│   │   ├── su2-adapter
+│   │   │   ├── docs
+│   │   │   │   ├── configure.md
+│   │   │   │   ├── get.md
+│   │   │   │   └── overview.md
+│   │   │   ├── LICENSE
+│   │   │   ├── README.md
+│   │   │   ├── replacement_files
+│   │   │   │   ├── CDriver.hpp
+│   │   │   │   ├── python_wrapper_structure.cpp
+│   │   │   │   └── README.md
+│   │   │   ├── run
+│   │   │   │   ├── SU2_preCICE_CHT.py
+│   │   │   │   └── SU2_preCICE_FSI.py
+│   │   │   └── su2AdapterInstall
+│   │   └── tutorials
+│   │       ├── aste-turbine
+│   │       │   ├── clean.sh
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-aste-turbine-precice-config.png
+│   │       │   │   └── tutorials-aste-turbine-setup.png
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── run.sh
+│   │       ├── breaking-dam-2d
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── alpha.water_orig
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── phi
+│   │       │   │   │   ├── pointDisplacement
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── dynamicMeshDict
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── displacementProbe
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       ├── preciceDict
+│   │       │   │       └── setFieldsDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-breaking-dam-2d-physics.png
+│   │       │   │   └── tutorials-breaking-dam-2d-precice-config.png
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solid-calculix
+│   │       │       ├── all.msh
+│   │       │       ├── clean.sh
+│   │       │       ├── config.yml
+│   │       │       ├── fix1_beam.nam
+│   │       │       ├── flap.inp
+│   │       │       ├── interface_beam.nam
+│   │       │       └── run.sh
+│   │       ├── changelog-entries
+│   │       │   ├── 480.md
+│   │       │   ├── 500.md
+│   │       │   ├── 537.md
+│   │       │   ├── 544.md
+│   │       │   ├── 545.md
+│   │       │   ├── 557.md
+│   │       │   ├── 587.md
+│   │       │   ├── 590.md
+│   │       │   ├── 593.md
+│   │       │   ├── 597.md
+│   │       │   ├── 599.md
+│   │       │   ├── 606.md
+│   │       │   ├── 607.md
+│   │       │   ├── 608.md
+│   │       │   ├── 609.md
+│   │       │   ├── 618.md
+│   │       │   ├── 631.md
+│   │       │   ├── 634.md
+│   │       │   ├── 638.md
+│   │       │   ├── 642.md
+│   │       │   ├── 645.md
+│   │       │   ├── 646.md
+│   │       │   ├── 660.md
+│   │       │   ├── 662.md
+│   │       │   ├── 663.md
+│   │       │   ├── 664.md
+│   │       │   ├── 665.md
+│   │       │   ├── 666.md
+│   │       │   ├── 668.md
+│   │       │   ├── 676.md
+│   │       │   ├── 677.md
+│   │       │   ├── 678.md
+│   │       │   ├── 680.md
+│   │       │   ├── 683.md
+│   │       │   ├── 691.md
+│   │       │   ├── 695.md
+│   │       │   ├── 696.md
+│   │       │   ├── 699.md
+│   │       │   ├── 700.md
+│   │       │   ├── 701.md
+│   │       │   ├── 702.md
+│   │       │   ├── 713.md
+│   │       │   └── 716.md
+│   │       ├── CHANGELOG.md
+│   │       ├── channel-transport
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── fluid.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-channel-transport-amr.png
+│   │       │   │   ├── tutorials-channel-transport-animation.webm
+│   │       │   │   ├── tutorials-channel-transport-physics.png
+│   │       │   │   └── tutorials-channel-transport-precice-config.png
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── transport-nutils
+│   │       │       ├── clean.sh
+│   │       │       ├── requirements.txt
+│   │       │       ├── run.sh
+│   │       │       └── transport.py
+│   │       ├── channel-transport-particles
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── fluid.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-channel-transport-particles-precice-config.pdf
+│   │       │   │   └── tutorials-channel-transport-particles-setup.png
+│   │       │   ├── particles-mercurydpm
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── run.sh
+│   │       │   │   └── setup-mercurydpm.sh
+│   │       │   ├── precice-config.xml
+│   │       │   └── README.md
+│   │       ├── channel-transport-reaction
+│   │       │   ├── chemical-fenics
+│   │       │   │   ├── chemical-reaction-advection-diffusion.json
+│   │       │   │   ├── chemical-reaction-advection-diffusion.py
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-fenics
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── fluid-config.json
+│   │       │   │   ├── fluid.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-channel-transport-reaction-geometry.png
+│   │       │   │   ├── tutorials-channel-transport-reaction-precice-config.png
+│   │       │   │   └── tutorials-channel-transport-reaction-state-t40.png
+│   │       │   ├── plot.py
+│   │       │   ├── precice-config.xml
+│   │       │   └── README.md
+│   │       ├── clean-all.sh
+│   │       ├── CODE_OF_CONDUCT.md
+│   │       ├── CONTRIBUTING.md
+│   │       ├── elastic-tube-1d
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-cpp
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── output
+│   │       │   │   ├── run.sh
+│   │       │   │   └── src
+│   │       │   │       ├── FluidComputeSolution.cpp
+│   │       │   │       ├── FluidComputeSolution.h
+│   │       │   │       ├── FluidSolver.cpp
+│   │       │   │       ├── utilities.cpp
+│   │       │   │       └── utilities.h
+│   │       │   ├── fluid-fortran
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   └── src
+│   │       │   │       ├── FluidComputeSolution.f90
+│   │       │   │       ├── FluidSolver.f90
+│   │       │   │       └── utilities.f90
+│   │       │   ├── fluid-fortran-module
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   └── src
+│   │       │   │       ├── FluidComputeSolution.f90
+│   │       │   │       ├── FluidSolver.f90
+│   │       │   │       └── utilities.f90
+│   │       │   ├── fluid-python
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── FluidSolver.py
+│   │       │   │   ├── output
+│   │       │   │   ├── outputConfiguration.py
+│   │       │   │   ├── output.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   ├── thetaScheme.py
+│   │       │   │   └── tubePlotting.py
+│   │       │   ├── fluid-rust
+│   │       │   │   ├── Cargo.toml
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── run.sh
+│   │       │   │   └── src
+│   │       │   │       ├── main.rs
+│   │       │   │       ├── solver.rs
+│   │       │   │       └── utils.rs
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-elastic-tube-1d-all.png
+│   │       │   │   ├── tutorials-elastic-tube-1d-animation.gif
+│   │       │   │   ├── tutorials-elastic-tube-1d-diameter.png
+│   │       │   │   ├── tutorials-elastic-tube-1d-precice-config.png
+│   │       │   │   └── tutorials-elastic-tube-1d-setup.png
+│   │       │   ├── metadata.yaml
+│   │       │   ├── plot-all.sh
+│   │       │   ├── plot-diameter.sh
+│   │       │   ├── plot-vtk.py
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   ├── reference-results
+│   │       │   │   ├── fluid-cpp_solid-cpp.tar.gz
+│   │       │   │   ├── fluid-cpp_solid-python.tar.gz
+│   │       │   │   ├── fluid-python_solid-python.tar.gz
+│   │       │   │   └── reference_results.metadata
+│   │       │   ├── solid-cpp
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   └── src
+│   │       │   │       ├── SolidComputeSolution.cpp
+│   │       │   │       ├── SolidSolver.cpp
+│   │       │   │       └── SolidSolver.h
+│   │       │   ├── solid-fortran
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   └── src
+│   │       │   │       ├── SolidComputeSolution.f90
+│   │       │   │       └── SolidSolver.f90
+│   │       │   ├── solid-fortran-module
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   └── src
+│   │       │   │       ├── SolidComputeSolution.f90
+│   │       │   │       └── SolidSolver.f90
+│   │       │   ├── solid-python
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── requirements.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   └── SolidSolver.py
+│   │       │   └── solid-rust
+│   │       │       ├── Cargo.toml
+│   │       │       ├── clean.sh
+│   │       │       ├── run.sh
+│   │       │       └── src
+│   │       │           ├── main.rs
+│   │       │           └── solver.rs
+│   │       ├── elastic-tube-3d
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── pointDisplacement
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── dynamicMeshDict
+│   │       │   │   │   ├── polyMesh.orig
+│   │       │   │   │   │   ├── boundary
+│   │       │   │   │   │   ├── cellZones
+│   │       │   │   │   │   ├── faces
+│   │       │   │   │   │   ├── faceZones
+│   │       │   │   │   │   ├── neighbour
+│   │       │   │   │   │   ├── owner
+│   │       │   │   │   │   ├── points
+│   │       │   │   │   │   └── pointZones
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   ├── system
+│   │       │   │   │   ├── controlDict
+│   │       │   │   │   ├── decomposeParDict
+│   │       │   │   │   ├── fvSchemes
+│   │       │   │   │   ├── fvSolution
+│   │       │   │   │   └── preciceDict
+│   │       │   │   └── time-series
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-elastic-tube-3d-plot.png
+│   │       │   │   ├── tutorials-elastic-tube-3d-precice-config.png
+│   │       │   │   └── tutorials-elastic-tube-3d-tube-result.png
+│   │       │   ├── metadata.yaml
+│   │       │   ├── plot-all-displacements.sh
+│   │       │   ├── plot-displacements.sh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   ├── solid-calculix
+│   │       │   │   ├── all.msh
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── config.yml
+│   │       │   │   ├── inlet.nam
+│   │       │   │   ├── interface.nam
+│   │       │   │   ├── interface.sur
+│   │       │   │   ├── outlet.nam
+│   │       │   │   ├── run.sh
+│   │       │   │   ├── tube.inp
+│   │       │   │   └── wall.nam
+│   │       │   └── solid-fenics
+│   │       │       ├── clean.sh
+│   │       │       ├── precice-adapter-config-fsi-s.json
+│   │       │       ├── requirements.txt
+│   │       │       ├── run.sh
+│   │       │       └── solid.py
+│   │       ├── flow-around-controlled-moving-cylinder
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── controller-fmi
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── fmi-settings.json
+│   │       │   │   ├── fmu
+│   │       │   │   │   ├── CMakeLists.txt
+│   │       │   │   │   ├── include
+│   │       │   │   │   │   ├── cosimulation.h
+│   │       │   │   │   │   ├── fmi2Functions.h
+│   │       │   │   │   │   ├── fmi2FunctionTypes.h
+│   │       │   │   │   │   ├── FMI2.h
+│   │       │   │   │   │   ├── fmi2TypesPlatform.h
+│   │       │   │   │   │   ├── fmi3Functions.h
+│   │       │   │   │   │   ├── fmi3FunctionTypes.h
+│   │       │   │   │   │   ├── FMI3.h
+│   │       │   │   │   │   ├── fmi3PlatformTypes.h
+│   │       │   │   │   │   ├── fmiFunctions.h
+│   │       │   │   │   │   ├── FMI.h
+│   │       │   │   │   │   ├── fmiModelFunctions.h
+│   │       │   │   │   │   ├── fmiModelTypes.h
+│   │       │   │   │   │   ├── fmiPlatformTypes.h
+│   │       │   │   │   │   └── model.h
+│   │       │   │   │   ├── PIDcontroller
+│   │       │   │   │   │   ├── buildDescription.xml
+│   │       │   │   │   │   ├── config.h
+│   │       │   │   │   │   ├── FMI1CS.xml
+│   │       │   │   │   │   ├── FMI1ME.xml
+│   │       │   │   │   │   ├── FMI2.xml
+│   │       │   │   │   │   ├── FMI3.xml
+│   │       │   │   │   │   ├── model.c
+│   │       │   │   │   │   └── readme.html
+│   │       │   │   │   ├── README.md
+│   │       │   │   │   ├── set_tool_version.py
+│   │       │   │   │   ├── src
+│   │       │   │   │   │   ├── cosimulation.c
+│   │       │   │   │   │   ├── FMI2.c
+│   │       │   │   │   │   ├── fmi2Functions.c
+│   │       │   │   │   │   ├── FMI3.c
+│   │       │   │   │   │   ├── fmi3Functions.c
+│   │       │   │   │   │   └── FMI.c
+│   │       │   │   │   └── thirdparty
+│   │       │   │   │       └── LICENSE.txt
+│   │       │   │   ├── precice-settings.json
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0.orig
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── pointDisplacement
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── dynamicMeshDict
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── forces
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-flow-around-controlled-moving-cylinder-precice-config.png
+│   │       │   │   ├── tutorials-flow-around-controlled-moving-cylinder-setup.png
+│   │       │   │   └── tutorials-flow-around-controlled-moving-cylinder-watchpoint.png
+│   │       │   ├── plot-timeseries.py
+│   │       │   ├── plot-watchpoint.sh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solid-python
+│   │       │       ├── clean.sh
+│   │       │       ├── requirements.txt
+│   │       │       ├── run.sh
+│   │       │       └── solid.py
+│   │       ├── flow-over-heated-plate
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── alphat
+│   │       │   │   │   ├── epsilon
+│   │       │   │   │   ├── k
+│   │       │   │   │   ├── nut
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   ├── T
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── thermophysicalProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── fluid-su2
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── fluid_mesh.su2
+│   │       │   │   ├── laminar_config_unsteady.cfg
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-flow-over-heated-plate-example.png
+│   │       │   │   ├── tutorials-flow-over-heated-plate-graph-result.png
+│   │       │   │   ├── tutorials-flow-over-heated-plate-precice-config.png
+│   │       │   │   ├── tutorials-flow-over-heated-plate-result-openfoam.png
+│   │       │   │   └── tutorials-flow-over-heated-plate-results-comparison.png
+│   │       │   ├── metadata.yaml
+│   │       │   ├── plot-final-interface-temperature.py
+│   │       │   ├── plot-final-interface-temperature-requirements.txt
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   ├── reference-results
+│   │       │   │   ├── fluid-openfoam_solid-fenics.tar.gz
+│   │       │   │   ├── fluid-openfoam_solid-nutils.tar.gz
+│   │       │   │   ├── fluid-openfoam_solid-openfoam.tar.gz
+│   │       │   │   └── reference_results.metadata
+│   │       │   ├── solid-dunefem
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── requirements.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   └── solid.py
+│   │       │   ├── solid-fenics
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── precice-adapter-config.json
+│   │       │   │   ├── requirements.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   └── solid.py
+│   │       │   ├── solid-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── requirements.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   └── solid.py
+│   │       │   └── solid-openfoam
+│   │       │       ├── 0
+│   │       │       │   └── T
+│   │       │       ├── clean.sh
+│   │       │       ├── constant
+│   │       │       │   └── transportProperties
+│   │       │       ├── run.sh
+│   │       │       └── system
+│   │       │           ├── blockMeshDict
+│   │       │           ├── controlDict
+│   │       │           ├── decomposeParDict
+│   │       │           ├── fvSchemes
+│   │       │           ├── fvSolution
+│   │       │           └── preciceDict
+│   │       ├── flow-over-heated-plate-nearest-projection
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── alphat
+│   │       │   │   │   ├── epsilon
+│   │       │   │   │   ├── k
+│   │       │   │   │   ├── nut
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   ├── T
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── thermophysicalProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   └── tutorials-flow-over-heated-plate-nearest-projection-precice-config.png
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solid-openfoam
+│   │       │       ├── 0
+│   │       │       │   └── T
+│   │       │       ├── clean.sh
+│   │       │       ├── constant
+│   │       │       │   └── transportProperties
+│   │       │       ├── run.sh
+│   │       │       └── system
+│   │       │           ├── blockMeshDict
+│   │       │           ├── controlDict
+│   │       │           ├── decomposeParDict
+│   │       │           ├── fvSchemes
+│   │       │           ├── fvSolution
+│   │       │           └── preciceDict
+│   │       ├── flow-over-heated-plate-partitioned-flow
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid1-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   ├── T
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── thermophysicalProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── fluid2-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   ├── T
+│   │       │   │   │   ├── U
+│   │       │   │   │   └── uniform
+│   │       │   │   │       └── functionObjects
+│   │       │   │   │           └── functionObjectProperties.gz
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── thermophysicalProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-flow-over-heated-plate-partitioned-flow-graph.png
+│   │       │   │   ├── tutorials-flow-over-heated-plate-partitioned-flow-precice-config.png
+│   │       │   │   └── tutorials-flow-over-heated-plate-partitioned-flow-results.png
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solid-openfoam
+│   │       │       ├── 0
+│   │       │       │   └── T
+│   │       │       ├── clean.sh
+│   │       │       ├── constant
+│   │       │       │   └── transportProperties
+│   │       │       ├── run.sh
+│   │       │       └── system
+│   │       │           ├── blockMeshDict
+│   │       │           ├── controlDict
+│   │       │           ├── decomposeParDict
+│   │       │           ├── fvSchemes
+│   │       │           ├── fvSolution
+│   │       │           └── preciceDict
+│   │       ├── flow-over-heated-plate-steady-state
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── alphat
+│   │       │   │   │   ├── epsilon
+│   │       │   │   │   ├── k
+│   │       │   │   │   ├── nut
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   ├── T
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── thermophysicalProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-flow-over-heated-plate-steady-state-post-processing.png
+│   │       │   │   ├── tutorials-flow-over-heated-plate-steady-state-precice-config.png
+│   │       │   │   └── tutorials-flow-over-heated-plate-steady-state-result.png
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solid-codeaster
+│   │       │       ├── clean.sh
+│   │       │       ├── config.comm
+│   │       │       ├── def.comm
+│   │       │       ├── REPE_OUT
+│   │       │       ├── run.sh
+│   │       │       ├── solid.astk
+│   │       │       └── solid.mmed
+│   │       ├── flow-over-heated-plate-two-meshes
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── alphat
+│   │       │   │   │   ├── epsilon
+│   │       │   │   │   ├── k
+│   │       │   │   │   ├── nut
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   ├── T
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── thermophysicalProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   └── tutorials-flow-over-heated-plate-two-meshes-precice-config.png
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solid-calculix
+│   │       │       ├── clean.sh
+│   │       │       ├── config.yml
+│   │       │       ├── generate_mesh.py
+│   │       │       ├── run.sh
+│   │       │       └── solid.inp
+│   │       ├── free-flow-over-porous-media
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── free-flow-dumux
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── config.h.cmake
+│   │       │   │   ├── dune.module
+│   │       │   │   ├── free-flow-dumux.pc.in
+│   │       │   │   ├── params.input
+│   │       │   │   ├── run.sh
+│   │       │   │   └── solver-dumux
+│   │       │   │       ├── CMakeLists.txt
+│   │       │   │       ├── main.cc
+│   │       │   │       ├── problem.hh
+│   │       │   │       └── properties.hh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-free-flow-over-porous-media-precice-config-visualization.png
+│   │       │   │   ├── tutorials-free-flow-over-porous-media-result-pressure.png
+│   │       │   │   ├── tutorials-free-flow-over-porous-media-result-ux.png
+│   │       │   │   └── tutorials-free-flow-over-porous-media-setup.png
+│   │       │   ├── metadata.yaml
+│   │       │   ├── porous-media-dumux
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── config.h.cmake
+│   │       │   │   ├── dune.module
+│   │       │   │   ├── params.input
+│   │       │   │   ├── porous-media-dumux.pc.in
+│   │       │   │   ├── run.sh
+│   │       │   │   └── solver-dumux
+│   │       │   │       ├── CMakeLists.txt
+│   │       │   │       ├── main.cc
+│   │       │   │       ├── problem.hh
+│   │       │   │       ├── properties.hh
+│   │       │   │       └── spatialparams.hh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── setup-dumux.sh
+│   │       ├── heat-exchanger
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── download-meshes.sh
+│   │       │   ├── fluid-inner-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── alphat
+│   │       │   │   │   ├── epsilon
+│   │       │   │   │   ├── k
+│   │       │   │   │   ├── nut
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   ├── T
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── thermophysicalProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvOptions
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── fluid-outer-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── alphat
+│   │       │   │   │   ├── epsilon
+│   │       │   │   │   ├── k
+│   │       │   │   │   ├── nut
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   ├── T
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── thermophysicalProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvOptions
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-heat-exchanger-geometry.png
+│   │       │   │   ├── tutorials-heat-exchanger-participants.png
+│   │       │   │   ├── tutorials-heat-exchanger-precice-config.png
+│   │       │   │   └── tutorials-heat-exchanger-visualization.png
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solid-calculix
+│   │       │       ├── clean.sh
+│   │       │       ├── config.yml
+│   │       │       └── run.sh
+│   │       ├── heat-exchanger-simplified
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-bottom-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── alphat
+│   │       │   │   │   ├── epsilon
+│   │       │   │   │   ├── k
+│   │       │   │   │   ├── nut
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   ├── T
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── thermophysicalProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── fluid-top-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── alphat
+│   │       │   │   │   ├── epsilon
+│   │       │   │   │   ├── k
+│   │       │   │   │   ├── nut
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   ├── T
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── thermophysicalProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-heat-exchanger-simplified-animation.webp
+│   │       │   │   ├── tutorials-heat-exchanger-simplified-overview.png
+│   │       │   │   └── tutorials-heat-exchanger-simplified-precice-config.png
+│   │       │   ├── metadata.yaml
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solid-calculix
+│   │       │       ├── clean.sh
+│   │       │       ├── config.yml
+│   │       │       ├── generate_mesh.py
+│   │       │       ├── run.sh
+│   │       │       └── solid.inp
+│   │       ├── LICENSE
+│   │       ├── multiple-perpendicular-flaps
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── phi
+│   │       │   │   │   ├── pointDisplacement
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── dynamicMeshDict
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-multiple-perpendicular-flaps-precice-config.png
+│   │       │   │   ├── tutorials-multiple-perpendicular-flaps-results.png
+│   │       │   │   └── tutorials-multiple-perpendicular-flaps-setup-two-flaps.png
+│   │       │   ├── metadata.yaml
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   ├── reference-results
+│   │       │   │   └── reference_results.metadata
+│   │       │   ├── solid-downstream-dealii
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── parameters.prm
+│   │       │   │   ├── plot-displacement.sh
+│   │       │   │   └── run.sh -> ../../tools/run-dealii.sh
+│   │       │   └── solid-upstream-dealii
+│   │       │       ├── clean.sh
+│   │       │       ├── parameters.prm
+│   │       │       ├── plot-displacement.sh
+│   │       │       └── run.sh -> ../../tools/run-dealii.sh
+│   │       ├── oscillator
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-oscillator-precice-config.png
+│   │       │   │   ├── tutorials-oscillator-schematic-drawing.png
+│   │       │   │   ├── tutorials-oscillator-schematic-drawing.tex
+│   │       │   │   ├── tutorials-oscillator-trajectory-generalized-alpha.png
+│   │       │   │   └── tutorials-oscillator-trajectory-newmark-beta.png
+│   │       │   ├── mass-left-fmi
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── fmi-settings.json
+│   │       │   │   ├── precice-settings.json
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── mass-left-python
+│   │       │   │   ├── clean.sh
+│   │       │   │   └── run.sh
+│   │       │   ├── mass-right-fmi
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── fmi-settings.json
+│   │       │   │   ├── precice-settings.json
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── mass-right-python
+│   │       │   │   ├── clean.sh
+│   │       │   │   └── run.sh
+│   │       │   ├── plot-trajectory.py
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   ├── solver-fmi
+│   │       │   │   ├── calculate-error.py
+│   │       │   │   ├── fmu
+│   │       │   │   │   ├── CMakeLists.txt
+│   │       │   │   │   ├── include
+│   │       │   │   │   │   ├── cosimulation.h
+│   │       │   │   │   │   ├── fmi2Functions.h
+│   │       │   │   │   │   ├── fmi2FunctionTypes.h
+│   │       │   │   │   │   ├── FMI2.h
+│   │       │   │   │   │   ├── fmi2TypesPlatform.h
+│   │       │   │   │   │   ├── fmi3Functions.h
+│   │       │   │   │   │   ├── fmi3FunctionTypes.h
+│   │       │   │   │   │   ├── FMI3.h
+│   │       │   │   │   │   ├── fmi3PlatformTypes.h
+│   │       │   │   │   │   ├── fmiFunctions.h
+│   │       │   │   │   │   ├── FMI.h
+│   │       │   │   │   │   ├── fmiModelFunctions.h
+│   │       │   │   │   │   ├── fmiModelTypes.h
+│   │       │   │   │   │   ├── fmiPlatformTypes.h
+│   │       │   │   │   │   └── model.h
+│   │       │   │   │   ├── Oscillator
+│   │       │   │   │   │   ├── buildDescription.xml
+│   │       │   │   │   │   ├── config.h
+│   │       │   │   │   │   ├── FMI2.xml
+│   │       │   │   │   │   ├── FMI3.xml
+│   │       │   │   │   │   ├── model.c
+│   │       │   │   │   │   └── readme.html
+│   │       │   │   │   ├── README.md
+│   │       │   │   │   ├── set_tool_version.py
+│   │       │   │   │   ├── src
+│   │       │   │   │   │   ├── cosimulation.c
+│   │       │   │   │   │   ├── FMI2.c
+│   │       │   │   │   │   ├── fmi2Functions.c
+│   │       │   │   │   │   ├── FMI3.c
+│   │       │   │   │   │   ├── fmi3Functions.c
+│   │       │   │   │   │   └── FMI.c
+│   │       │   │   │   └── thirdparty
+│   │       │   │   │       └── LICENSE.txt
+│   │       │   │   └── requirements.txt
+│   │       │   └── solver-python
+│   │       │       ├── mypy.ini
+│   │       │       ├── oscillator.py
+│   │       │       ├── problemDefinition.py
+│   │       │       ├── requirements.txt
+│   │       │       └── timeSteppers.py
+│   │       ├── oscillator-overlap
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-oscillator-overlap-dd.pdf
+│   │       │   │   ├── tutorials-oscillator-overlap-dd.png
+│   │       │   │   ├── tutorials-oscillator-overlap-dd.tex
+│   │       │   │   └── tutorials-oscillator-overlap-precice-config.png
+│   │       │   ├── mass-left-python
+│   │       │   │   ├── clean.sh
+│   │       │   │   └── run.sh
+│   │       │   ├── mass-right-python
+│   │       │   │   ├── clean.sh
+│   │       │   │   └── run.sh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solver-python
+│   │       │       ├── mypy.ini
+│   │       │       ├── oscillator.py
+│   │       │       ├── problemDefinition.py
+│   │       │       ├── requirements.txt
+│   │       │       └── timeSteppers.py
+│   │       ├── partitioned-backwards-facing-step
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid1-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── fluid2-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-partitioned-backwards-facing-step-precice-config.png
+│   │       │   │   ├── tutorials-partitioned-backwards-facing-step-results.png
+│   │       │   │   └── tutorials-partitioned-backwards-facing-step-sampled.png
+│   │       │   ├── precice-config.xml
+│   │       │   └── README.md
+│   │       ├── partitioned-elastic-beam
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── dirichlet-calculix
+│   │       │   │   ├── all.msh
+│   │       │   │   ├── beam1.inp
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── config.yml
+│   │       │   │   ├── fix1_beam.nam
+│   │       │   │   ├── interface_beam.nam
+│   │       │   │   └── run.sh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-partitioned-elastic-beam-precice-config.png
+│   │       │   │   ├── tutorials-partitioned-elastic-beam-results.png
+│   │       │   │   └── tutorials-partitioned-elastic-beam-setup.png
+│   │       │   ├── neumann-calculix
+│   │       │   │   ├── all.msh
+│   │       │   │   ├── beam2.inp
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── config.yml
+│   │       │   │   ├── fix1_beam.nam
+│   │       │   │   ├── interface_beam.nam
+│   │       │   │   └── run.sh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   ├── visualize.fbd
+│   │       │   └── visualize.py
+│   │       ├── partitioned-heat-conduction
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── dirichlet-fenics
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── precice-adapter-config.json
+│   │       │   │   └── run.sh
+│   │       │   ├── dirichlet-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── heat.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── dirichlet-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   └── T
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   └── transportProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-partitioned-heat-conduction-FEniCS-movie.gif
+│   │       │   │   ├── tutorials-partitioned-heat-conduction-precice-config.png
+│   │       │   │   └── tutorials-partitioned-heat-conduction-setup.png
+│   │       │   ├── neumann-fenics
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── precice-adapter-config.json
+│   │       │   │   └── run.sh
+│   │       │   ├── neumann-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── heat.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── neumann-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   └── T
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   └── transportProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   ├── solver-fenics
+│   │       │   │   ├── errorcomputation.py
+│   │       │   │   ├── heatHigherOrder.py
+│   │       │   │   ├── heat.py
+│   │       │   │   ├── heat_pySDC_problem_class.py
+│   │       │   │   ├── heat_pySDC.py
+│   │       │   │   ├── my_enums.py
+│   │       │   │   ├── problem_setup.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── utils
+│   │       │   │       ├── ButcherTableaux.py
+│   │       │   │       ├── __init__.py
+│   │       │   │       └── utils.py
+│   │       │   └── solver-openfoam
+│   │       │       ├── clean.sh
+│   │       │       ├── createFields.H
+│   │       │       ├── heatTransfer.C
+│   │       │       ├── Make
+│   │       │       │   ├── files
+│   │       │       │   └── options
+│   │       │       └── write.H
+│   │       ├── partitioned-heat-conduction-complex
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── dirichlet-fenics
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── precice-adapter-config.json
+│   │       │   │   └── run.sh
+│   │       │   ├── images
+│   │       │   │   └── tutorials-partitioned-heat-conduction-complex-precice-config.png
+│   │       │   ├── neumann-fenics
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── precice-adapter-config.json
+│   │       │   │   └── run.sh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solver-fenics
+│   │       │       ├── errorcomputation.py
+│   │       │       ├── heat.py
+│   │       │       ├── my_enums.py
+│   │       │       ├── problem_setup.py
+│   │       │       └── requirements.txt
+│   │       ├── partitioned-heat-conduction-direct
+│   │       │   ├── clean-tutorial.sh
+│   │       │   ├── dirichlet-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── heat.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── images
+│   │       │   │   └── tutorials-partitioned-heat-conduction-direct-precice-config.png
+│   │       │   ├── neumann-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── heat.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── precice-config.xml
+│   │       │   └── README.md
+│   │       ├── partitioned-heat-conduction-overlap
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-partitioned-heat-conduction-overlap-precice-config.png
+│   │       │   │   ├── tutorials-partitioned-heat-conduction-overlap-setup.pdf
+│   │       │   │   ├── tutorials-partitioned-heat-conduction-overlap-setup.png
+│   │       │   │   └── tutorials-partitioned-heat-conduction-overlap-setup.tex
+│   │       │   ├── left-fenics
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── precice-adapter-config.json
+│   │       │   │   └── run.sh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   ├── right-fenics
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── precice-adapter-config.json
+│   │       │   │   └── run.sh
+│   │       │   └── solver-fenics
+│   │       │       ├── errorcomputation.py
+│   │       │       ├── heat.py
+│   │       │       └── requirements.txt
+│   │       ├── partitioned-pipe
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid1-openfoam-pimplefoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── blockMeshDictSkewed
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── fluid1-openfoam-sonicliquidfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── thermodynamicProperties
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── fluid2-openfoam-pimplefoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── blockMeshDictSkewed
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── fluid2-openfoam-sonicliquidfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── thermodynamicProperties
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-partitioned-pipe-precice-config.png
+│   │       │   │   ├── tutorials-partitioned-pipe-results-skewed.png
+│   │       │   │   └── tutorials-partitioned-pipe-results-sonicliquidfoam-pimplefoam.png
+│   │       │   ├── precice-config.xml
+│   │       │   └── README.md
+│   │       ├── partitioned-pipe-multiscale
+│   │       │   ├── clean-tutorial.sh
+│   │       │   ├── fluid1d-left-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── fluid1d-right-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── fluid3d-left-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       ├── preciceDict
+│   │       │   │       ├── probes
+│   │       │   │       └── sampleDict
+│   │       │   ├── fluid3d-right-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       ├── preciceDict
+│   │       │   │       ├── probes
+│   │       │   │       └── sampleDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-partitioned-pipe-multiscale-1d3d-config.png
+│   │       │   │   ├── tutorials-partitioned-pipe-multiscale-3d1d-config.png
+│   │       │   │   ├── tutorials-partitioned-pipe-multiscale-3d1d-pressure-distribution.png
+│   │       │   │   └── tutorials-partitioned-pipe-multiscale-3d1d-velocityProfileInterface3d.png
+│   │       │   ├── plot-pressure.py
+│   │       │   ├── precice-config-1d-1d.xml
+│   │       │   ├── precice-config-1d-3d.xml
+│   │       │   ├── precice-config-3d-1d.xml
+│   │       │   ├── precice-config-3d-3d.xml
+│   │       │   ├── precice-config.xml -> precice-config-1d-3d.xml
+│   │       │   ├── README.md
+│   │       │   ├── set-case.sh
+│   │       │   └── solver-fluid1d-nutils
+│   │       │       └── Fluid1D.py
+│   │       ├── partitioned-pipe-two-phase
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid1-openfoam
+│   │       │   │   ├── 0.orig
+│   │       │   │   │   ├── alpha.water
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       ├── preciceDict
+│   │       │   │       └── setFieldsDict
+│   │       │   ├── fluid2-openfoam
+│   │       │   │   ├── 0.orig
+│   │       │   │   │   ├── alpha.water
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       ├── preciceDict
+│   │       │   │       └── setFieldsDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-partitioned-pipe-two-phase-precice-config.png
+│   │       │   │   ├── tutorials-partitioned-pipe-two-phase-result.png
+│   │       │   │   └── tutorials-partitioned-pipe-two-phase-setup.png
+│   │       │   ├── monolithic
+│   │       │   │   ├── 0.orig
+│   │       │   │   │   ├── alpha.water
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       ├── sampling
+│   │       │   │       └── setFieldsDict
+│   │       │   ├── precice-config.xml
+│   │       │   └── README.md
+│   │       ├── perpendicular-flap
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-fake
+│   │       │   │   ├── fake.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── fluid-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── fluid.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── phi
+│   │       │   │   │   ├── pointDisplacement
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── dynamicMeshDict
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── fluid-su2
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── euler_config_unsteady.cfg
+│   │       │   │   ├── fluidMesh.su2
+│   │       │   │   ├── initial_flow_00000.csv
+│   │       │   │   ├── initial_flow_00000.dat
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-perpendicular-flap-displacement-fake-watchpoints.png
+│   │       │   │   ├── tutorials-perpendicular-flap-displacement-flow-comparison-watchpoints.png
+│   │       │   │   ├── tutorials-perpendicular-flap-displacement-nutils-watchpoints.png
+│   │       │   │   ├── tutorials-perpendicular-flap-displacement-openfoam-watchpoints.png
+│   │       │   │   ├── tutorials-perpendicular-flap-displacement-selected-watchpoints.png
+│   │       │   │   ├── tutorials-perpendicular-flap-displacement-su2-watchpoints.png
+│   │       │   │   ├── tutorials-perpendicular-flap-displacement-watchpoint.png
+│   │       │   │   ├── tutorials-perpendicular-flap-physics.png
+│   │       │   │   ├── tutorials-perpendicular-flap-precice-config.png
+│   │       │   │   └── tutorials-perpendicular-flap-setup-drawing.png
+│   │       │   ├── metadata.yaml
+│   │       │   ├── plot-all-displacements.sh
+│   │       │   ├── plot-displacement.sh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   ├── reference-results
+│   │       │   │   ├── fluid-openfoam_solid-calculix.tar.gz
+│   │       │   │   ├── fluid-openfoam_solid-dealii.tar.gz
+│   │       │   │   ├── fluid-openfoam_solid-upstream-dealii_solid-downstream-dealii.tar.gz
+│   │       │   │   ├── fluid-su2_solid-fenics.tar.gz
+│   │       │   │   ├── reference_results.metadata
+│   │       │   │   └── watchpoints.tar.gz
+│   │       │   ├── solid-calculix
+│   │       │   │   ├── all.msh
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── config.yml
+│   │       │   │   ├── fix1_beam.nam
+│   │       │   │   ├── flap.inp
+│   │       │   │   ├── flap_modal.inp
+│   │       │   │   ├── frequency.inp
+│   │       │   │   ├── interface_beam.nam
+│   │       │   │   └── run.sh
+│   │       │   ├── solid-dealii
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── parameters.prm
+│   │       │   │   └── run.sh -> ../../tools/run-dealii.sh
+│   │       │   ├── solid-dune
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── run.sh
+│   │       │   │   └── Solid.msh
+│   │       │   ├── solid-fake
+│   │       │   │   ├── fake.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── solid-fenics
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── precice-adapter-config-fsi-s.json
+│   │       │   │   ├── requirements.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   └── solid.py
+│   │       │   ├── solid-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── requirements.txt
+│   │       │   │   ├── run.sh
+│   │       │   │   └── solid.py
+│   │       │   ├── solid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── D
+│   │       │   │   │   └── solidForce
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── mechanicalProperties
+│   │       │   │   │   └── thermalProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   ├── solidDisplacementFoamForce
+│   │       │   │   │   ├── Make
+│   │       │   │   │   │   ├── files
+│   │       │   │   │   │   └── options
+│   │       │   │   │   ├── solidDisplacementFoamForceFvPatchVectorField.C
+│   │       │   │   │   └── solidDisplacementFoamForceFvPatchVectorField.H
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   └── solid-solids4foam
+│   │       │       ├── 0
+│   │       │       │   ├── D
+│   │       │       │   └── solidForce
+│   │       │       ├── clean.sh
+│   │       │       ├── constant
+│   │       │       │   ├── dynamicMeshDict
+│   │       │       │   ├── g
+│   │       │       │   ├── mechanicalProperties
+│   │       │       │   ├── physicsProperties
+│   │       │       │   └── solidProperties
+│   │       │       ├── run.sh
+│   │       │       └── system
+│   │       │           ├── blockMeshDict
+│   │       │           ├── controlDict
+│   │       │           ├── decomposeParDict
+│   │       │           ├── fvSchemes
+│   │       │           ├── fvSolution
+│   │       │           └── preciceDict
+│   │       ├── perpendicular-flap-stress
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── phi
+│   │       │   │   │   ├── pointDisplacement
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── dynamicMeshDict
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-perpendicular-flap-stress-displacement-watchpoint.png
+│   │       │   │   └── tutorials-perpendicular-flap-stress-precice-config.png
+│   │       │   ├── plot-displacement.sh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solid-gismo
+│   │       │       ├── clean.sh
+│   │       │       └── run.sh
+│   │       ├── quickstart
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── pointDisplacement
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── dynamicMeshDict
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── quickstart-precice-config.png
+│   │       │   │   ├── quickstart-result.png
+│   │       │   │   └── quickstart-setup.png
+│   │       │   ├── plotDisplacement.sh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── solid-cpp
+│   │       │       ├── clean.sh
+│   │       │       ├── CMakeLists.txt
+│   │       │       ├── rigid_body_solver.cpp
+│   │       │       └── run.sh
+│   │       ├── README.md
+│   │       ├── resonant-circuit
+│   │       │   ├── capacitor-matlab
+│   │       │   │   ├── capacitor.m
+│   │       │   │   ├── clean.sh
+│   │       │   │   └── run.sh
+│   │       │   ├── capacitor-python
+│   │       │   │   ├── capacitor.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── coil-matlab
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── coil.m
+│   │       │   │   └── run.sh
+│   │       │   ├── coil-python
+│   │       │   │   ├── coil.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-resonant-circuit-curves.png
+│   │       │   │   ├── tutorials-resonant-circuit-diagram.svg
+│   │       │   │   └── tutorials-resonant-circuit-precice-config.png
+│   │       │   ├── plot-solution.sh
+│   │       │   ├── precice-config.xml
+│   │       │   └── README.md
+│   │       ├── tools
+│   │       │   ├── check-image-names.py
+│   │       │   ├── check-links-to-precice.sh
+│   │       │   ├── check.sh
+│   │       │   ├── check-size.sh
+│   │       │   ├── cleaning-tools.sh
+│   │       │   ├── clean-tutorial-base.sh
+│   │       │   ├── log.sh
+│   │       │   ├── openfoam-remove-empty-dirs.sh
+│   │       │   ├── run-dealii.sh
+│   │       │   ├── run-openfoam.sh
+│   │       │   ├── tests
+│   │       │   │   ├── build_docker_images.py
+│   │       │   │   ├── components.yaml
+│   │       │   │   ├── component-templates
+│   │       │   │   │   ├── bare.yaml
+│   │       │   │   │   ├── calculix-adapter.yaml
+│   │       │   │   │   ├── dealii-adapter.yaml
+│   │       │   │   │   ├── dumux-adapter.yaml
+│   │       │   │   │   ├── fenics-adapter.yaml
+│   │       │   │   │   ├── micro-manager.yaml
+│   │       │   │   │   ├── nutils-adapter.yaml
+│   │       │   │   │   ├── openfoam-adapter.yaml
+│   │       │   │   │   ├── python-bindings.yaml
+│   │       │   │   │   └── su2-adapter.yaml
+│   │       │   │   ├── docker-compose.field_compare.template.yaml
+│   │       │   │   ├── docker-compose.template.yaml
+│   │       │   │   ├── dockerfiles
+│   │       │   │   │   ├── ubuntu_2204
+│   │       │   │   │   │   └── Dockerfile
+│   │       │   │   │   └── ubuntu_2404
+│   │       │   │   │       └── Dockerfile
+│   │       │   │   ├── generate_reference_results.py
+│   │       │   │   ├── metadata_parser
+│   │       │   │   │   ├── __init__.py
+│   │       │   │   │   └── metdata.py
+│   │       │   │   ├── paths.py
+│   │       │   │   ├── print_case_combinations.py
+│   │       │   │   ├── print_metadata.py
+│   │       │   │   ├── print_test_suites.py
+│   │       │   │   ├── README.md
+│   │       │   │   ├── reference_results.metadata.template
+│   │       │   │   ├── reference_versions.yaml
+│   │       │   │   ├── requirements.txt
+│   │       │   │   ├── systemtests
+│   │       │   │   │   ├── __init__.py
+│   │       │   │   │   ├── SystemtestArguments.py
+│   │       │   │   │   ├── Systemtest.py
+│   │       │   │   │   └── TestSuite.py
+│   │       │   │   ├── systemtests.py
+│   │       │   │   └── tests.yaml
+│   │       │   └── visualize-configs.sh
+│   │       ├── turek-hron-fsi3
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── fluid.geo
+│   │       │   │   ├── fluid.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── pointDisplacement
+│   │       │   │   │   └── U
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── dynamicMeshDict
+│   │       │   │   │   ├── transportProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── blockMeshDict_double_refined
+│   │       │   │       ├── blockMeshDict_refined
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       └── preciceDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-turek-hron-fsi3-precice-config.png
+│   │       │   │   ├── tutorials-turek-hron-fsi3-setup.png
+│   │       │   │   └── tutorials-turek-hron-fsi3-tip-plot.png
+│   │       │   ├── plot-displacement.sh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   ├── solid-dealii
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── parameters.prm
+│   │       │   │   └── run.sh -> ../../tools/run-dealii.sh
+│   │       │   └── solid-nutils
+│   │       │       ├── clean.sh
+│   │       │       ├── requirements.txt
+│   │       │       ├── run.sh
+│   │       │       ├── solid.geo
+│   │       │       └── solid.py
+│   │       ├── two-scale-heat-conduction
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-two-scale-heat-conduction-evolving-micro-simulations.png
+│   │       │   │   ├── tutorials-two-scale-heat-conduction-macro-micro-schematic.png
+│   │       │   │   ├── tutorials-two-scale-heat-conduction-precice-config.png
+│   │       │   │   ├── tutorials-two-scale-heat-conduction-results-du-du.png
+│   │       │   │   └── tutorials-two-scale-heat-conduction-results.png
+│   │       │   ├── macro-dumux
+│   │       │   │   ├── appl
+│   │       │   │   │   ├── CMakeLists.txt
+│   │       │   │   │   ├── main.cc
+│   │       │   │   │   ├── myenergyvolumevariables.hh
+│   │       │   │   │   ├── mysimpleliquid.hh
+│   │       │   │   │   ├── myvolumevariables.hh
+│   │       │   │   │   ├── problem.hh
+│   │       │   │   │   ├── properties.hh
+│   │       │   │   │   └── spatialparams.hh
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── cmake
+│   │       │   │   │   └── modules
+│   │       │   │   │       ├── CMakeLists.txt
+│   │       │   │   │       └── MacroDumuxMacros.cmake
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── config.h.cmake
+│   │       │   │   ├── doc
+│   │       │   │   │   ├── CMakeLists.txt
+│   │       │   │   │   └── doxygen
+│   │       │   │   │       ├── CMakeLists.txt
+│   │       │   │   │       └── Doxylocal
+│   │       │   │   ├── dune.module
+│   │       │   │   ├── macro-dumux.pc.in
+│   │       │   │   ├── params.input
+│   │       │   │   └── run.sh
+│   │       │   ├── macro-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── macro.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── metadata.yaml
+│   │       │   ├── micro-dumux
+│   │       │   │   ├── appl
+│   │       │   │   │   ├── cell_problem
+│   │       │   │   │   │   ├── indices.hh
+│   │       │   │   │   │   ├── localresidual.hh
+│   │       │   │   │   │   ├── model.hh
+│   │       │   │   │   │   └── volumevariables.hh
+│   │       │   │   │   ├── CMakeLists.txt
+│   │       │   │   │   ├── micro_sim.cpp
+│   │       │   │   │   ├── problem_allencahn.hh
+│   │       │   │   │   ├── problem_cellproblem.hh
+│   │       │   │   │   ├── properties_allencahn.hh
+│   │       │   │   │   ├── properties_cellproblem.hh
+│   │       │   │   │   └── spatialparams_cellproblem.hh
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── config.h.cmake
+│   │       │   │   ├── dune.module
+│   │       │   │   ├── micro-manager-config.json
+│   │       │   │   ├── micro_sim.pc.in
+│   │       │   │   ├── params.input
+│   │       │   │   └── run.sh
+│   │       │   ├── micro-nutils
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── micro-manager-config.json
+│   │       │   │   ├── micro.py
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── run.sh
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── setup-dumux.sh
+│   │       ├── volume-coupled-diffusion
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── drain-fenics
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── precice-adapter-config.json
+│   │       │   │   └── run.sh
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-volume-coupled-diffusion-precice-config.png
+│   │       │   │   └── tutorials-volume-coupled-diffusion-setup.png
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   ├── solver-fenics
+│   │       │   │   ├── requirements.txt
+│   │       │   │   └── volume-coupled-diffusion.py
+│   │       │   └── source-fenics
+│   │       │       ├── clean.sh
+│   │       │       ├── precice-adapter-config.json
+│   │       │       └── run.sh
+│   │       ├── volume-coupled-flow
+│   │       │   ├── clean-tutorial.sh -> ../tools/clean-tutorial-base.sh
+│   │       │   ├── fluid-openfoam
+│   │       │   │   ├── 0
+│   │       │   │   │   ├── alphat
+│   │       │   │   │   ├── epsilon
+│   │       │   │   │   ├── k
+│   │       │   │   │   ├── nut
+│   │       │   │   │   ├── p
+│   │       │   │   │   ├── p_rgh
+│   │       │   │   │   ├── T
+│   │       │   │   │   ├── U
+│   │       │   │   │   └── U_vol
+│   │       │   │   ├── clean.sh
+│   │       │   │   ├── constant
+│   │       │   │   │   ├── fvOptions
+│   │       │   │   │   ├── g
+│   │       │   │   │   ├── thermophysicalProperties
+│   │       │   │   │   └── turbulenceProperties
+│   │       │   │   ├── run.sh
+│   │       │   │   └── system
+│   │       │   │       ├── blockMeshDict
+│   │       │   │       ├── controlDict
+│   │       │   │       ├── decomposeParDict
+│   │       │   │       ├── fvSchemes
+│   │       │   │       ├── fvSolution
+│   │       │   │       ├── preciceDict
+│   │       │   │       └── topoSetDict
+│   │       │   ├── images
+│   │       │   │   ├── tutorials-volume-coupled-flow-config.png
+│   │       │   │   ├── tutorials-volume-coupled-flow-precice-config.png
+│   │       │   │   └── tutorials-volume-coupled-flow-Ux.png
+│   │       │   ├── precice-config.xml
+│   │       │   ├── README.md
+│   │       │   └── source-nutils
+│   │       │       ├── clean.sh
+│   │       │       ├── run.sh
+│   │       │       └── source.py
+│   │       └── water-hammer
+│   │           ├── clean-tutorial.sh
+│   │           ├── fluid1d-left-nutils
+│   │           │   ├── clean.sh
+│   │           │   ├── requirements.txt
+│   │           │   └── run.sh
+│   │           ├── fluid1d-right-nutils
+│   │           │   ├── clean.sh
+│   │           │   ├── requirements.txt
+│   │           │   └── run.sh
+│   │           ├── fluid3d-left-openfoam
+│   │           │   ├── 0
+│   │           │   │   ├── p
+│   │           │   │   └── U
+│   │           │   ├── clean.sh
+│   │           │   ├── constant
+│   │           │   │   ├── thermodynamicProperties
+│   │           │   │   ├── transportProperties
+│   │           │   │   └── turbulenceProperties
+│   │           │   ├── run.sh
+│   │           │   └── system
+│   │           │       ├── blockMeshDict
+│   │           │       ├── controlDict
+│   │           │       ├── decomposeParDict
+│   │           │       ├── fvSchemes
+│   │           │       ├── fvSolution
+│   │           │       ├── preciceDict
+│   │           │       └── probes
+│   │           ├── fluid3d-right-openfoam
+│   │           │   ├── 0
+│   │           │   │   ├── p
+│   │           │   │   └── U
+│   │           │   ├── clean.sh
+│   │           │   ├── constant
+│   │           │   │   ├── thermodynamicProperties
+│   │           │   │   ├── transportProperties
+│   │           │   │   └── turbulenceProperties
+│   │           │   ├── run.sh
+│   │           │   └── system
+│   │           │       ├── blockMeshDict
+│   │           │       ├── controlDict
+│   │           │       ├── decomposeParDict
+│   │           │       ├── fvSchemes
+│   │           │       ├── fvSolution
+│   │           │       ├── preciceDict
+│   │           │       └── probes
+│   │           ├── images
+│   │           │   ├── tutorials-water-hammer-1d3d-outlet-pressure.png
+│   │           │   ├── tutorials-water-hammer-1d3d-precice-config.png
+│   │           │   └── tutorials-water-hammer-3d1d-precice-config.png
+│   │           ├── plot-pressure.py
+│   │           ├── precice-config-1d-1d.xml
+│   │           ├── precice-config-1d-3d.xml
+│   │           ├── precice-config-3d-1d.xml
+│   │           ├── precice-config-3d-3d.xml
+│   │           ├── precice-config.xml -> precice-config-1d-3d.xml
+│   │           ├── README.md
+│   │           ├── set-case.sh
+│   │           └── solver-fluid1d-nutils
+│   │               └── Fluid1D.py
+│   ├── _index.html
+│   ├── posts
+│   │   ├── 2015-04-12-test-post-last-year.md
+│   │   ├── 2016-02-24-first-post.md
+│   │   └── 2016-02-26-sample-post-jekyll.md
+│   ├── privacy
+│   │   ├── _index.md
+│   │   └── privacy.md
+│   └── tutorials
+│       ├── _index.md
+│       ├── tutorials.md
+│       └── tutorials-visualization.md
+├── data
+│   ├── alerts.yml
+│   ├── developer.yaml
+│   ├── funding.yml
+│   ├── logowall.yml
+│   ├── samplelist.yml
+│   ├── sidebars
+│   │   ├── community_sidebar.yaml
+│   │   ├── docs_sidebar.yml
+│   │   ├── home_sidebar.yml
+│   │   └── tutorial_sidebar.yml
+│   ├── strings.yml
+│   ├── timeline.yaml
+│   └── topnav.yml
+├── hugo.yaml
+├── layouts
+│   ├── _default
+│   │   ├── about.html
+│   │   ├── baseof.html
+│   │   ├── default.html
+│   │   ├── default_print.html
+│   │   ├── landing.html
+│   │   ├── landing_page.html
+│   │   ├── none.html
+│   │   ├── page.html
+│   │   ├── page_print.html
+│   │   ├── post.html
+│   │   ├── section.html
+│   │   ├── taxonomy.html
+│   │   └── term.html
+│   ├── partials
+│   │   ├── about.html
+│   │   ├── algolia.html
+│   │   ├── archive.html
+│   │   ├── breadcrumb.html
+│   │   ├── callout.html
+│   │   ├── commento.html
+│   │   ├── disclaimer.html
+│   │   ├── feedback.html
+│   │   ├── footer.html
+│   │   ├── google_analytics.html
+│   │   ├── head.html
+│   │   ├── head_print.html
+│   │   ├── image.html
+│   │   ├── important.html
+│   │   ├── initialize_shuffle.html
+│   │   ├── inline_image.html
+│   │   ├── links.html
+│   │   ├── news_banner.html
+│   │   ├── newsletter.html
+│   │   ├── note.html
+│   │   ├── sidebar.html
+│   │   ├── taglogic.html
+│   │   ├── tip.html
+│   │   ├── toc.html
+│   │   ├── topnav.html
+│   │   ├── warning.html
+│   │   └── xmlreference.md
+│   └── shortcodes
+│       ├── dev_leads.html
+│       ├── devlist.html
+│       ├── funding.html
+│       └── param.html
+├── licenses
+│   ├── LICENSE
+│   └── LICENSE-BSD-NAVGOCO.txt
+├── material
+│   ├── coupled
+│   │   ├── coupled_config.odg
+│   │   ├── coupled_config.pdf
+│   │   ├── coupled_threeParticipants.pdf
+│   │   ├── coupled_threeParticipants.svg
+│   │   ├── coupled_twoSolvers.odg
+│   │   ├── coupled_twoSolvers.pdf
+│   │   └── README.txt
+│   ├── flyers
+│   │   ├── preCICE2020-poster.pdf
+│   │   ├── preCICE2020-poster.png
+│   │   ├── precice2023-poster.pdf
+│   │   ├── precice2023-poster-thumbnail.png
+│   │   ├── precice2025-poster-thumbnail.png
+│   │   ├── precice2027-poster-thumbnail.png
+│   │   └── preCICE_flyer_January2018.pdf
+│   ├── logo
+│   │   ├── preCICE_Logo_4000_transparent.png
+│   │   ├── preCICE_Logo_4000_white.png
+│   │   └── precice.png
+│   ├── overview
+│   │   ├── precice-overview.pdf
+│   │   └── precice-overview.png
+│   └── README.md
+├── migration_summary.txt
+│   ├── js
+│   │   ├── algolia-search.js
+│   │   ├── auto-render.min.js
+│   │   ├── customscripts.js
+│   │   ├── forum-fetch.js
+│   │   ├── github-queries.js
+│   │   ├── jekyll-search.js
+│   │   ├── jquery.ba-throttle-debounce.min.js
+│   │   ├── jquery.navgoco.min.js
+│   │   ├── jquery.shuffle.min.js
+│   │   ├── katex.min.js
+│   │   ├── news-collect.js
+│   │   ├── prince.es6.polyfill.min.js
+│   │   ├── prince.mathjax.compat.js
+│   │   ├── tex-svg.js
+│   │   ├── theme-toggle.js
+│   │   └── toc.js
+│   ├── pdf
+│   │   ├── libprecice2_2.2.1_docs_20210924.pdf
+│   │   ├── libprecice2_2.2.1_docs_20210929.pdf
+│   │   ├── libprecice2_2.2.3_docs_20211020.pdf
+│   │   ├── preCICE_docs_2.3.0_20211201_5d91b60.pdf
+│   │   ├── preCICE_docs_2.3.0_20220218_v202202.0.0.pdf
+│   │   └── README.md
+│   ├── pdfconfigs
+│   │   ├── config_docs_pdf.yml
+│   │   ├── prince-list.txt
+│   │   ├── titlepage.html
+│   │   └── tocpage.html
+│   └── webfonts
+│       ├── fa-brands-400.eot
+│       ├── fa-brands-400.svg
+│       ├── fa-brands-400.ttf
+│       ├── fa-brands-400.woff
+│       ├── fa-brands-400.woff2
+│       ├── fa-regular-400.eot
+│       ├── fa-regular-400.svg
+│       ├── fa-regular-400.ttf
+│       ├── fa-regular-400.woff
+│       ├── fa-regular-400.woff2
+│       ├── fa-solid-900.eot
+│       ├── fa-solid-900.svg
+│       ├── fa-solid-900.ttf
+│       ├── fa-solid-900.woff
+│       └── fa-solid-900.woff2
+├── tools
+│   ├── check-old-precice.py
+│   ├── fetch-faq.py
+│   ├── fetch-news.py
+│   └── old-precice.txt
+├── tooltips.json
+├── var
+│   └── build.sh
+└── vercel.json
+
+1970 directories, 8279 files

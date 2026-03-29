@@ -26,5 +26,10 @@
   </div>
   {{- partial "footer.html" . -}}
   <script src="{{ "js/theme-toggle.js" | relURL }}"></script>
+
+  {{/* ── Algolia Search ── */}}
+  {{- if .Params.search -}}
+    {{- partial "algolia.html" . -}}
+  {{- end -}}
 </body>
 </html>
