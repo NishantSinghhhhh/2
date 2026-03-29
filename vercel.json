@@ -1,5 +1,5 @@
 {
-  "buildCommand": "hugo --gc --baseURL https://$VERCEL_URL/",
+  "buildCommand": "python3 preprocess.py && hugo --gc --baseURL https://$VERCEL_URL/",
   "outputDirectory": "public",
   "build": {
     "env": {
