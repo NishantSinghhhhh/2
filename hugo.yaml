@@ -20,8 +20,9 @@ ignoreFiles:
 
 algolia:
   application_id: "LIT6P0EW26"
-  index_name: "precice"           # was "jekyll"
+  index_name: "precice"
   search_only_api_key: "760ed6be3e165d08b4a798ac4aa82fe4"
+
 # -------------------------------------------------------------
 # CASCADE: Automatically applies frontmatter based on folder
 # -------------------------------------------------------------
@@ -222,6 +223,8 @@ module:
       target: data
     - source: assets
       target: assets
+
+    # ── Content mounts ──
     - source: imported/tutorials
       target: content/imported/tutorials
     - source: imported/openfoam-adapter
@@ -240,6 +243,78 @@ module:
       target: content/imported/dumux-adapter
     - source: imported/preeco-orga
       target: content/imported/preeco-orga
+
+    # ── Image mounts: tutorial images → static/images ──
+    - source: imported/tutorials/quickstart/images
+      target: static/images
+    - source: imported/tutorials/aste-turbine/images
+      target: static/images
+    - source: imported/tutorials/breaking-dam-2d/images
+      target: static/images
+    - source: imported/tutorials/channel-transport/images
+      target: static/images
+    - source: imported/tutorials/channel-transport-particles/images
+      target: static/images
+    - source: imported/tutorials/channel-transport-reaction/images
+      target: static/images
+    - source: imported/tutorials/elastic-tube-1d/images
+      target: static/images
+    - source: imported/tutorials/elastic-tube-3d/images
+      target: static/images
+    - source: imported/tutorials/flow-around-controlled-moving-cylinder/images
+      target: static/images
+    - source: imported/tutorials/flow-over-heated-plate/images
+      target: static/images
+    - source: imported/tutorials/flow-over-heated-plate-nearest-projection/images
+      target: static/images
+    - source: imported/tutorials/flow-over-heated-plate-partitioned-flow/images
+      target: static/images
+    - source: imported/tutorials/flow-over-heated-plate-steady-state/images
+      target: static/images
+    - source: imported/tutorials/flow-over-heated-plate-two-meshes/images
+      target: static/images
+    - source: imported/tutorials/free-flow-over-porous-media/images
+      target: static/images
+    - source: imported/tutorials/heat-exchanger/images
+      target: static/images
+    - source: imported/tutorials/heat-exchanger-simplified/images
+      target: static/images
+    - source: imported/tutorials/multiple-perpendicular-flaps/images
+      target: static/images
+    - source: imported/tutorials/oscillator/images
+      target: static/images
+    - source: imported/tutorials/oscillator-overlap/images
+      target: static/images
+    - source: imported/tutorials/partitioned-backwards-facing-step/images
+      target: static/images
+    - source: imported/tutorials/partitioned-elastic-beam/images
+      target: static/images
+    - source: imported/tutorials/partitioned-heat-conduction/images
+      target: static/images
+    - source: imported/tutorials/partitioned-heat-conduction-complex/images
+      target: static/images
+    - source: imported/tutorials/partitioned-heat-conduction-direct/images
+      target: static/images
+    - source: imported/tutorials/partitioned-heat-conduction-overlap/images
+      target: static/images
+    - source: imported/tutorials/partitioned-pipe/images
+      target: static/images
+    - source: imported/tutorials/partitioned-pipe-two-phase/images
+      target: static/images
+    - source: imported/tutorials/perpendicular-flap/images
+      target: static/images
+    - source: imported/tutorials/perpendicular-flap-stress/images
+      target: static/images
+    - source: imported/tutorials/resonant-circuit/images
+      target: static/images
+    - source: imported/tutorials/turek-hron-fsi3/images
+      target: static/images
+    - source: imported/tutorials/two-scale-heat-conduction/images
+      target: static/images
+    - source: imported/tutorials/volume-coupled-diffusion/images
+      target: static/images
+    - source: imported/tutorials/volume-coupled-flow/images
+      target: static/images
 
 frontmatter:
   date:
